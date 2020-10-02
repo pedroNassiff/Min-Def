@@ -66,13 +66,15 @@
 
 @media (max-width: 600px) {
     
+    .ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu{
+        margin-left: 8em;
+    }
 
-
-.ant-menu-dark.ant-menu-horizontal > .ant-menu-submenu{
-    margin-left: 8em;
+    .ant-divider-vertical{
+        display: none;
+    }
 }
 
 .ant-divider-vertical{
-    display: none;
-}
+    margin: 0;
 }

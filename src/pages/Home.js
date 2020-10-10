@@ -1,16 +1,21 @@
-import React from 'react'
+import React, {useState}  from 'react'
 import CardGrid from 'componentes/cardGrid'
 import Carousel from 'componentes/carouselNotices'
 import './Home.scss'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import fpCont from '../assets/img/fpCont.svg';
-import backSegCont from '../assets/img/backSegCont.svg';
+import PcontResp from '../assets/img/PcontResp.svg';
+import backSegCont from '../assets/img/backSegCont.png';
+import ScontResp from '../assets/img/ScontResp.svg';
+import backTercerCont from '../assets/img/backTercerCont.svg';
+import TcontResp from '../assets/img/TcontResp.svg';
 import Button from '@material-ui/core/Button';
 
 import Typography from '@material-ui/core/Typography';
 import gps from '../assets/img/gps.svg';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import Footer from 'componentes/ui/Footer';
 
 
 const useStyles = makeStyles(theme => ({
@@ -25,9 +30,12 @@ const useStyles = makeStyles(theme => ({
         fontFamily: "Raleway",
         fontSize: "2.50rem",
         color: "white",
-        marginTop: "7em",
+        marginTop: "5em",
         marginLeft: "5em",
-        fontWeight: 700 
+        fontWeight: 700,
+        [theme.breakpoints.down("xs")]: {
+            marginLeft: "1.4em",
+        }
     },
     subtitulos1: {
         fontSize: "1.50rem",
@@ -35,6 +43,9 @@ const useStyles = makeStyles(theme => ({
         color: "white",
         marginLeft: "9.7em",
         marginBottom: "1em",
+        [theme.breakpoints.down("xs")]: {
+            marginLeft: "3.7em",
+        }
     },
     imagenUbicacion: {
         height: "2em",
@@ -49,7 +60,24 @@ const useStyles = makeStyles(theme => ({
         borderWidth: 2,
         borderRadius: 50,
         fontFamily: "Roboto",
-        marginLeft: "27em",
+        marginLeft: "22em",
+        marginBottom: "2em",
+        fontWeight: "bold",
+       "&:hover": {
+           backgroundColor: "#00a0dc"
+       },
+       [theme.breakpoints.down("xs")]: {
+        marginLeft: "11.6em",
+    }
+    },
+
+    botonUbicacion2: {
+        borderColor: "#00a0dc",
+        color: "white",
+        borderWidth: 2,
+        borderRadius: 50,
+        fontFamily: "Roboto",
+        
         marginBottom: "2em",
         fontWeight: "bold",
        "&:hover": {
@@ -57,30 +85,46 @@ const useStyles = makeStyles(theme => ({
        }
     },
     sContenedor1: {
-        marginTop: "1em"
+        
     },
     fpCont: {
         backgroundImage: `url(${fpCont})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        height: "50%",
-        width: "100%"
+        backgroundRepeat: "no-repeat",        
+        width: "100%",
+        [theme.breakpoints.down("xs")]: {
+            backgroundImage: `url(${PcontResp})`,
+        }
     },
     backSegCont: {
         backgroundImage: `url(${backSegCont})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-        height: "50%",
-        width: "100%"
-    }
+        backgroundRepeat: "no-repeat",        
+        width: "100%",
+        [theme.breakpoints.down("xs")]: {
+            backgroundImage: `url(${ScontResp})`,
+        }
+    },
+    backTercerCont: {
+        backgroundImage: `url(${backTercerCont})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",        
+        width: "100%",
+        [theme.breakpoints.down("xs")]: {
+            backgroundImage: `url(${TcontResp})`,
+        }
+    },
 }))
 
 export default function Home() {
     const classes = useStyles();
     const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"))
+    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+    const [selectedIndex, setSelectedIndex] = useState(0);
+  const [value, setValue] = useState(0);
     return (
         <div className="homeContainer">
             <div className="carouselContainer">
@@ -91,7 +135,7 @@ export default function Home() {
             container 
             className={classes.mainContainer}
             direction="column">
-            <Grid container style={{height: "35em"}}>    
+            <Grid container style={{height: "20em"}}>    
             <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
                 <Grid 
                     container direction="row"
@@ -105,55 +149,68 @@ export default function Home() {
                             Lorem Ipsum Lorem Ipsum lorem ipsum
                         </Typography>
                         <Button variant="outlined" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
-                            <span style={{ marginRight: 0 }}>VER MÁS</span>
+                            <span style={{ marginRight: 0 }}>MIEMBROS</span>
+                        </Button>
+                        <Button variant="outlined" className={classes.botonUbicacion2} style={{ marginRight: 20 }}>
+                            <span style={{ marginRight: 0 }}>REQUISITOS</span>
                         </Button>
                     </Grid>
                 </Grid>
                 </Grid>
                 <div className={classes.fpCont} />
             </Grid>
-            <Grid container style={{height: "60em"}}>  
-            <Grid item style={{position: "absolute"}} alignItems="center"> {/*--3er Contenedor---*/}
+            <Grid container style={{height: "20em"}}>    
+            <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
                 <Grid 
-                    container 
-                    direction="row"
-                    justify={matchesSM ? "center" : "flex-end"} 
+                    container direction="row"
+                    justify={matchesSM ? "center" : undefined} 
                     className={classes.sContenedor2}>
-                    <Grid item style={{ marginRight: matchesSM ? 0 : "12em"}}>
+                    <Grid item style={{ marginLeft: matchesSM ? 0 : "55em"}}>
                         <Typography variant="h4" className={classes.titulos1}>
-                            Defensorias Públicas y Civiles
+                            Defensorias Públicas Penales
                         </Typography>
                         <Typography variant="subtitle1" className={classes.subtitulos1}>
                             Lorem Ipsum Lorem Ipsum lorem ipsum
                         </Typography>
-                        <Button variant="outlined" className={classes.botonUbicacion}>
-                            <span style={{ marginLeft: 10 }}>VER UBICACIÓN</span>
+                        <Button variant="outlined" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
+                            <span style={{ marginRight: 0 }}>MIEMBROS</span>
+                        </Button>
+                        <Button variant="outlined" className={classes.botonUbicacion2} style={{ marginRight: 20 }}>
+                            <span style={{ marginRight: 0 }}>REQUISITOS</span>
                         </Button>
                     </Grid>
                 </Grid>
+                </Grid>
+                <div className={classes.backSegCont} />
             </Grid>
-            <div className={classes.backSegCont} />
-            </Grid>
-            <Grid item> {/*--2do Contenedor---*/}
+            <Grid container style={{height: "20em"}}>    
+            <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
                 <Grid 
                     container direction="row"
                     justify={matchesSM ? "center" : undefined} 
                     className={classes.sContenedor3}>
                     <Grid item style={{ marginLeft: matchesSM ? 0 : "5em"}}>
                         <Typography variant="h4" className={classes.titulos1}>
-                            Asesorías de Niñas, Niños y Adolecentes
+                            Defensorias Públicas Penales
                         </Typography>
                         <Typography variant="subtitle1" className={classes.subtitulos1}>
                             Lorem Ipsum Lorem Ipsum lorem ipsum
                         </Typography>
-                        <Button variant="outlined" className={classes.botonUbicacion}>
-                            <span style={{ marginRight: 10 }}>VER UBICACIÓN</span>
+                        <Button variant="outlined" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
+                            <span style={{ marginRight: 0 }}>MIEMBROS</span>
+                        </Button>
+                        <Button variant="outlined" className={classes.botonUbicacion2} style={{ marginRight: 20 }}>
+                            <span style={{ marginRight: 0 }}>REQUISITOS</span>
                         </Button>
                     </Grid>
                 </Grid>
+                </Grid>
+                <div className={classes.backTercerCont} />
             </Grid>
         </Grid>
-          
+        <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
+
         </div>
+
     );
 }

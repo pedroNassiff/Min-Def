@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
     footer: {
         backgroundColor: "#00a0dc",
         width: "100%",
-        zIndex: 1302,
+        zIndex: 1902,
     },
     mainContainer: {
         backgroundColor: "#00a0dc",

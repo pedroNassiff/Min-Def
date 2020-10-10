@@ -47,17 +47,22 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 800,
         fontSize: ".9em",
         opacity: "1",
-       
+       borderRight: "1px solid",
+       "&:hover": {
+        color: "white",
+        opacity: "1",
+        
+    }
     },
     iniReg: {
        backgroundColor: "transparent",
        boxShadow: "none",
        border: "1px solid #ffffff",
-       marginLeft: "1315px",
+       marginLeft: "1330px",
        color: "#ffffff",
        borderRadius: "10px",
-       fontSize: ".8em",
-       marginTop: ".7em",
+       fontSize: ".6em",
+       marginTop: "1em",
        height: "30px",
        "&:hover": {
         color: "white",
@@ -73,7 +78,7 @@ const useStyles = makeStyles(theme => ({
         fontFamily: "Ralewey",
         fontWeight: 800,
         fontSize: ".9em",
-        opacity: 0.7,
+        opacity: 1,
         "&:hover": {
             opacity: 1
         }

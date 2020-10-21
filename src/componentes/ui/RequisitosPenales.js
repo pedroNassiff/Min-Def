@@ -19,6 +19,9 @@ import IconButton from '@material-ui/core/IconButton';
 const useStyles = makeStyles(theme => ({
     ListItemText: {
         fontSize: "2rem"
+    },
+    Typography: {
+        fontFamily: "Roboto",
     }
 
      
@@ -43,7 +46,7 @@ export default function RequisitosPenales() {
            
             <Typography
                     variant="h2"
-                    style={{ fontSize: "1.7em", marginTop:"3em"}}
+                    style={{ fontSize: "1.7em", marginTop:"3em", fontFamily: "Roboto", background: "#00a0dc",  color: "white", maxWidth: "43em", width: "35em", marginLeft: "-3em"}}
                     align={matchesSM ? "center" : undefined}
                     >Podemos proporcionártelo, si necesitas que te asesoren y/o representen en:
                 </Typography>    
@@ -147,7 +150,7 @@ export default function RequisitosPenales() {
            
             <Typography
                     variant="h2"
-                    style={{ fontSize: "1.7em"}}
+                    style={{ fontSize: "1.7em", background: "#00a0dc",  color: "white", maxWidth: "43em", width: "30em", marginLeft: "-3em"}}
                     align={matchesSM ? "center" : undefined}
                     >¿Cuándo puedo acceder a un abogado en estos temas?
                 </Typography>    

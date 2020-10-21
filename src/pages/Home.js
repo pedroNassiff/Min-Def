@@ -28,17 +28,29 @@ const useStyles = makeStyles(theme => ({
         }
     },
     titulos1: {
-        fontFamily: "Raleway",
+        fontFamily: "Roboto",
         fontSize: "2.50rem",
         color: "white",
         marginTop: "5em",
-        marginLeft: "5em",
+        marginLeft: "4.5em",
+        fontWeight: 700,
+        [theme.breakpoints.down("xs")]: {
+            marginLeft: "1.4em",
+        }
+    },
+    titulos2: {
+        fontFamily: "Roboto",
+        fontSize: "2.50rem",
+        color: "white",
+        marginTop: "5em",
+        marginLeft: "2em",
         fontWeight: 700,
         [theme.breakpoints.down("xs")]: {
             marginLeft: "1.4em",
         }
     },
     subtitulos1: {
+        fontFamily: "Roboto",
         fontSize: "1.50rem",
         fontWeight: 300,
         color: "white",
@@ -56,6 +68,7 @@ const useStyles = makeStyles(theme => ({
       
     },
     botonUbicacion: {
+        fontFamily: "Roboto",
         borderColor: "#00a0dc",
         color: "white",
         borderWidth: 2,
@@ -73,6 +86,7 @@ const useStyles = makeStyles(theme => ({
     },
 
     botonUbicacion2: {
+        fontFamily: "Roboto",
         borderColor: "#00a0dc",
         color: "white",
         borderWidth: 2,
@@ -204,8 +218,8 @@ export default function Home() {
                     container direction="row"
                     justify={matchesSM ? "center" : undefined} 
                     className={classes.sContenedor3}>
-                    <Grid item style={{ marginLeft: matchesSM ? 0 : "5em"}}>
-                        <Typography variant="h4" className={classes.titulos1}>
+                    <Grid item style={{ marginLeft: matchesSM ? 0 : "2em"}}>
+                        <Typography variant="h4" className={classes.titulos2}>
                             Asesorias de Niños, Niñas y Adolecentes
                         </Typography>
                         <Typography variant="subtitle1" className={classes.subtitulos1}>

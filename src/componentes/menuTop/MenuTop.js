@@ -39,14 +39,14 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         position: "absolute",
         border: "1px solid #ffffff",
-       
+     
       
         
     },
     tab: {
         marginLeft: "1.5em",
         color: "white",
-        fontFamily: "Ralewey",
+        fontFamily: "Roboto",
         fontWeight: 800,
         fontSize: ".9em",
         opacity: "1",
@@ -54,10 +54,11 @@ const useStyles = makeStyles(theme => ({
        "&:hover": {
         color: "white",
         opacity: "1",
-      
+        minHeight: "1em",
     }
     },
     iniReg: {
+        fontFamily: "Roboto",
        backgroundColor: "transparent",
        boxShadow: "none",
        border: "1px solid #ffffff",
@@ -84,7 +85,7 @@ const useStyles = makeStyles(theme => ({
     },
     menuItem: {
         color: "white",
-        fontFamily: "Ralewey",
+        fontFamily: "Roboto",
         fontWeight: 800,
         fontSize: ".9em",
         opacity: 1,
@@ -93,7 +94,7 @@ const useStyles = makeStyles(theme => ({
         "&:hover": {
             opacity: 1,
             height: "3em",
-            backgroundColor: "#00a0dc",
+            backgroundColor: "none",
         }
     },
     drawerIconContainer:  {
@@ -117,7 +118,7 @@ const useStyles = makeStyles(theme => ({
       },
       drawerItem: {
         color: "white",
-        fontFamily: "Ralewey",
+        fontFamily: "Roboto",
         fontWeight: 800,
         fontSize: ".9em",
         opacity: "0.7"
@@ -220,6 +221,7 @@ export default function MenuTop() {
                     value={value}
                     onChange={handleChange}
                     indicatorColor="none"
+                    selectionFollowsFocus={false}
                     >
                         {routes.map((route, index) => (
                     <Tab 
@@ -227,10 +229,12 @@ export default function MenuTop() {
                         className={classes.tab} 
                         component={Link} 
                         to={route.link} 
+                       
                         label={route.name}
                         aria-owns={route.ariaOwns} 
                         aria-haspopup={route.ariaPopup} 
                         onMouseOver={route.mouseOver}/>
+                        
                 ))}   
                 </Tabs>
                 <Button 
@@ -252,6 +256,7 @@ export default function MenuTop() {
                             MenuListProps={{onMouseLeave: handleClose}}
                             elevation={0}
                             style={{zIndex: 1302}}
+                            autoFocus={false}
                             keepMounted
                             >
                                 {menuOptions.map((option, i) => (
@@ -259,6 +264,7 @@ export default function MenuTop() {
                                     key={`${option}${i}`}
                                     component={Link}
                                     to={option.link}
+                                    style={{zIndex: 1302}}
                                     classes={{root: classes.menuItem}} 
                                     onClick={(event) =>
                                     {handleMenuItemClick(event, i); 

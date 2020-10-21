@@ -1,4 +1,5 @@
 import React, {useState}  from 'react'
+import {Link} from 'react-router-dom'
 import CardGrid from 'componentes/cardGrid'
 import Carousel from 'componentes/carouselNotices'
 import './Home.scss'
@@ -81,7 +82,8 @@ const useStyles = makeStyles(theme => ({
         marginBottom: "2em",
         fontWeight: "bold",
        "&:hover": {
-           backgroundColor: "#00a0dc"
+           backgroundColor: "#00a0dc",
+           color: "white",
        }
     },
     sContenedor1: {
@@ -135,7 +137,7 @@ export default function Home() {
             container 
             className={classes.mainContainer}
             direction="column">
-            <Grid container style={{height: "20em"}}>    
+            <Grid container style={{height: "20em", marginBottom: "2em"}}>    
             <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
                 <Grid 
                     container direction="row"
@@ -148,10 +150,18 @@ export default function Home() {
                         <Typography variant="subtitle1" className={classes.subtitulos1}>
                             Lorem Ipsum Lorem Ipsum lorem ipsum
                         </Typography>
-                        <Button variant="outlined" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
+                        <Button 
+                            variant="outlined" 
+                            className={classes.botonUbicacion} 
+                            style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>MIEMBROS</span>
                         </Button>
-                        <Button variant="outlined" className={classes.botonUbicacion2} style={{ marginRight: 20 }}>
+                        <Button
+                            component={Link}
+                            to="/requisitos-penales" 
+                            variant="outlined" 
+                            className={classes.botonUbicacion2} 
+                            style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>REQUISITOS</span>
                         </Button>
                     </Grid>
@@ -159,7 +169,7 @@ export default function Home() {
                 </Grid>
                 <div className={classes.fpCont} />
             </Grid>
-            <Grid container style={{height: "20em"}}>    
+            <Grid container style={{height: "20em", marginBottom: "2em"}}>    
             <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
                 <Grid 
                     container direction="row"
@@ -167,7 +177,7 @@ export default function Home() {
                     className={classes.sContenedor2}>
                     <Grid item style={{ marginLeft: matchesSM ? 0 : "55em"}}>
                         <Typography variant="h4" className={classes.titulos1}>
-                            Defensorias Públicas Penales
+                            Defensorias Públicas Civiles
                         </Typography>
                         <Typography variant="subtitle1" className={classes.subtitulos1}>
                             Lorem Ipsum Lorem Ipsum lorem ipsum
@@ -175,7 +185,12 @@ export default function Home() {
                         <Button variant="outlined" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>MIEMBROS</span>
                         </Button>
-                        <Button variant="outlined" className={classes.botonUbicacion2} style={{ marginRight: 20 }}>
+                        <Button 
+                            component={Link}
+                            to="/requisitos-civiles" 
+                            variant="outlined" 
+                            className={classes.botonUbicacion2} 
+                            style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>REQUISITOS</span>
                         </Button>
                     </Grid>
@@ -191,7 +206,7 @@ export default function Home() {
                     className={classes.sContenedor3}>
                     <Grid item style={{ marginLeft: matchesSM ? 0 : "5em"}}>
                         <Typography variant="h4" className={classes.titulos1}>
-                            Defensorias Públicas Penales
+                            Asesorias de Niños, Niñas y Adolecentes
                         </Typography>
                         <Typography variant="subtitle1" className={classes.subtitulos1}>
                             Lorem Ipsum Lorem Ipsum lorem ipsum
@@ -199,7 +214,12 @@ export default function Home() {
                         <Button variant="outlined" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>MIEMBROS</span>
                         </Button>
-                        <Button variant="outlined" className={classes.botonUbicacion2} style={{ marginRight: 20 }}>
+                        <Button 
+                            component={Link}
+                            to="/requisitos-niños" 
+                            variant="outlined" 
+                            className={classes.botonUbicacion2} 
+                            style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>REQUISITOS</span>
                         </Button>
                     </Grid>

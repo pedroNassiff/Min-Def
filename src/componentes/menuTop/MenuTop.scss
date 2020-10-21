@@ -5,59 +5,6 @@
     border: 1px solid white;
     border-bottom: 1px solid white;
 }
-.menuTopLeft {
-    float: right;
-}
-.ant-menu-vertical > .menuTopLeft {
-    float: left;
-}
-.ant-menu.ant-menu-dark {
-    color: rgb(255, 255, 255);
-    background: #9ca0a5;
-    font-weight: 500;
-}
-.ant-menu.ant-menu-dark,
-.ant-menu-dark .ant-menu-sub,
-.ant-menu.ant-menu-dark .ant-menu-sub {
-    color: rgb(255, 255, 255);
-    background: #1d71b8;
-   
-}
-.ant-divider-vertical{
-    height: 2.9em;
-    border-left: 1px solid #fff;
-}
-
-
-.ant-menu-submenu-active:hover {
-    background: #1890ff;
-}
-.ant-menu-item-active:hover {
-    background: #1890ff;
-}
-.ant-menu-item-active:hover {
-    background-color: #1890ff !important;
-}
-.ant-menu.ant-menu-dark .ant-menu-item-selected {
-    background-color: #1890ff;
-}
-.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
-    background-color: #1890ff;
-}
-.adtiveColor {
-    background-color: #1890ff !important;
-}
-.ant-menu-horizontal > .ant-menu-submenu > .ant-menu-submenu-title {
-    padding: inherit;
-}
-
-.ant-menu-submenu-active .ant-menu-submenu-title{
-    color: rgb(255, 255, 255);
-    background-color: #1890ff
-}
-.nav-text{
-    color: rgb(255, 255, 255);
-}
 
 //Ajustes Responsive
 .ant-menu.ant-menu-dark, .ant-menu-dark .ant-menu-sub, .ant-menu.ant-menu-dark .ant-menu-sub{

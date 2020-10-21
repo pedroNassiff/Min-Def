@@ -5,6 +5,9 @@ import LayoutMain from 'layouts/LayoutMain'
 import Home from 'pages/Home'
 import Contact from 'pages/Contact'
 import biblioteca from 'pages/biblioteca'
+import RequisitosPenales from 'componentes/ui/RequisitosPenales'
+import RequisitosCiviles from 'componentes/ui/RequisitosCiviles'
+import RequisitosNiños from 'componentes/ui/RequisitosNiños'
 
 //Other
 import Error404 from 'pages/Error404'
@@ -51,6 +54,21 @@ const routes = [
             {
                 path: "/nueva-cuenta",
                 component: NuevaCuenta,
+                exact: true
+            },
+            {
+                path: "/requisitos-penales",
+                component: RequisitosPenales,
+                exact: true
+            },
+            {
+                path: "/requisitos-civiles",
+                component: RequisitosCiviles,
+                exact: true
+            },
+            {
+                path: "/requisitos-niños",
+                component: RequisitosNiños,
                 exact: true
             },
             {

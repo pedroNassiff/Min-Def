@@ -39,6 +39,9 @@ const useStyles = makeStyles(theme => ({
         width: "100%",
         position: "absolute",
         border: "1px solid #ffffff",
+       
+      
+        
     },
     tab: {
         marginLeft: "1.5em",
@@ -51,7 +54,7 @@ const useStyles = makeStyles(theme => ({
        "&:hover": {
         color: "white",
         opacity: "1",
-        
+      
     }
     },
     iniReg: {
@@ -72,6 +75,12 @@ const useStyles = makeStyles(theme => ({
         backgroundColor: "#00a0dc",
         color: "white",
         borderRadius: "0px",
+        backgroundColor: "#00a0dc",
+        width: "11.25em",
+        marginLeft: "-1.3em",
+        marginTop: "0.3em",
+        paddingTop: "-3em",
+        
     },
     menuItem: {
         color: "white",
@@ -79,8 +88,12 @@ const useStyles = makeStyles(theme => ({
         fontWeight: 800,
         fontSize: ".9em",
         opacity: 1,
+        height: "3em",
+        
         "&:hover": {
-            opacity: 1
+            opacity: 1,
+            height: "3em",
+            backgroundColor: "#00a0dc",
         }
     },
     drawerIconContainer:  {

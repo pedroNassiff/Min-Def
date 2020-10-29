@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Mapa from './Mapa';
 
 import LocalidadContenido from './LocalidadContenido';
-import Card from '@material-ui/core/Card';
+import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion'
 
 export default class Miembros extends Component {
@@ -23,7 +23,7 @@ export default class Miembros extends Component {
 
     render(){   
         return (
-            <>
+        <>
             <div className="App">
                 <div className="container">
                     <div className="row justify-content-md-center">
@@ -46,6 +46,7 @@ export default class Miembros extends Component {
                                 </Card>
                             </Accordion>
                         </div>
+                    
                     </div>
                 </div>
             </div>

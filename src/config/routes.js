@@ -8,6 +8,7 @@ import biblioteca from 'pages/biblioteca'
 import RequisitosPenales from 'componentes/ui/RequisitosPenales'
 import RequisitosCiviles from 'componentes/ui/RequisitosCiviles'
 import RequisitosNiños from 'componentes/ui/RequisitosNiños'
+import Miembros from 'componentes/ui/Miembros'
 
 //Other
 import Error404 from 'pages/Error404'
@@ -54,6 +55,11 @@ const routes = [
             {
                 path: "/nueva-cuenta",
                 component: NuevaCuenta,
+                exact: true
+            },
+            {
+                path: "/miembros",
+                component: Miembros,
                 exact: true
             },
             {

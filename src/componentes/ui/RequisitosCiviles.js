@@ -19,8 +19,23 @@ import AlbumIcon from '@material-ui/icons/Album';
 const useStyles = makeStyles(theme => ({
     ListItemText: {
         fontSize: "2rem"
-    }
-
+    },
+    botonUbicacion2: {
+        fontFamily: "Roboto",
+        borderColor: "#00a0dc",
+        color: "white",
+        borderWidth: 2,
+        borderRadius: 50,
+        fontFamily: "Roboto",
+        backgroundColor: "#00a0dc",
+        fontSize: "0.8em",
+        marginBottom: "2em",
+        fontWeight: "bold",
+       "&:hover": {
+           backgroundColor: "#00a0dc",
+           color: "white",
+       }
+    },
      
 }))
 
@@ -190,8 +205,8 @@ export default function RequisitosCiviles() {
                     to="/requisitos-niños" 
                     variant="outlined" 
                     className={classes.botonUbicacion2} 
-                    style={{ marginRight: 20, justify: "center"  }}>
-                    <span style={{ marginRight: 0 }}>REQUISITOS</span>
+                    style={{ marginRight: 20, marginLeft: "53em", marginBottom: "5em", justify: "center", align: "center" }}>
+                    <span style={{ marginRight: 0 }}>CONTACTANOS</span>
                 </Button>
             </Grid>
         </Grid>

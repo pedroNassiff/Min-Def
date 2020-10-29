@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 
 import Mapa from './Mapa';
-
+import './miembros.css';
 import LocalidadContenido from './LocalidadContenido';
 import Card from 'react-bootstrap/Card';
 import Accordion from 'react-bootstrap/Accordion'

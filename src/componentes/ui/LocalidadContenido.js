@@ -19,17 +19,17 @@ export default class LocalidadContenido extends Component {
         return (
             <div className="card shadow">
                 <div className="card-body" style={{background: "#E0463C"}}>
-                <Link to="/">
+                <Link to="/miembros">
                     <h5 className="card-header">MIEMBROS</h5>
                 </Link>
                 <Switch>
-                    <Route exact path="/" component={DefaultLegend}/>
-                    <Route exact path="/castelli" component={Castelli}/>
-                    <Route exact path="/charata" component={Charata}/>
-                    <Route exact path="/resistencia" component={Resistencia}/>
-                    <Route exact path="/saenzPeña" component={SaenzPeña}/>
-                    <Route exact path="/sanMartin" component={SanMartin}/>
-                    <Route exact path="/villaAngela" component={VillaAngela}/>
+                    <Route exact path="/miembros" component={DefaultLegend}/>
+                    <Route exact path="castelli" component={Castelli}/>
+                    <Route exact path="miembros/charata" component={Charata}/>
+                    <Route exact path="miembros/resistencia" component={Resistencia}/>
+                    <Route exact path="miembros/saenzPeña" component={SaenzPeña}/>
+                    <Route exact path="miembros/sanMartin" component={SanMartin}/>
+                    <Route exact path="miembros/villaAngela" component={VillaAngela}/>
                 </Switch>
                 </div>
             </div>

@@ -8,6 +8,7 @@ import VillaAngela from '../Localidades/VillaAngela'
 import Home from 'pages/Home'
 
 //import DefaultLegend from './DefaultLegend'
+import DefaultLegend from './DefaultLegend'
 
 import {Route, Switch} from 'react-router-dom'
 import {Link} from 'react-router-dom'
@@ -22,7 +23,7 @@ export default class LocalidadContenido extends Component {
                     <h5 className="card-header">MIEMBROS</h5>
                 </Link>
                 <Switch>
-                    <Route exact path="/" component={Miembros}/>
+                    <Route exact path="/" component={DefaultLegend}/>
                     <Route exact path="/castelli" component={Castelli}/>
                     <Route exact path="/charata" component={Charata}/>
                     <Route exact path="/resistencia" component={Resistencia}/>

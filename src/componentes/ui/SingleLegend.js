@@ -1,6 +1,6 @@
 import React from 'react'
 import Accordion from 'react-bootstrap/Accordion'
-import Card from '@material-ui/core/Card';
+import Card from 'react-bootstrap/Card'
 
 
 export default function SingleLegend({defOficNum,tel,email,img}) {

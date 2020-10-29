@@ -35,7 +35,6 @@ export default class Miembros extends Component {
                                 <Card>
                                     <Card.Header style={{background: "#ccc"}}>
                                         <Accordion.Toggle as={Card.Header} eventKey="0" style={{background: "#80B8C8"}}>
-                                            <p className="text-center text-uppercase" style={{fontFamily: "knewave", color:"#15343D", fontSize:"30px", cursor:"pointer"}}>Ver Mapa</p>
                                         </Accordion.Toggle>
                                     </Card.Header>
                                     <Accordion.Collapse eventKey="0">

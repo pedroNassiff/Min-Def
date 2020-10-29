@@ -11,6 +11,7 @@ import Home from 'pages/Home'
 
 import {Route, Switch} from 'react-router-dom'
 import {Link} from 'react-router-dom'
+import Miembros from './Miembros'
 
 export default class LocalidadContenido extends Component {
     render() {
@@ -21,13 +22,13 @@ export default class LocalidadContenido extends Component {
                     <h5 className="card-header">MIEMBROS</h5>
                 </Link>
                 <Switch>
-                    <Route exact path="/" component={Home}/>
-                    <Route exact path="/Castelli" component={Castelli}/>
-                    <Route exact path="/Charata" component={Charata}/>
-                    <Route exact path="/Resistencia" component={Resistencia}/>
-                    <Route exact path="/SaenzPeña" component={SaenzPeña}/>
-                    <Route exact path="/SanMartin" component={SanMartin}/>
-                    <Route exact path="/VillaAngela" component={VillaAngela}/>
+                    <Route exact path="/" component={Miembros}/>
+                    <Route exact path="/castelli" component={Castelli}/>
+                    <Route exact path="/charata" component={Charata}/>
+                    <Route exact path="/resistencia" component={Resistencia}/>
+                    <Route exact path="/saenzPeña" component={SaenzPeña}/>
+                    <Route exact path="/sanMartin" component={SanMartin}/>
+                    <Route exact path="/villaAngela" component={VillaAngela}/>
                 </Switch>
                 </div>
             </div>

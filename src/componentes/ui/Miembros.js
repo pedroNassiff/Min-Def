@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 
 import Mapa from './Mapa';
-
+import './miembros.css';
 import LocalidadContenido from './LocalidadContenido';
-import Card from '@material-ui/core/Card';
+import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
 
 export default class Miembros extends Component {

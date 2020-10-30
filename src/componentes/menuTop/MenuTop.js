@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
   tab: {
     marginLeft: "1.5em",
     color: "white",
-    fontFamily: "Ralewey",
+    fontFamily: "Roboto",
     fontWeight: 800,
     fontSize: ".9em",
     opacity: "1",
@@ -79,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuItem: {
     color: "white",
-    fontFamily: "Ralewey",
+    fontFamily: "Roboto",
     fontWeight: 800,
     fontSize: ".9em",
     opacity: 1,
@@ -112,7 +112,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerItem: {
     color: "white",
-    fontFamily: "Ralewey",
+    fontFamily: "Roboto",
     fontWeight: 800,
     fontSize: ".9em",
     opacity: "0.7",

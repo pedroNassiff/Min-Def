@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import Mapa from './Mapa';
 import './miembros.css';
 import LocalidadContenido from './LocalidadContenido';
-import Card from 'react-bootstrap/Card';
+import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
 
 export default class Miembros extends Component {
@@ -23,14 +23,14 @@ export default class Miembros extends Component {
 
     render(){   
         return (
-        <>
+            <>
             <div className="App">
                 <div className="container">
                     <div className="row justify-content-md-center">
-                        <div className="col">
+                        <div className="col-1">
                             <LocalidadContenido />
                         </div>
-                        <div className="col col-lg-5">
+                        <div className="col-2 col-lg-5">
                             <Accordion className="shadow" >
                                 <Card>
                                     <Card.Header style={{background: "#ccc"}}>
@@ -38,14 +38,14 @@ export default class Miembros extends Component {
                                         </Accordion.Toggle>
                                     </Card.Header>
                                     <Accordion.Collapse eventKey="0">
-                                        <Card.Body style={{background: "linear-gradient(135deg, rgba(4,189,96,1) 0%, rgba(54,170,224,1) 73%, rgba(54,170,224,1) 100%)"}}>
+                                        <Card.Body style={{background: "gray"}}>
                                             <Mapa />
                                         </Card.Body>
                                     </Accordion.Collapse>
                                 </Card>
                             </Accordion>
+                            
                         </div>
-                    
                     </div>
                 </div>
             </div>

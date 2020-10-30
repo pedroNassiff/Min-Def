@@ -5,7 +5,7 @@ h5{
     text-align: center;
     padding-top: 10px;
     margin-bottom: 5px; 
-    color: rgb(228, 228, 228);
+   
     font-family: 'Knewave', cursive;
   }
   
@@ -19,11 +19,14 @@ h5{
       display: block;
   }
   .App{
+      position: absolute;
     min-height: calc(100vh - 0px) ;
-    background: red;
+    background: none;
     display: block;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    margin-top: 20em;
   }
    
   body {
@@ -57,12 +60,11 @@ h5{
   
  
   #botonCastelli{
-      position:absolute;
-      width:55px;
-      height:74px;
-      left: 58px;
-      top: 47px;	
-      
+    position: absolute;
+    width: 166px;
+    height: 131px;
+    left: 1077px;
+    top: 102px;
   }
   
       
@@ -76,8 +78,8 @@ h5{
       width:81px;
       height:62px;
       background:url(../../assets/img/Charata.png) top no-repeat;
-      left: 65px;
-      top: 4px;
+      left: 1120px;
+      top: 235px;
       
   }
   
@@ -88,11 +90,11 @@ h5{
   
   #botonResistencia{
       position:absolute;
-      width:22px;
-      height:28px;
+      width:20em;
+      height:20em;
       background:url(../../assets/img/Resistencia.png) top  no-repeat;
-      left: 96px;
-      top: 60px;
+      left: 1097px;
+      top: 233px;
       z-index:1;
       
   }
@@ -102,11 +104,11 @@ h5{
   background:url(../../assets/img/Resistencia.png) bottom  no-repeat;
   }
   #botonSaenzPeña{
-      position:absolute;
-      width:62px;
-      height:63px;
-      left: 146px;
-      top: 10px;
+    position: absolute;
+    width: 182px;
+    height: 122px;
+    left: 1051px;
+    top: 147px;
   }
   
   
@@ -116,28 +118,27 @@ h5{
   
   
   
-  #botonSaenzPeña{
-      position:absolute;
-      width:65px;
-      height:56px;
-      
-      left: 131px;
-      top: 33px;
-      
-  }
-  
-  
-  #botonSaenzPeña.presionado{ 
-      background:url(../../assets/img/SaenzPeña.png) bottom  no-repeat;
-  }
+
+
+  #botonSanMartin{
+    position: absolute;
+    width: 61px;
+    height: 56px;
+    left: 1228px;
+    top: 199px;
+    
+}
+#botonSanMartin.presionado{ 
+    background:url(../../assets/img/SanMartin.png) bottom  no-repeat;
+}
   
   #botonVillaAngela{
       position:absolute;
-      width:45px;
-      height:71px;
+      width:92px;
+      height:75px;
       background:url(../../assets/img/VillaAngela.png) top  no-repeat;
-      left: 108px;
-      top: 55px;
+      left: 1129px;
+      top: 251px;
       
   }
   
@@ -179,7 +180,7 @@ h5{
   .button1{
       
       
-     /*background:url(img/bsas-sprite.png) bottom  no-repeat;*/
+     background:url(../../assets/img/castelli.png) bottom  no-repeat;
   height:20px;
   width:20px;
   }
@@ -189,7 +190,7 @@ h5{
       
       width:20px;
       height:20px;
-     /*background:url(img/bsas-sprite.png) bottom  no-repeat;*/
+     background:url(../../assets/img/castelli.png) bottom  no-repeat;
       margin: 0;
   padding: 0;
   
@@ -206,7 +207,7 @@ h5{
   .button2{
       
       
-      /*background:url(img/catamarca-sprite.png) no-repeat;*/
+      background:url(../../assets/img/Charata.png) no-repeat;
   width:55px;
       height:73px;
   }
@@ -216,7 +217,7 @@ h5{
       position:absolute;
       width:55px;
       height:73px;
-      /*background:url(img/catamarca-sprite.png) bottom  no-repeat;*/
+      background:url(../../assets/img/Charata.png) bottom  no-repeat;
       margin: 0;
   padding: 0;
   
@@ -234,7 +235,7 @@ h5{
   .button3{
       
       
-      /*background:url(img/chaco-sprite.png);*/
+      background:url(../../assets/img/Resistencia.png);
   width:65px;
       height:56px;
   }
@@ -244,7 +245,7 @@ h5{
       
   width:65px;
       height:56px;
-      /*background:url(img/chaco-sprite.png) bottom  no-repeat;*/
+      background:url(../../assets/img/Resistencia.png) bottom  no-repeat;
       margin: 0;
   padding: 0;
   
@@ -261,7 +262,7 @@ h5{
   .button4{
       
       
-      /*background:url(img/chubut-sprite.png);*/
+      background:url(../../assets/img/SaenzPeña.png);
   width:111px;
       height:73px;
   }
@@ -271,7 +272,7 @@ h5{
       
   width:111px;
       height:73px;
-      /*background:url(img/chubut-sprite.png) bottom  no-repeat;*/
+      background:url(../../assets/img/SaenzPeña.png) bottom  no-repeat;
       margin: 0;
   padding: 0;
   
@@ -289,7 +290,7 @@ h5{
   .button5{
       
       
-      /*background:url(img/cordoba-sprite.png);*/
+      background:url(../../assets/img/SanMartin.png);
       width:52px;
       height:84px;
   }
@@ -298,7 +299,7 @@ h5{
   .button5 span{
       width:52px;
       height:84px;
-      /*background:url(img/cordoba-sprite.png) bottom  no-repeat;*/
+      background:url(../../assets/img/SanMartin.png) bottom  no-repeat;
       margin: 0;
   padding: 0;
   
@@ -313,9 +314,7 @@ h5{
   }
   
   .button6{
-      
-      
-      /*background:url(img/corrientes-sprite.png);*/
+      background:url(../../assets/img/VillaAngela.png);
       width:52px;
       height:84px;
   }
@@ -357,16 +356,33 @@ h5{
   }
   
   .contenedor-mapa{
-    position: relative;
-  
+    position: absolute;
+    margin-top: -20em;
       width:100%;
       height: 550px;
-      margin:0 auto;
+      margin-left: -5%;
       align-self: center;
       align-content: center;
       align-items: center;
   }
+  .col-1{
+    width: 70%;
   
+}
+.col-2{
+  width: 70%;
+
+}
+.titulo-card{
+    margin-left: -9em;
+}
+
+.card-body1{
+    margin-top: -8em;
+    margin-left: 10em;
+}
+
+
   .MapaSuper{
       margin-left: 40%;
       align-self: center;

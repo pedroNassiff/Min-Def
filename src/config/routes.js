@@ -60,7 +60,7 @@ const routes = [
             {
                 path: "/miembros",
                 component: Miembros,
-                exact: true
+                exact: false
             },
             {
                 path: "/requisitos-penales",

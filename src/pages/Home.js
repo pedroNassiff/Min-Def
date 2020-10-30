@@ -165,7 +165,9 @@ export default function Home() {
                             Lorem Ipsum Lorem Ipsum lorem ipsum
                         </Typography>
                         <Button 
-                            variant="outlined" 
+                            variant="outlined"
+                            component={Link}
+                            to="/miembros" 
                             className={classes.botonUbicacion} 
                             style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>MIEMBROS</span>
@@ -196,7 +198,8 @@ export default function Home() {
                         <Typography variant="subtitle1" className={classes.subtitulos1}>
                             Lorem Ipsum Lorem Ipsum lorem ipsum
                         </Typography>
-                        <Button variant="outlined" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
+                        <Button variant="outlined" component={Link}
+                            to="/miembros" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>MIEMBROS</span>
                         </Button>
                         <Button 
@@ -225,7 +228,8 @@ export default function Home() {
                         <Typography variant="subtitle1" className={classes.subtitulos1}>
                             Lorem Ipsum Lorem Ipsum lorem ipsum
                         </Typography>
-                        <Button variant="outlined" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
+                        <Button variant="outlined" component={Link}
+                            to="/miembros"  className={classes.botonUbicacion} style={{ marginRight: 20 }}>
                             <span style={{ marginRight: 0 }}>MIEMBROS</span>
                         </Button>
                         <Button 

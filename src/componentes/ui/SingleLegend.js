@@ -1,8 +1,8 @@
 import React from 'react'
 import Accordion from 'react-bootstrap/Accordion'
 import Card from 'react-bootstrap/Card'
-
-
+import ContactPhoneIcon from '@material-ui/icons/ContactPhone';
+import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 export default function SingleLegend({defOficNum,tel,email,img}) {
     return (
         <div>
@@ -21,8 +21,8 @@ export default function SingleLegend({defOficNum,tel,email,img}) {
                         <Card.Body className="overflow-auto" style={{maxHeight:'250px'}}>
                                  
                            
-                        <p className="font-weight-normal">{tel}</p>
-                        <p className="font-weight-normal">{email}</p>
+                        <p className="font-weight-normal"> <ContactPhoneIcon style={{width: "25px", height: "25px", margin: "0px auto"}} />{tel}</p>
+                        <p className="font-weight-normal">  <AlternateEmailIcon style={{width: "25px", height: "25px", margin: "0px auto"}} />{email}</p>
                         </Card.Body>
                     </Accordion.Collapse>
                 </Card>

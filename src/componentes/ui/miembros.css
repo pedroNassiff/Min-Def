@@ -1,0 +1,399 @@
+
+
+h5{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    margin-bottom: 5px; 
+   
+    font-family: 'Knewave', cursive;
+  }
+  
+  h5:hover{
+      color:#09F;
+  
+  }
+  /* HTML5 display-role reset for older browsers */
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section {
+      display: block;
+  }
+  .App{
+      position: absolute;
+    min-height: calc(100vh - 0px) ;
+    background: none;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20em;
+  }
+   
+  body {
+      line-height: 1;
+      font-family:Verdana, Geneva, sans-serif;
+  font-size:12px;
+  }
+  ol, ul {
+      list-style: none;
+  }
+  blockquote, q {
+      quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+      content: '';
+      content: none;
+  }
+  table {
+      border-collapse: collapse;
+      border-spacing: 0;
+  }
+  label {
+      display: inline-block;
+      width: 5em;
+    }
+  .cursor{ cursor:pointer;}
+  ul{ margin:5px;}
+  li{ margin: 15px;}
+  
+  
+ 
+  #botonCastelli{
+    position: absolute;
+    width: 166px;
+    height: 131px;
+    left: 1077px;
+    top: 102px;
+  }
+  
+      
+  
+  #botonCastelli.presionado{ 
+  background:url(../../assets/img/castelli.png) bottom  no-repeat;
+  }
+  
+  #botonCharata{
+      position:absolute;
+      width:81px;
+      height:62px;
+      background:url(../../assets/img/Charata.png) top no-repeat;
+      left: 1120px;
+      top: 235px;
+      
+  }
+  
+  
+  #botonCharata.presionado{ 
+      background:url(../../assets/img/Charata.png) bottom  no-repeat;
+  }
+  
+  #botonResistencia{
+      position:absolute;
+      width:20em;
+      height:20em;
+      background:url(../../assets/img/Resistencia.png) top  no-repeat;
+      left: 1097px;
+      top: 233px;
+      z-index:1;
+      
+  }
+  
+  
+  #botonResistencia.presionado{ 
+  background:url(../../assets/img/Resistencia.png) bottom  no-repeat;
+  }
+  #botonSaenzPeña{
+    position: absolute;
+    width: 182px;
+    height: 122px;
+    left: 1051px;
+    top: 147px;
+  }
+  
+  
+  #botonSaenzPeña.presionado{ 
+      background:url(../../assets/img/SaenzPeña.png) bottom  no-repeat;
+  }
+  
+  
+  
+
+
+  #botonSanMartin{
+    position: absolute;
+    width: 61px;
+    height: 56px;
+    left: 1228px;
+    top: 199px;
+    
+}
+#botonSanMartin.presionado{ 
+    background:url(../../assets/img/SanMartin.png) bottom  no-repeat;
+}
+  
+  #botonVillaAngela{
+      position:absolute;
+      width:92px;
+      height:75px;
+      background:url(../../assets/img/VillaAngela.png) top  no-repeat;
+      left: 1129px;
+      top: 251px;
+      
+  }
+  
+  
+  #botonVillaAngela.presionado{ 
+      background:url(../../assets/img/VillaAngela.png) bottom  no-repeat;
+  }
+  
+ 
+  
+  .button{
+      
+      
+      /*background:url(img/bsas-sprite.png);*/
+  height:126px;
+  width:87px;
+  }
+  
+  
+  .button span{
+      
+      width:87px;
+      height:126px;
+      /*background:url(img/bsas-sprite.png) bottom  no-repeat;*/
+      margin: 0;
+  padding: 0;
+  
+      opacity: 0;
+      /* -webkit-transition: opacity 0.5s; */
+      /* -moz-transition:    opacity 0.5s; */
+      /* -o-transition:      opacity 0.5s; */
+  }
+  
+  .button span:hover{
+      opacity: 1;
+  }
+  
+  
+  .button1{
+      
+      
+     background:url(../../assets/img/castelli.png) bottom  no-repeat;
+  height:20px;
+  width:20px;
+  }
+  
+  
+  .button1 span{
+      
+      width:20px;
+      height:20px;
+     background:url(../../assets/img/castelli.png) bottom  no-repeat;
+      margin: 0;
+  padding: 0;
+  
+      opacity: 0;
+      /* -webkit-transition: opacity 0.5s;
+      -moz-transition:    opacity 0.5s;
+      -o-transition:      opacity 0.5s; */
+  }
+  
+  .button1 span:hover{
+      opacity: 1;
+  }
+  
+  .button2{
+      
+      
+      background:url(../../assets/img/Charata.png) no-repeat;
+  width:55px;
+      height:73px;
+  }
+  
+  
+  .button2 span{
+      position:absolute;
+      width:55px;
+      height:73px;
+      background:url(../../assets/img/Charata.png) bottom  no-repeat;
+      margin: 0;
+  padding: 0;
+  
+      opacity: 0;
+      /* -webkit-transition: opacity 0.5s;
+      -moz-transition:    opacity 0.5s;
+      -o-transition:      opacity 0.5s; */
+  }
+  
+  .button2 span:hover{
+      opacity: 1;
+  }
+  
+  
+  .button3{
+      
+      
+      background:url(../../assets/img/Resistencia.png);
+  width:65px;
+      height:56px;
+  }
+  
+  
+  .button3 span{
+      
+  width:65px;
+      height:56px;
+      background:url(../../assets/img/Resistencia.png) bottom  no-repeat;
+      margin: 0;
+  padding: 0;
+  
+      opacity: 0;
+      /* -webkit-transition: opacity 0.5s;
+      -moz-transition:    opacity 0.5s;
+      -o-transition:      opacity 0.5s; */
+  }
+  
+  .button3 span:hover{
+      opacity: 1;
+  }
+  
+  .button4{
+      
+      
+      background:url(../../assets/img/SaenzPeña.png);
+  width:111px;
+      height:73px;
+  }
+  
+  
+  .button4 span{
+      
+  width:111px;
+      height:73px;
+      background:url(../../assets/img/SaenzPeña.png) bottom  no-repeat;
+      margin: 0;
+  padding: 0;
+  
+      opacity: 0;
+      /* -webkit-transition: opacity 0.5s;
+      -moz-transition:    opacity 0.5s;
+      -o-transition:      opacity 0.5s; */
+  }
+  
+  .button4 span:hover{
+      opacity: 1;
+  }
+  
+  
+  .button5{
+      
+      
+      background:url(../../assets/img/SanMartin.png);
+      width:52px;
+      height:84px;
+  }
+  
+  
+  .button5 span{
+      width:52px;
+      height:84px;
+      background:url(../../assets/img/SanMartin.png) bottom  no-repeat;
+      margin: 0;
+  padding: 0;
+  
+      opacity: 0;
+      /* -webkit-transition: opacity 0.5s;
+      -moz-transition:    opacity 0.5s;
+      -o-transition:      opacity 0.5s; */
+  }
+  
+  .button5 span:hover{
+      opacity: 1;
+  }
+  
+  .button6{
+      background:url(../../assets/img/VillaAngela.png);
+      width:52px;
+      height:84px;
+  }
+  
+  
+  .button6 span{
+      width:53px;
+      height:52px;
+      
+      margin: 0;
+  padding: 0;
+  
+      opacity: 0;
+      /* -webkit-transition: opacity 0.5s;
+      -moz-transition:    opacity 0.5s;
+      -o-transition:      opacity 0.5s; */
+  }
+  
+  .button6 span:hover{
+      opacity: 1;
+  }
+  
+  
+  .button7{
+      
+      width:39px;
+      height:59px;
+  }
+  
+  
+  
+  
+  
+  #receptor{
+      position:absolute;
+      left: 368px;
+      top: 170px;
+      border:solid #039 2px;
+  }
+  
+  .contenedor-mapa{
+    position: absolute;
+    margin-top: -20em;
+      width:100%;
+      height: 550px;
+      margin-left: -5%;
+      align-self: center;
+      align-content: center;
+      align-items: center;
+  }
+  .col-1{
+    width: 70%;
+  
+}
+.col-2{
+  width: 70%;
+
+}
+.titulo-card{
+    margin-left: -9em;
+}
+
+.card-body1{
+    margin-top: -8em;
+    margin-left: 10em;
+}
+
+
+  .MapaSuper{
+      margin-left: 40%;
+      align-self: center;
+      padding: auto;
+  }
+  
+  #map{
+      position:absolute;
+      left: 30px;
+      top: 172px;
+      z-index:-1;
+  }
+  
+  

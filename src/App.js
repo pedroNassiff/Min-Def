@@ -1,10 +1,11 @@
-import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, {useState} from 'react';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import routes from './config/routes';
-
+import Footer from 'componentes/ui/Footer';
 import '../src/App.scss';
 
 function App() {
+  
   return (
     <Router>
       <Switch>

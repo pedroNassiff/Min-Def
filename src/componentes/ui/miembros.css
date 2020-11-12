@@ -62,9 +62,12 @@ h5{
   #botonCastelli{
     position: absolute;
     width: 166px;
-    height: 131px;
+    height: 120px;
     left: 1077px;
-    top: 102px;
+    top: 112px;
+    z-index:1;
+    background:url(../../assets/img/castelli.png) top  no-repeat;
+
   }
   
       
@@ -79,8 +82,8 @@ h5{
       height:62px;
       background:url(../../assets/img/Charata.png) top no-repeat;
       left: 1120px;
-      top: 235px;
-      
+      top: 236px;
+      z-index:1;
   }
   
   
@@ -90,10 +93,10 @@ h5{
   
   #botonResistencia{
       position:absolute;
-      width:20em;
-      height:20em;
+      width:94px;
+      height:69px;
       background:url(../../assets/img/Resistencia.png) top  no-repeat;
-      left: 1097px;
+      left: 1210px;
       top: 233px;
       z-index:1;
       
@@ -109,13 +112,13 @@ h5{
     height: 122px;
     left: 1051px;
     top: 147px;
+    background:url(../../assets/img/SaenzPeña.png) top no-repeat;
+
+    z-index:1;
   }
   
   
-  #botonSaenzPeña.presionado{ 
-      background:url(../../assets/img/SaenzPeña.png) bottom  no-repeat;
-  }
-  
+ 
   
   
 
@@ -126,6 +129,7 @@ h5{
     height: 56px;
     left: 1228px;
     top: 199px;
+    z-index:1;
     
 }
 #botonSanMartin.presionado{ 
@@ -134,12 +138,12 @@ h5{
   
   #botonVillaAngela{
       position:absolute;
-      width:92px;
-      height:75px;
+      width:74px;
+      height:51px;
       background:url(../../assets/img/VillaAngela.png) top  no-repeat;
-      left: 1129px;
+      left: 1139px;
       top: 251px;
-      
+      z-index:1;
   }
   
   
@@ -148,43 +152,6 @@ h5{
   }
   
  
-  
-  .button{
-      
-      
-      /*background:url(img/bsas-sprite.png);*/
-  height:126px;
-  width:87px;
-  }
-  
-  
-  .button span{
-      
-      width:87px;
-      height:126px;
-      /*background:url(img/bsas-sprite.png) bottom  no-repeat;*/
-      margin: 0;
-  padding: 0;
-  
-      opacity: 0;
-      /* -webkit-transition: opacity 0.5s; */
-      /* -moz-transition:    opacity 0.5s; */
-      /* -o-transition:      opacity 0.5s; */
-  }
-  
-  .button span:hover{
-      opacity: 1;
-  }
-  
-  
-  .button1{
-      
-      
-     background:url(../../assets/img/castelli.png) bottom  no-repeat;
-  height:20px;
-  width:20px;
-  }
-  
   
   .button1 span{
       
@@ -208,15 +175,15 @@ h5{
       
       
       background:url(../../assets/img/Charata.png) no-repeat;
-  width:55px;
-      height:73px;
+      width: 83px;
+      height: 56px;
   }
   
   
   .button2 span{
       position:absolute;
-      width:55px;
-      height:73px;
+      width: 83px;
+      height: 56px;
       background:url(../../assets/img/Charata.png) bottom  no-repeat;
       margin: 0;
   padding: 0;
@@ -375,6 +342,7 @@ h5{
 }
 .titulo-card{
     margin-left: -9em;
+    font-family: Roboto;
 }
 
 .card-body1{

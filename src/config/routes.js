@@ -9,6 +9,10 @@ import RequisitosPenales from 'componentes/ui/RequisitosPenales'
 import RequisitosCiviles from 'componentes/ui/RequisitosCiviles'
 import RequisitosNiños from 'componentes/ui/RequisitosNiños'
 import Miembros from 'componentes/ui/Miembros'
+import MiembrosCiviles from 'componentes/ui/MiembrosCiviles'
+import MiembrosANNA from 'componentes/ui/MiembrosANNA'
+
+
 
 //Other
 import Error404 from 'pages/Error404'
@@ -60,6 +64,16 @@ const routes = [
             {
                 path: "/miembros",
                 component: Miembros,
+                exact: false
+            },
+            {
+                path: "/miembrosCiviles",
+                component: MiembrosCiviles,
+                exact: false
+            },
+            {
+                path: "/miembrosANNA",
+                component: MiembrosANNA,
                 exact: false
             },
             {

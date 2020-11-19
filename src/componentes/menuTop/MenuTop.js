@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #ffffff",
   },
   tab: {
-    marginLeft: "1.5em",
+    marginLeft: "0.5em",
     color: "white",
     fontFamily: "Roboto",
     fontWeight: 800,
@@ -57,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: "transparent",
     boxShadow: "none",
     border: "1px solid #ffffff",
-    marginLeft: "1330px",
+    marginLeft: "1213px",
     color: "#ffffff",
     borderRadius: "10px",
     fontSize: ".6em",

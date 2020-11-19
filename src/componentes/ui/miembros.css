@@ -66,9 +66,20 @@ h5{
     left: 1077px;
     top: 112px;
     z-index:1;
+    background:url(../../assets/img//maps2/map6G.png) top  no-repeat;
+
+  }
+  #botonCastelli:hover{
+    position: absolute;
+    width: 166px;
+    height: 120px;
+    left: 1077px;
+    top: 112px;
+    z-index:1;
     background:url(../../assets/img/castelli.png) top  no-repeat;
 
   }
+  
   
       
   
@@ -80,11 +91,21 @@ h5{
       position:absolute;
       width:81px;
       height:62px;
-      background:url(../../assets/img/Charata.png) top no-repeat;
+      background:url(../../assets/img/maps2/map4G.png) top no-repeat;
       left: 1120px;
       top: 236px;
       z-index:1;
   }
+  #botonCharata:hover{
+    position:absolute;
+    width:81px;
+    height:62px;
+    background:url(../../assets/img/Charata.png) top no-repeat;
+    left: 1120px;
+    top: 236px;
+    z-index:1;
+}
+
   
   
   #botonCharata.presionado{ 
@@ -95,12 +116,22 @@ h5{
       position:absolute;
       width:94px;
       height:69px;
-      background:url(../../assets/img/Resistencia.png) top  no-repeat;
+      background:url(../../assets/img//maps2/map1G.png) top  no-repeat;
       left: 1210px;
       top: 233px;
       z-index:1;
       
   }
+  #botonResistencia:hover{
+    position:absolute;
+    width:94px;
+    height:69px;
+    background:url(../../assets/img/Resistencia.png) top  no-repeat;
+    left: 1210px;
+    top: 233px;
+    z-index:1;
+    
+}
   
   
   #botonResistencia.presionado{ 
@@ -112,12 +143,21 @@ h5{
     height: 122px;
     left: 1051px;
     top: 147px;
-    background:url(../../assets/img/SaenzPeña.png) top no-repeat;
+    background:url(../../assets/img/maps2/map2G.png) top no-repeat;
 
     z-index:1;
   }
   
-  
+  #botonSaenzPeña:hover{
+    position: absolute;
+    width: 182px;
+    height: 122px;
+    left: 1051px;
+    top: 147px;
+    background:url(../../assets/img/SaenzPeña.png) top no-repeat;
+
+    z-index:1;
+  }
  
   
   
@@ -130,8 +170,22 @@ h5{
     left: 1228px;
     top: 199px;
     z-index:1;
+    background:url(../../assets/img/maps2/map5G.png) bottom  no-repeat;
+
+    
     
 }
+#botonSanMartin:hover{
+    position: absolute;
+    width: 61px;
+    height: 56px;
+    left: 1228px;
+    top: 199px;
+    z-index:1;
+    background:url(../../assets/img/SanMartin.png) bottom  no-repeat;
+}
+
+
 #botonSanMartin.presionado{ 
     background:url(../../assets/img/SanMartin.png) bottom  no-repeat;
 }
@@ -140,11 +194,20 @@ h5{
       position:absolute;
       width:74px;
       height:51px;
-      background:url(../../assets/img/VillaAngela.png) top  no-repeat;
+      background:url(../../assets/img/maps2/map3G.png) top  no-repeat;
       left: 1139px;
       top: 251px;
       z-index:1;
   }
+  #botonVillaAngela:hover{
+    position:absolute;
+    width:74px;
+    height:51px;
+    background:url(../../assets/img/VillaAngela.png) top  no-repeat;
+    left: 1139px;
+    top: 251px;
+    z-index:1;
+}
   
   
   #botonVillaAngela.presionado{ 
@@ -179,7 +242,7 @@ h5{
       height: 56px;
   }
   
-  
+  /*
   .button2 span{
       position:absolute;
       width: 83px;
@@ -191,9 +254,9 @@ h5{
       opacity: 0;
       /* -webkit-transition: opacity 0.5s;
       -moz-transition:    opacity 0.5s;
-      -o-transition:      opacity 0.5s; */
+      -o-transition:      opacity 0.5s; 
   }
-  
+  */
   .button2 span:hover{
       opacity: 1;
   }
@@ -263,18 +326,7 @@ h5{
   }
   
   
-  .button5 span{
-      width:52px;
-      height:84px;
-      background:url(../../assets/img/SanMartin.png) bottom  no-repeat;
-      margin: 0;
-  padding: 0;
-  
-      opacity: 0;
-      /* -webkit-transition: opacity 0.5s;
-      -moz-transition:    opacity 0.5s;
-      -o-transition:      opacity 0.5s; */
-  }
+
   
   .button5 span:hover{
       opacity: 1;
@@ -324,7 +376,7 @@ h5{
   
   .contenedor-mapa{
     position: absolute;
-    margin-top: -20em;
+    margin-top: -15em;
       width:100%;
       height: 550px;
       margin-left: -5%;
@@ -364,4 +416,40 @@ h5{
       z-index:-1;
   }
   
-  
+  @media (max-width: 600px) {
+    
+    .contenedor-mapa{
+        margin-top: -44em;
+        margin-left: -64em;
+      }
+      .card-body1{
+        margin-top: 4em;
+        margin-left: 10em;
+    }
+    .titulo-card{
+        margin-left: -3.5em;
+    }
+    .col-1{
+        margin-top: 2em;
+        width: 29em;
+        margin-left: -1em;
+    }
+    .card{
+        width: 18em;
+        margin-left: -2em;
+    }
+    .img-fluid .mx-auto .d-block{
+        margin-left: 2em;
+    }
+    .text-center{
+        margin-left: -2.5em;
+    }
+    .overflow-auto{
+        width: 20em;
+        margin-left: -4em;
+    }
+    .font-weight-normal{
+        width: 23em;
+        font-size: 1.4rem;
+    }
+}

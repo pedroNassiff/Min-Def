@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import SingleLegend from 'componentes/ui/SingleLegend'
 import avatar3 from ' ../../assets/img/avatar3.jpg'
+
 export default class Resistencia extends Component {
     render() {
         return (

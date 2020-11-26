@@ -7,7 +7,7 @@ export default class Mapa extends Component {
     render() {
         return (
             <div>
-                <div className="contenedor-mapa">
+                <div className="contenedor-mapa" style={{marginTop: "-5em", position: "absolute", height:"30em"}}> 
                     <Link to="/miembros/castelli">
                         <a id="div-btn1">
                         <div id="botonCastelli" className="boton button1"  title="Castelli" ><span></span></div></a>

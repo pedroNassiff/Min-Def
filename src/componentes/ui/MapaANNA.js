@@ -7,7 +7,7 @@ export default class MapaANNA extends Component {
     render() {
         return (
             <div>
-                <div className="contenedor-mapa">
+                <div className="contenedor-mapa" style={{marginTop: "-7em", position: "absolute", height:"30em"}}>
                     <Link to="/miembrosANNA/castelli">
                         <a id="div-btn1">
                         <div id="botonCastelli" className="boton button1"  title="Castelli" ><span></span></div></a>

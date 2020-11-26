@@ -27,10 +27,7 @@ export default class Miembros extends Component {
             <div className="App">
                 <div className="container">
                     <div className="row justify-content-md-center">
-                        <div className="col-1">
-                            <LocalidadContenido />
-                        </div>
-                        <div className="col-2 col-lg-5">
+                        <div className="col-2 col-lg-5" > 
                             <Accordion className="shadow" >
                                 <Card>
                                     <Card.Header style={{background: "#ccc"}}>
@@ -43,8 +40,10 @@ export default class Miembros extends Component {
                                         </Card.Body>
                                     </Accordion.Collapse>
                                 </Card>
-                            </Accordion>
-                            
+                            </Accordion>  
+                        </div>
+                        <div className="col-1">
+                            <LocalidadContenido />
                         </div>
                     </div>
                 </div>

@@ -23,7 +23,7 @@ export default function VillaAngela() {
                                 <Grid item>
                                     <Typography
                                         variant="h2"
-                                        style={{ fontSize: matchesSM ? "0.9em" : "1.3em", fontWeight: 900, marginTop: "-4em", position: "absolute", fontFamily: "Roboto", background: "#00a0dc", color: "white", maxWidth: matchesSM ? "18em" : "43em", width: "40em", marginLeft: matchesSM ? "-5em" : "-16em" }}
+                                        style={{ fontSize: matchesSM ? "0.9em" : "1.3em", fontWeight: 900, marginTop: "-4em", position: "absolute", fontFamily: "Roboto", background: "#00a0dc", color: "white", maxWidth: matchesSM ? "26em" : "43em", width: "40em", marginLeft: matchesSM ? "-7em" : "-16em" }}
                                         align={matchesSM ? "center" : undefined}
                                     >III CIRCUNSCRIPCIÒN - VILLA ANGELA | Cel turno: 3625-239847
                                         </Typography>
@@ -32,7 +32,7 @@ export default function VillaAngela() {
                             <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
                             <SingleLegend img={avatar5} 
                                 defOficNum="Defensoría Oficial N° 1: Dra. Cecilia Carauini"
-                                dir="9 de Julio Nº 372"
+                                dir="Direcciòn: 9 de Julio Nº 372"
                                 tel="Teléfono fijo: 375-4421213"
                                 email="defensoria1-va@justiciachaco.gov.ar"
                                 />
@@ -40,7 +40,7 @@ export default function VillaAngela() {
                             <Grid item sm direction="column" style={{ width: "100%", marginLeft:  matchesSM ? "-5em" :"-1em", marginTop: "2em" }} >
                                 <SingleLegend img={avatar5}
                                     defOficNum="Defensoría Oficial N° 2: Dr. Ramòn Svenson"
-                                    dir="9 de Julio Nº 372"
+                                    dir="Direcciòn: 9 de Julio Nº 372"
                                     tel="Teléfono fijo: 375-4421213"
                                     email="defensoria2-va@justiciachaco.gov.ar"
                                 />

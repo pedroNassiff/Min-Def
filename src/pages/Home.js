@@ -78,7 +78,8 @@ const useStyles = makeStyles(theme => ({
         marginBottom: "2em",
         fontWeight: "bold",
        "&:hover": {
-           backgroundColor: "#00a0dc"
+           backgroundColor: "#00a0dc",
+           color: "white"
        },
        [theme.breakpoints.down("xs")]: {
         marginLeft: "11.6em",
@@ -191,7 +192,7 @@ export default function Home() {
                     container direction="row"
                     justify={matchesSM ? "center" : undefined} 
                     className={classes.sContenedor2}>
-                    <Grid item style={{ marginLeft: matchesSM ? 0 : "55em"}}>
+                    <Grid item style={{ marginLeft: matchesSM ? 0 : "50em"}}>
                         <Typography variant="h4" className={classes.titulos1}>
                             Defensorias Públicas Civiles
                         </Typography>

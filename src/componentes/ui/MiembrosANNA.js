@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 
+import Mapa from './MapaANNA';
 import './miembros.css';
-import LocalidadContenidoANNA from './LocalidadContenidoANNA';
+import LocalidadContenido from './LocalidadContenidoANNA';
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
-import MapaANNA from './MapaANNA';
 
-export default class MiembrosANNA extends Component {
+export default class MiembrosCiviles extends Component {
     state ={
         hideNav:null
     }
@@ -27,11 +27,7 @@ export default class MiembrosANNA extends Component {
             <div className="App">
                 <div className="container">
                     <div className="row justify-content-md-center">
-                        <div className="col-1">
-                            
-                            <LocalidadContenidoANNA />
-                        </div>
-                        <div className="col-2 col-lg-5">
+                        <div className="col-2 col-lg-5" > 
                             <Accordion className="shadow" >
                                 <Card>
                                     <Card.Header style={{background: "#ccc"}}>
@@ -40,12 +36,14 @@ export default class MiembrosANNA extends Component {
                                     </Card.Header>
                                     <Accordion.Collapse eventKey="0">
                                         <Card.Body style={{background: "gray"}}>
-                                            <MapaANNA />
+                                            <Mapa />
                                         </Card.Body>
                                     </Accordion.Collapse>
                                 </Card>
-                            </Accordion>
-                            
+                            </Accordion>  
+                        </div>
+                        <div className="col-1">
+                            <LocalidadContenido />
                         </div>
                     </div>
                 </div>

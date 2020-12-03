@@ -62,15 +62,15 @@ export default function RequisitosPenales() {
            
             <Typography
                     variant="h2"
-                    style={{ fontSize: "1.7em", marginTop:"3em", fontFamily: "Roboto", background: "#00a0dc",  color: "white", maxWidth: "43em", width: "35em", marginLeft: "-3em"}}
+                    style={{ fontSize: matchesSM ? "1.3em" : "1.7em", marginTop:"3em", fontFamily: "Roboto", background: "#00a0dc",  color: "white", maxWidth: matchesSM ? "30em" : "43em", width: matchesSM ? "18em" : "35em", marginLeft: matchesSM ? "-4em" : "-3em"}}
                     align={matchesSM ? "center" : undefined}
                     >Podemos proporcionártelo, si necesitas que te asesoren y/o representen en:
                 </Typography>    
             </Grid>    
         </Grid>
         <Grid item container direction="row">  
-        <Grid container direction="column" spacing={2} style={{ padding:"6em", marginTop:"-9em"}}> 
-            <Grid item container xs={6} sm={6}>
+        <Grid container direction="column" spacing={2} style={{ padding: matchesSM ? "2em" : "6em", marginTop: matchesSM ? "-5em" : "-9em"}}> 
+            <Grid item container xs={6} sm={3}>
                 <Grid item>
                     <AlbumIcon
                     style={{ marginRight:"2rem" }} />
@@ -83,7 +83,8 @@ export default function RequisitosPenales() {
                     </Typography>
                 </Grid>
             
-            <Grid item container xs={6} sm={6} style={{ marginLeft: "25em", marginTop: "-1.5em"}}>
+            
+            <Grid container direction="column" spacing={3} style={{ marginLeft: matchesSM ? "12em" : "25em", marginTop: matchesSM ? "-3em" : "-1.5em"}}> 
                 <Grid item>
                     <AlbumIcon
                     style={{ marginRight:"1.5rem" }} />
@@ -98,7 +99,7 @@ export default function RequisitosPenales() {
             </Grid>
             </Grid>
         </Grid>
-        <Grid container direction="column" spacing={3} style={{ padding:"6em", marginTop:"-12em"}}> 
+        <Grid container direction="column" spacing={3} style={{ padding: matchesSM ? "2em" : "6em", marginTop: matchesSM ? "-3em" : "-12em"}}> 
             <Grid item container xs={6} sm={6}>
                 <Grid item>
                     <AlbumIcon
@@ -112,7 +113,7 @@ export default function RequisitosPenales() {
                     </Typography>
                 </Grid>
             
-            <Grid item container xs={6} sm={6} style={{ marginLeft: "25em", marginTop: "-1.5em"}}>
+            <Grid item container xs={6} sm={3} style={{ marginLeft: "25em", marginTop: "-1.5em"}}>
                 <Grid item>
                     <AlbumIcon
                     style={{ marginRight:"1.5rem" }} />
@@ -127,7 +128,7 @@ export default function RequisitosPenales() {
             </Grid>
             </Grid>
         </Grid>
-        <Grid container direction="column" spacing={3} style={{ padding:"6em", marginTop:"-12em"}}> 
+        <Grid container direction="column" spacing={3} style={{ padding: matchesSM ? "2em" :"6em", marginTop:matchesSM ? "-4em" : "-12em"}}> 
             <Grid item container xs={6} sm={6}>
                 <Grid item>
                     <AlbumIcon
@@ -141,7 +142,7 @@ export default function RequisitosPenales() {
                     </Typography>
                 </Grid>
             
-            <Grid item container xs={6} sm={6} style={{ marginLeft: "25em", marginTop: "-1.5em"}}>
+            <Grid item container xs={6} sm={3} style={{ marginLeft: "25em", marginTop: "-1.5em"}}>
                 <Grid item>
                     <AlbumIcon
                     style={{ marginRight:"1.5rem" }} />

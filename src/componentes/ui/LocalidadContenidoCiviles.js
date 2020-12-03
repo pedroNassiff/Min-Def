@@ -17,7 +17,7 @@ import MiembrosCiviles from './MiembrosCiviles'
 export default class LocalidadContenidoCiviles extends Component {
     render() {
         return (
-            <div className="card shadow">
+            <div className="card-1 shadow">
                 <div className="card-body1" >
                 
                 <Switch>

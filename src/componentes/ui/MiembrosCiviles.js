@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import {Link} from 'react-router-dom'
 
+import Mapa from './MapaCiviles';
 import './miembros.css';
-import LocalidadContenidoCiviles from './LocalidadContenidoCiviles';
+import LocalidadContenido from './LocalidadContenidoCiviles';
 import Card from 'react-bootstrap/Card'
 import Accordion from 'react-bootstrap/Accordion'
-import MapaCiviles from './MapaCiviles';
 
 export default class MiembrosCiviles extends Component {
     state ={
@@ -27,11 +27,7 @@ export default class MiembrosCiviles extends Component {
             <div className="App">
                 <div className="container">
                     <div className="row justify-content-md-center">
-                        <div className="col-1">
-                            
-                            <LocalidadContenidoCiviles />
-                        </div>
-                        <div className="col-2 col-lg-5">
+                        <div className="col-2 col-lg-5" > 
                             <Accordion className="shadow" >
                                 <Card>
                                     <Card.Header style={{background: "#ccc"}}>
@@ -40,12 +36,14 @@ export default class MiembrosCiviles extends Component {
                                     </Card.Header>
                                     <Accordion.Collapse eventKey="0">
                                         <Card.Body style={{background: "gray"}}>
-                                            <MapaCiviles />
+                                            <Mapa />
                                         </Card.Body>
                                     </Accordion.Collapse>
                                 </Card>
-                            </Accordion>
-                            
+                            </Accordion>  
+                        </div>
+                        <div className="col-1">
+                            <LocalidadContenido />
                         </div>
                     </div>
                 </div>

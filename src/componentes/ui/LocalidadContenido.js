@@ -17,7 +17,7 @@ import Miembros from './Miembros'
 export default class LocalidadContenido extends Component {
     render() {
         return (
-            <div className="card shadow">
+            <div className="card-1 shadow">
                 <div className="card-body1" >
                 
                 <Switch>

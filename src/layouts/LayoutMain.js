@@ -6,8 +6,9 @@ import MenuTop from "componentes/menuTop";
 import Whatsapp from 'componentes/whatsapp'
 import Colapse from 'componentes/Colapse';
 import Footer from 'componentes/ui/Footer';
-
+import Loader from 'componentes/ui/Loader';
 import "./LayoutMain.scss";
+import "../componentes/ui/animacion.css"
 
 export default function LayoutBasic(props) {
   const { routes } = props;
@@ -15,9 +16,13 @@ export default function LayoutBasic(props) {
   
   return (
     <Layout>
+        
       <MenuTop />
+      
       <Content>
         <div className="contentLoadRoutes">
+            
+
           <LoadRoutes routes={routes} />
         </div>
       </Content>

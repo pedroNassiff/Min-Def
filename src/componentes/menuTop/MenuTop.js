@@ -72,9 +72,9 @@ const useStyles = makeStyles((theme) => ({
     color: "white",
     borderRadius: "0px",
     backgroundColor: "#00a0dc",
-    width: "11.25em",
-    marginLeft: "-1.3em",
-    marginTop: "0.3em",
+    width: "13.7em",
+    marginLeft: "-0.5em",
+    marginTop: "0em",
     paddingTop: "-3em",
   },
   menuItem: {
@@ -132,7 +132,9 @@ export default function MenuTop() {
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
+  const [anchorEl2, setAnchorEl2] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
+  const [openMenu2, setOpenMenu2] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleChange = (e, newValue) => {
@@ -142,7 +144,15 @@ export default function MenuTop() {
   const handleClick = (e) => {
     setAnchorEl(e.currentTarget);
     setOpenMenu(true);
+
   };
+
+  const handleClick2 = (e) => {
+    setAnchorEl(e.currentTarget);
+    
+    setOpenMenu2(true);
+  };
+
 
   const handleMenuItemClick = (e, i) => {
     setAnchorEl(null);
@@ -150,9 +160,23 @@ export default function MenuTop() {
     setSelectedIndex(i);
   };
 
+  const handleMenuItemClick2 = (e, i) => {
+    setAnchorEl2(null);
+    setOpenMenu2(false);
+    setSelectedIndex(i);
+  };
+
+
+
+
   const handleClose = (e) => {
     setAnchorEl(null);
     setOpenMenu(false);
+  };
+
+  const handleClose2 = (e) => {
+    setAnchorEl2(null);
+    setOpenMenu2(false);
   };
 
   const menuOptions = [
@@ -188,6 +212,35 @@ export default function MenuTop() {
     },
   ];
 
+  //Miembros
+
+  const menuOptions2 = [
+    {
+    name: "MIEMBROS",
+      link: "/institucional/organizacion",
+      activeIndex: 3,
+      selectedIndex: 0,
+    },
+    {
+    name: "Miembros Penales",
+      link: "/institucional/organizacion",
+      activeIndex: 1,
+      selectedIndex: 1,
+    },
+    {
+    name: "Miembros Civiles",
+      link: "/miembrosCiviles",
+      activeIndex: 1,
+      selectedIndex: 2,
+    },
+    {
+    name: "Asesorìa de Niñas, Niños y adolecentes",
+      link: "/miembrosANNA",
+      activeIndex: 1,
+      selectedIndex: 3,
+    },
+  ];
+
   const routes = [
     { name: "INICIO", link: "/", activeIndex: 0 },
     {
@@ -199,14 +252,18 @@ export default function MenuTop() {
       mouseOver: (event) => handleClick(event),
     },
     { name: "ACCIONES", link: "/acciones", activeIndex: 2 },
-    { name: "MIEMBROS", link: "/miembros", activeIndex: 3 },
+    { name: "MIEMBROS", link: "/miembros", activeIndex: 3,
+        ariaOwns: anchorEl ? "simple-menu2" : undefined,
+        ariaPopup: anchorEl ? "true" : undefined,
+        mouseOver: (event) => handleClick2(event),
+      },
     { name: "BIBLIOTECA", link: "/biblioteca", activeIndex: 4 },
     { name: "SALUD MENTAL", link: "/saludMental", activeIndex: 5 },
     { name: "CONTACTO", link: "/contact", activeIndex: 6 },
   ];
 
   useEffect(() => {
-    [...menuOptions, ...routes].forEach((route) => {
+    [...menuOptions, ...menuOptions2, ...routes].forEach((route) => {
       switch (window.location.pathname) {
         case `{$route.link}`:
           if (value !== route.activeIndex) {
@@ -220,7 +277,7 @@ export default function MenuTop() {
           break;
       }
     });
-  }, [value, menuOptions, selectedIndex, routes]);
+  }, [value, menuOptions, menuOptions2, selectedIndex, routes]);
 
   const tabs = (
     <React.Fragment>
@@ -279,7 +336,38 @@ export default function MenuTop() {
             {option.name}
           </MenuItem>
         ))}
+        
       </Menu>
+      <Menu
+        id="simple-menu2"
+        anchorEl={anchorEl}
+        open={openMenu2}
+        onClose={handleClose}
+        classes={{ paper: classes.menu }}
+        MenuListProps={{ onMouseLeave: handleClose2 }}
+        autoFocus={false}
+        keepMounted
+      >
+
+          {menuOptions2.map((option, i) => (
+            <MenuItem
+              key={`${option}${i}`}
+              component={Link}
+              to={option.link}
+              classes={{ root: classes.menuItem }}
+              onClick={(event) => {
+                handleMenuItemClick2(event, i);
+                setValue(1);
+                handleClose2();
+              }}
+              //selected={i === selectedIndex && value === 1}
+            >
+              {option.name}
+            </MenuItem>
+        ))}
+        
+      </Menu>
+      
     </React.Fragment>
   );
 

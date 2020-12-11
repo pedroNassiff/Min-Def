@@ -32,7 +32,7 @@ export default function Resistencia() {
                                     </Typography>
                             </Grid>
                         </Grid>
-                        <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
+                        <Grid item style={{ marginTop: "-5em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-10em" : "0em"  }}>
                             <SingleLegend img={avatar3}
                                 defOficNum="Asesoria de NNA N° 1: Dra. Natalia Raquel Fachin"
                                 tel="Teléfono: 362-4433642"
@@ -41,7 +41,7 @@ export default function Resistencia() {
                         </Grid>
                     </Grid>
                     <Grid container >
-                        <Grid item container direction="row" style={{ width: "100%", marginTop: "2em", marginLeft: matchesSM ? "10em" : "2em" }}>
+                        <Grid item container direction="row" style={{ width: "100%", marginTop: "2em", marginLeft: matchesSM ? "5em" : "2em" }}>
                             <Grid item sm direction="column" style={{ width: "100%" }} >
                                 <SingleLegend img={avatar3}
                                     defOficNum="Asesoria de NNA N° 2: Dra. Romina Soledad Cima"
@@ -49,14 +49,14 @@ export default function Resistencia() {
                                     email="asesoriadelmenor2@justiciachaco.gov.ar"
                                 />
                             </Grid>
-                            <Grid item sm direction="column" style={{ width: "100%", marginLeft:  matchesSM ? "0em" :"10em" }} >
+                            <Grid item sm direction="column" style={{ width: "100%", marginLeft:  matchesSM ? "-1em" :"10em" }} >
                                 <SingleLegend img={avatar3}
                                     defOficNum="Asesoria de NNA N° 5: Dra. Gabriela Carolina Coleff"
                                     tel="Teléfono: 362-44538731"
                                     email="asesoriadelmenor5@justiciachaco.gov.ar"
                                 />
                             </Grid>
-                            <Grid item sm direction="column" style={{ width: "100%",  marginLeft:  matchesSM ? "0em" :"10em"  }} >
+                            <Grid item sm direction="column" style={{ width: "100%",  marginLeft:  matchesSM ? "-1em" :"10em"  }} >
                                 <SingleLegend img={avatar3}
                                     defOficNum="Asesoria de NNA N° 5: Dra. Patricia Noemi Zamudio"
                                     tel="Teléfono: 362-4453872"
@@ -79,7 +79,7 @@ export default function Resistencia() {
                         </Grid>
                     </Grid>
                     <Grid container >
-                        <Grid item container direction="row" style={{ width: "100%", marginTop: "-3em", marginLeft: matchesSM ? "10em" : "2em" }}>
+                        <Grid item container direction="row" style={{ width: "100%", marginTop: "-3em", marginLeft: matchesSM ? "4em" : "2em" }}>
                             <Grid item sm direction="column" style={{ width: "100%" }} >
                                 <SingleLegend img={avatar3}
                                     defOficNum="Asesoria de NNA N° 3: Dra. Marianela Motter Lugo"

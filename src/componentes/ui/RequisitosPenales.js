@@ -73,7 +73,7 @@ export default function RequisitosPenales() {
             <Grid item container xs={6} sm={3}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"2rem" }} />
+                    style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -87,7 +87,7 @@ export default function RequisitosPenales() {
             <Grid container direction="column" spacing={3} style={{ marginLeft: matchesSM ? "12em" : "25em", marginTop: matchesSM ? "-3em" : "-1.5em"}}> 
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"1.5rem" }} />
+                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -103,7 +103,7 @@ export default function RequisitosPenales() {
             <Grid item container xs={6} sm={6}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"2rem" }} />
+                    style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -113,10 +113,10 @@ export default function RequisitosPenales() {
                     </Typography>
                 </Grid>
             
-            <Grid item container xs={6} sm={3} style={{ marginLeft: "25em", marginTop: "-1.5em"}}>
+            <Grid item container xs={6} sm={3} style={{ marginLeft: matchesSM ? "13em" : "25em", marginTop: "-1.5em"}}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"1.5rem" }} />
+                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -132,7 +132,7 @@ export default function RequisitosPenales() {
             <Grid item container xs={6} sm={6}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"2rem" }} />
+                    style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -142,10 +142,10 @@ export default function RequisitosPenales() {
                     </Typography>
                 </Grid>
             
-            <Grid item container xs={6} sm={3} style={{ marginLeft: "25em", marginTop: "-1.5em"}}>
+            <Grid item container xs={6} sm={3} style={{ marginLeft: matchesSM ? "13em" : "25em", marginTop: "-1.5em"}}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"1.5rem" }} />
+                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -177,7 +177,7 @@ export default function RequisitosPenales() {
             <Grid item container xs={6} sm={6}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"2rem" }} />
+                    style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -190,7 +190,7 @@ export default function RequisitosPenales() {
             <Grid item container xs={6} sm={6}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"1.5rem" }} />
+                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item md>
                     <Typography
@@ -206,7 +206,7 @@ export default function RequisitosPenales() {
             <Grid item container xs={6} sm={6}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"1.5rem" }} />
+                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography
@@ -219,7 +219,7 @@ export default function RequisitosPenales() {
             <Grid item container xs={6} sm={6} style={{ flexWrap:"inherit" }}>
                 <Grid item>
                     <AlbumIcon
-                    style={{ marginRight:"1.5rem" }} />
+                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
                 </Grid>
                 <Grid item>
                     <Typography

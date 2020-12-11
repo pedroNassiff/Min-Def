@@ -29,7 +29,7 @@ export default function VillaAngela() {
                                         </Typography>
                                 </Grid>
                             </Grid>
-                            <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
+                            <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-11em" : "0em"  }}>
                             <SingleLegend img={avatar5} 
                                 defOficNum="Defensoría Oficial N° 1: Dra. Cecilia Carauini"
                                 dir="Direcciòn: 9 de Julio Nº 372"
@@ -37,7 +37,7 @@ export default function VillaAngela() {
                                 email="defensoria1-va@justiciachaco.gov.ar"
                                 />
                             </Grid>
-                            <Grid item sm direction="column" style={{ width: "100%", marginLeft:  matchesSM ? "-5em" :"-1em", marginTop: "2em" }} >
+                            <Grid item sm direction="column" style={{ width: "100%", marginLeft:  matchesSM ? "-11em" :"-1em", marginTop: "2em" }} >
                                 <SingleLegend img={avatar5}
                                     defOficNum="Defensoría Oficial N° 2: Dr. Ramòn Svenson"
                                     dir="Direcciòn: 9 de Julio Nº 372"

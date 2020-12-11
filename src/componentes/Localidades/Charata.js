@@ -31,7 +31,7 @@ export default function Charata() {
                                         </Typography>
                                 </Grid>
                             </Grid>
-                            <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
+                            <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-11em" : "0em"  }}>
                             <SingleLegend img={avatar5} 
                                 defOficNum="Defensoría Oficial N° 1: Dra. Patricia Paz"
                                 dir="Direcciòn: Monseñor de Carlo Nº 345"
@@ -39,7 +39,7 @@ export default function Charata() {
                                 email="defensoria1-ch@justiciachaco.gov.ar"
                                 />
                             </Grid>
-                            <Grid item sm direction="column" style={{ width: "100%", marginLeft:  matchesSM ? "-5em" :"-1em", marginTop: "2em" }} >
+                            <Grid item sm direction="column" style={{ width: "100%", marginLeft:  matchesSM ? "-11em" :"-1em", marginTop: "2em" }} >
                                 <SingleLegend img={avatar5}
                                     defOficNum="Defensoría Oficial N° 2: Dra. Lorena Pàez"
                                     dir="Direcciòn: Monseñor de Carlo Nº 345"

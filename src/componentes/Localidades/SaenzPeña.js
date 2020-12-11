@@ -31,7 +31,7 @@ export default function SaenzPeña() {
                                         </Typography>
                                 </Grid>
                             </Grid>
-                            <Grid item style={{ marginTop: "-5em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
+                            <Grid item style={{ marginTop: "-5em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-11em" : "0em"  }}>
                             <SingleLegend img={avatar5} 
                                 defOficNum="Defensoría Oficial N° 1: Dr. Ariel Juarez"
                                 dir="Direcciòn: 9 de Julio Nº 326"
@@ -42,7 +42,7 @@ export default function SaenzPeña() {
                             
                         </Grid>
                         <Grid container >
-                                <Grid item container direction="row" style={{ width: "100%", marginTop: "2em", marginLeft: matchesSM ? "10em" : "3em" }}>
+                                <Grid item container direction="row" style={{ width: "100%", marginTop: "2em", marginLeft: matchesSM ? "4em" : "3em" }}>
                                     <Grid item lg direction="column" style={{ width: "100%", marginLeft:  matchesSM ? "0em" :"-1em", marginTop: "0em" }} >
                                         <SingleLegend img={avatar5}
                                         defOficNum="Defensoría Oficial N° 2: Dr. Matias Jachesky"

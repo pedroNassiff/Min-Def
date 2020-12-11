@@ -152,28 +152,20 @@ export default function MenuTop() {
     
     setOpenMenu2(true);
   };
-
-
   const handleMenuItemClick = (e, i) => {
     setAnchorEl(null);
     setOpenMenu(false);
     setSelectedIndex(i);
   };
-
   const handleMenuItemClick2 = (e, i) => {
     setAnchorEl2(null);
     setOpenMenu2(false);
     setSelectedIndex(i);
   };
-
-
-
-
   const handleClose = (e) => {
     setAnchorEl(null);
     setOpenMenu(false);
   };
-
   const handleClose2 = (e) => {
     setAnchorEl2(null);
     setOpenMenu2(false);

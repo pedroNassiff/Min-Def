@@ -31,7 +31,7 @@ export default function SanMartin() {
                                         </Typography>
                                 </Grid>
                             </Grid>
-                            <Grid item style={{ marginTop: matchesSM ? "-4em" : "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
+                            <Grid item style={{ marginTop: matchesSM ? "-4em" : "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-11em" : "0em"  }}>
                             <SingleLegend img={avatar5} 
                                defOficNum="Asesoria de NNA N° 1: Dr. Hector Enrique Reynoso"
                                tel="Teléfono: 3725-422239 | Cel: 3624-652871"

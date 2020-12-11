@@ -216,7 +216,7 @@ export default function Home() {
                 </Grid>
                 <div className={classes.backSegCont} />
             </Grid>
-            <Grid container style={{height: "20em"}}>    
+            <Grid container style={{height: "25em"}}>    
             <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
                 <Grid 
                     container direction="row"

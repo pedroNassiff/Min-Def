@@ -33,7 +33,7 @@ export default function Resistencia() {
                                     </Typography>
                             </Grid>
                         </Grid>
-                        <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
+                        <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-11em" : "0em"  }}>
                             <SingleLegend img={avatar3}
                                 defOficNum="Defensoría Oficial N° 1: Dra. Carmen  Sanchez"
                                 tel="Teléfono: 3624-4452579"
@@ -42,7 +42,7 @@ export default function Resistencia() {
                         </Grid>
                     </Grid>
                     <Grid container >
-                        <Grid item container direction="row" style={{ width: "100%", marginTop: "2em", marginLeft: matchesSM ? "10em" : "2em" }}>
+                        <Grid item container direction="row" style={{ width: "100%", marginTop: "2em", marginLeft: matchesSM ? "3em" : "2em" }}>
                             <Grid item sm direction="column" style={{ width: "100%" }} >
                                 <SingleLegend img={avatar3}
                                     defOficNum="Defensoría Oficial N° 2: Dra. Maria de los Àngeles"

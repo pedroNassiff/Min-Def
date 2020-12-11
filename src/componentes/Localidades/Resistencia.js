@@ -32,7 +32,7 @@ export default function Resistencia() {
                                     </Typography>
                             </Grid>
                         </Grid>
-                        <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
+                        <Grid item style={{ marginTop: "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-11em" : "0em"  }}>
                             <SingleLegend img={avatar3}
                                 defOficNum="Defensoría Oficial N° 4: Dr. Juan Pablo Cerbera"
                                 tel="Teléfono: 3624-4427795"
@@ -41,7 +41,7 @@ export default function Resistencia() {
                         </Grid>
                     </Grid>
                     <Grid container >
-                        <Grid item container direction="row" style={{ width: "100%", marginTop: "2em", marginLeft: matchesSM ? "10em" : "2em" }}>
+                        <Grid item container direction="row" style={{ width: "100%", marginTop: "2em", marginLeft: matchesSM ? "3em" : "2em" }}>
                             <Grid item sm direction="column" style={{ width: "100%" }} >
                                 <SingleLegend img={avatar3}
                                     defOficNum="Defensoría Oficial N° 5: Dra. Daniela Acosta Calvo"
@@ -79,7 +79,7 @@ export default function Resistencia() {
                         </Grid>
                     </Grid>
                     <Grid container >
-                        <Grid item container direction="row" style={{ width: "100%", marginTop: "-3em", marginLeft: matchesSM ? "10em" : "2em" }}>
+                        <Grid item container direction="row" style={{ width: "100%", marginTop: "-3em", marginLeft: matchesSM ? "4em" : "2em" }}>
                             <Grid item sm direction="column" style={{ width: "100%" }} >
                                 <SingleLegend img={avatar3}
                                     defOficNum="Defensoría Oficial N° 13: Dra. Patricia Aleksich"
@@ -117,7 +117,7 @@ export default function Resistencia() {
                         </Grid>
                     </Grid>
                     <Grid container >
-                        <Grid item container direction="row" style={{ width: "100%", marginTop: "-3em", marginLeft:  matchesSM ? "10em" : "2em" }}>
+                        <Grid item container direction="row" style={{ width: "100%", marginTop: "-3em", marginLeft:  matchesSM ? "4em" : "2em" }}>
                             <Grid item sm direction="column" style={{ width: "100%" }} >
                                 <SingleLegend img={avatar3}
                                     defOficNum="Defensoría Oficial N° 6: Dra. Julieta Dansey"

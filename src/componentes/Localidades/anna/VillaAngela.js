@@ -31,7 +31,7 @@ export default function VillaAngela() {
                                         </Typography>
                                 </Grid>
                             </Grid>
-                            <Grid item style={{ marginTop: matchesSM ? "-4em" : "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-5em" : "0em"  }}>
+                            <Grid item style={{ marginTop: matchesSM ? "-4em" : "-7em", width: matchesSM ? "18em" : "100%", marginLeft: matchesSM ? "-10em" : "0em"  }}>
                             <SingleLegend img={avatar5} 
                                defOficNum="Asesoria de NNA N° 1: Dra. Maria Lorena Contreras"
                                tel="Teléfono: 3735-429009"

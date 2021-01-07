@@ -143,110 +143,59 @@ export default function Home() {
     const [selectedIndex, setSelectedIndex] = useState(0);
   const [value, setValue] = useState(0);
     return (
-        <div className="homeContainer">
-            <div className="carouselContainer">
-                <Carousel/>
+      <div className="homeContainer">
+        <div className="carouselContainer">
+            <Carousel/>
+        </div>
+
+
+        <section className='panel panel--content'>
+          <article className='panel__item item--left item--first'>
+            <div class='card'>
+              <div className='card__header'>
+                <h4>Defensorias Públicas Penales</h4>
+              </div>
+              <div className='card__body'>
+                <p>Lorem Ipsum Lorem Ipsum lorem ipsum</p>
+                <ul>
+                    <li><a href='/miembros'>MIEMBROS</a></li>
+                    <li><a href='/requisitos-penales'>REQUISITOS</a></li>
+                </ul>
+              </div>
             </div>
-    
-        <Grid 
-            container 
-            className={classes.mainContainer}
-            direction="column">
-            <Grid container style={{height: "20em", marginBottom: "2em"}}>    
-            <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
-                <Grid 
-                    container direction="row"
-                    justify={matchesSM ? "center" : undefined} 
-                    className={classes.sContenedor1}>
-                    <Grid item style={{ marginLeft: matchesSM ? 0 : "5em"}}>
-                        <Typography variant="h4" className={classes.titulos1}>
-                            Defensorias Públicas Penales
-                        </Typography>
-                        <Typography variant="subtitle1" className={classes.subtitulos1}>
-                            Lorem Ipsum Lorem Ipsum lorem ipsum
-                        </Typography>
-                        <Button 
-                            variant="outlined"
-                            component={Link}
-                            to="/miembros" 
-                            className={classes.botonUbicacion} 
-                            style={{ marginRight: 20 }}>
-                            <span style={{ marginRight: 0 }}>MIEMBROS</span>
-                        </Button>
-                        <Button
-                            component={Link}
-                            to="/requisitos-penales" 
-                            variant="outlined" 
-                            className={classes.botonUbicacion2} 
-                            style={{ marginRight: 20 }}>
-                            <span style={{ marginRight: 0 }}>REQUISITOS</span>
-                        </Button>
-                    </Grid>
-                </Grid>
-                </Grid>
-                <div className={classes.fpCont} />
-            </Grid>
-            <Grid container style={{height: "20em", marginBottom: "2em"}}>    
-            <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
-                <Grid 
-                    container direction="row"
-                    justify={matchesSM ? "center" : undefined} 
-                    className={classes.sContenedor2}>
-                    <Grid item style={{ marginLeft: matchesSM ? 0 : "50em"}}>
-                        <Typography variant="h4" className={classes.titulos1}>
-                            Defensorias Públicas Civiles
-                        </Typography>
-                        <Typography variant="subtitle1" className={classes.subtitulos1}>
-                            Lorem Ipsum Lorem Ipsum lorem ipsum
-                        </Typography>
-                        <Button variant="outlined" component={Link}
-                            to="/miembrosCiviles" className={classes.botonUbicacion} style={{ marginRight: 20 }}>
-                            <span style={{ marginRight: 0 }}>MIEMBROS</span>
-                        </Button>
-                        <Button 
-                            component={Link}
-                            to="/requisitos-civiles" 
-                            variant="outlined" 
-                            className={classes.botonUbicacion2} 
-                            style={{ marginRight: 20 }}>
-                            <span style={{ marginRight: 0 }}>REQUISITOS</span>
-                        </Button>
-                    </Grid>
-                </Grid>
-                </Grid>
-                <div className={classes.backSegCont} />
-            </Grid>
-            <Grid container style={{height: "25em"}}>    
-            <Grid item style={{position: "absolute"}} alignItems="center"> {/*--2do Contenedor---*/}
-                <Grid 
-                    container direction="row"
-                    justify={matchesSM ? "center" : undefined} 
-                    className={classes.sContenedor3}>
-                    <Grid item style={{ marginLeft: matchesSM ? 0 : "2em"}}>
-                        <Typography variant="h4" className={classes.titulos2}>
-                            Asesorias de Niños, Niñas y Adolecentes
-                        </Typography>
-                        <Typography variant="subtitle1" className={classes.subtitulos1}>
-                            Lorem Ipsum Lorem Ipsum lorem ipsum
-                        </Typography>
-                        <Button variant="outlined" component={Link}
-                            to="/miembrosANNA"  className={classes.botonUbicacion} style={{ marginRight: 20 }}>
-                            <span style={{ marginRight: 0 }}>MIEMBROS</span>
-                        </Button>
-                        <Button 
-                            component={Link}
-                            to="/requisitos-niños" 
-                            variant="outlined" 
-                            className={classes.botonUbicacion2} 
-                            style={{ marginRight: 20 }}>
-                            <span style={{ marginRight: 0 }}>REQUISITOS</span>
-                        </Button>
-                    </Grid>
-                </Grid>
-                </Grid>
-                <div className={classes.backTercerCont} />
-            </Grid>
-        </Grid>
+          </article>
+
+          <article className='panel__item item--right item--second'>
+            <div class='card'>
+              <div className='card__header'>
+                <h4>Defensorias Públicas Penales</h4>
+              </div>
+              <div className='card__body'>
+                <p>Lorem Ipsum Lorem Ipsum lorem ipsum</p>
+                <ul>
+                    <li><a href='/miembrosCiviles'>MIEMBROS</a></li>
+                    <li><a href='/requisitos-civiles'>REQUISITOS</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+
+          <article className='panel__item item--left item--third'>
+            <div class='card'>
+              <div className='card__header'>
+                <h4>Asesorias de Niños, Niñas y Adolecentes</h4>
+              </div>
+              <div className='card__body'>
+                <p>Lorem Ipsum Lorem Ipsum lorem ipsum</p>
+                <ul>
+                    <li><a href='/miembrosANNA'>MIEMBROS</a></li>
+                    <li><a href='/requisitos-niños'>REQUISITOS</a></li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </section>
+
         <Footer value={value} setValue={setValue} selectedIndex={selectedIndex} setSelectedIndex={setSelectedIndex} />
 
         </div>

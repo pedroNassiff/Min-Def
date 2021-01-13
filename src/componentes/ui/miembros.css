@@ -378,13 +378,20 @@ h5{
   .contenedor-mapa{
     position: absolute;
     margin-top: -48em;
-      width:100%;
-      height: 359px;
-      margin-left: -5%;
-      align-self: center;
-      align-content: center;
-      align-items: center;
+    width:100%;
+    height: 359px;
+    margin-left: -5%;
+    align-self: center;
+    align-content: center;
+    align-items: center;
   }
+  @media (min-width: 768px){
+    .contenedor-mapa{
+        margin-top: 1em;
+        margin-left: -20%;
+      } 
+  }
+
   .col-1{
     width: 100%;
   
@@ -421,25 +428,29 @@ h5{
   @media screen and (max-width: 600px) {
     
     .contenedor-mapa{
-        margin-top: -30em!important;
-        margin-left: -83em;
+        margin-top: -25em;
+        margin-left: -61em;
       }
       .card-body1{
         margin-top: 4em;
-        margin-left: 8em;
+        /* margin-left: 8em; */
     }
     .titulo-card{
         margin-left: -3.5em;
     }
     .col-1{
         margin-top: 11em;
-        width: 29em;
-        margin-left: -3.4em;
+        /* width: 29em; */
+        /* margin-left: -3.4em; */
     }
     .card-1{
         position: relative;
-        width: 25em;
-        margin-left: -4em;
+        /* width: 25em; */
+        /* margin-left: -4em; */
+    }
+    .col-1 .card-body1 > .MuiGrid-container{
+        width: 100%;
+        padding-left: 15px;
     }
     .img-fluid .mx-auto .d-block{
         margin-left: 2em;
@@ -454,5 +465,126 @@ h5{
     .font-weight-normal{
         width: 23em;
         font-size: 1.4rem;
+    }
+}
+
+
+/* Acá Walter */
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+@media (min-width: 576px){
+    .container{
+        width: 540px;
+    }
+}
+@media (min-width: 768px){
+    .container{
+        width: 720px;
+    }
+}
+@media (min-width: 992px){
+    .container{
+        width: 960px;
+    }
+}
+@media (min-width: 1200px){
+    .container{
+        width: 1140px;
+    }
+}
+.img-fluid{
+    max-width: 100%;
+}
+.mx-auto{
+    margin-right: auto;
+    margin-left: auto;
+}
+.first--city{
+
+}
+.content-city  .row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.content-city h2{
+    font-family: "Roboto";
+    background: #00a0dc;
+    color: white;
+    display: inline-block;
+    padding: 0 30px;
+    margin-top: 4rem;
+    min-width: 100%;
+}
+@media (min-width: 768px){
+    .content-city h2{
+        font-size: 1.3em;
+    }
+}
+.content-city .item{
+    width: 100%;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+@media (min-width: 768px){
+    .content-city .item--2{
+        width: 50%;
+    }
+    .content-city .item--3{
+        width: 30%;
+    }
+}
+.content-city figure{
+    border-radius: 50%;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    display: block;
+}
+.content-city figure img{
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+.content-city .item h6{
+    font-size: 20px;
+    font-family: 'Roboto';
+    color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+@media (min-width: 768px){
+    .content-city .item h6{
+        font-size: 25px;
+    }
+}
+.item--info span img{
+    width: 20px;
+}
+.item--info li{
+    margin: 7px 0;
+    line-height: 1;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.4rem;
+}
+@media (min-width: 768px){
+    .item--info li{
+        font-size: 12px;
+    }
+}
+.content-city .first-title{
+    min-width: 100%;
+}
+@media (min-width: 768px){
+    .content-city .first-title{
+        min-width: 30%;
     }
 }

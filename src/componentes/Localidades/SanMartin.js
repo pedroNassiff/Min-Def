@@ -17,9 +17,10 @@ export default function SanMartin() {
                     <h2 className='h2 first-title'>V CIRCUNSCRIPCIÓN - GENERAL SAN MARTIN | Cel turno: 3625-239849</h2>
                 </div>
                 <div className='row'>
+                <h6>Defensoría Oficial N° 2: Dr. Adrian Vañek</h6>
+
                     <div className='item item--2 first--city'>
                         <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 2: Dr. Adrian Vañek' /> </figure>
-                        <h6>Defensoría Oficial N° 2: Dr. Adrian Vañek</h6>
                         <ul className='item--info'>
                             <li><span><img className='img-fluid' src={iconArroba} alt='Dirección'/></span> Dirección: Yrigoyen Nº 265</li>
                             <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span> Teléfono fijo: 3725-422201</li>

@@ -18,8 +18,9 @@ export default function SaenzPeña() {
                 </div>
                 <div className='row'>
                     <div className='item item--2 first--city'>
+                    <h6>Defensoría Oficial N° 1: Dr. Ariel Juarez</h6>
+
                         <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 1: Dr. Dr. Ariel Juarez' /> </figure>
-                        <h6>Defensoría Oficial N° 1: Dr. Ariel Juarez</h6>
                         <ul className='item--info'>
                             <li><span><img className='img-fluid' src={iconArroba} alt='Dirección'/></span> Dirección: 9 de Julio Nº 326</li>
                             <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span> Teléfono fijo: 3644-421300</li>

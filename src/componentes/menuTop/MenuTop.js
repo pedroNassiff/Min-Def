@@ -133,8 +133,11 @@ export default function MenuTop() {
   const [value, setValue] = useState(0);
   const [anchorEl, setAnchorEl] = useState(null);
   const [anchorEl2, setAnchorEl2] = useState(null);
+  const [anchorEl3, setAnchorEl3] = useState(null);
+
   const [openMenu, setOpenMenu] = useState(false);
   const [openMenu2, setOpenMenu2] = useState(false);
+  const [openMenu3, setOpenMenu3] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleChange = (e, newValue) => {
@@ -152,6 +155,12 @@ export default function MenuTop() {
     
     setOpenMenu2(true);
   };
+  const handleClick3 = (e) => {
+    setAnchorEl(e.currentTarget);
+    
+    setOpenMenu3(true);
+  };
+
   const handleMenuItemClick = (e, i) => {
     setAnchorEl(null);
     setOpenMenu(false);
@@ -162,6 +171,12 @@ export default function MenuTop() {
     setOpenMenu2(false);
     setSelectedIndex(i);
   };
+  const handleMenuItemClick3 = (e, i) => {
+    setAnchorEl3(null);
+    setOpenMenu3(false);
+    setSelectedIndex(i);
+  };
+
   const handleClose = (e) => {
     setAnchorEl(null);
     setOpenMenu(false);
@@ -169,6 +184,10 @@ export default function MenuTop() {
   const handleClose2 = (e) => {
     setAnchorEl2(null);
     setOpenMenu2(false);
+  };
+  const handleClose3 = (e) => {
+    setAnchorEl3(null);
+    setOpenMenu3(false);
   };
 
   const menuOptions = [
@@ -233,6 +252,53 @@ export default function MenuTop() {
     },
   ];
 
+  //Acciones
+
+  const menuOptions3 = [
+    {
+    name: "Acciones",
+      link: "/acciones",
+      activeIndex: 3,
+      selectedIndex: 0,
+    },
+    {
+    name: "Informes",
+      link: "/acciones/informes",
+      activeIndex: 1,
+      selectedIndex: 1,
+    },
+    {
+    name: "Monitores",
+      link: "/acciones/monitoreos",
+      activeIndex: 1,
+      selectedIndex: 2,
+    },
+    {
+    name: "Defensoria Itinerante",
+      link: "/acciones/defensoriaItinerante",
+      activeIndex: 1,
+      selectedIndex: 3,
+    },
+    {
+      name: "Acciones Judiciales",
+        link: "/acciones/accionesJudiciales",
+        activeIndex: 1,
+        selectedIndex: 3,
+      },
+      {
+        name: "Convenios",
+          link: "/acciones/convenios",
+          activeIndex: 1,
+          selectedIndex: 3,
+        },
+        {
+          name: "Proyecto de Ley",
+            link: "/acciones/ProyectoLey",
+            activeIndex: 1,
+            selectedIndex: 3,
+          },
+  ];
+
   const routes = [
     { name: "INICIO", link: "/", activeIndex: 0 },
     {
@@ -243,7 +309,11 @@ export default function MenuTop() {
       ariaPopup: anchorEl ? "true" : undefined,
       mouseOver: (event) => handleClick(event),
     },
-    { name: "ACCIONES", link: "/acciones", activeIndex: 2 },
+    { name: "ACCIONES", link: "/acciones", activeIndex: 2,
+      ariaOwns: anchorEl ? "simple-menu3" : undefined,
+      ariaPopup: anchorEl ? "true" : undefined,
+      mouseOver: (event) => handleClick3(event),
+    },
     { name: "MIEMBROS", link: "/miembros", activeIndex: 3,
         ariaOwns: anchorEl ? "simple-menu2" : undefined,
         ariaPopup: anchorEl ? "true" : undefined,
@@ -252,6 +322,7 @@ export default function MenuTop() {
     { name: "BIBLIOTECA", link: "/biblioteca", activeIndex: 4 },
     { name: "SALUD MENTAL", link: "/saludMental", activeIndex: 5 },
     { name: "CONTACTO", link: "/contact", activeIndex: 6 },
+    { name: "INGRESAR", link: "/contact", activeIndex: 6 },
   ];
 
   useEffect(() => {
@@ -293,7 +364,7 @@ export default function MenuTop() {
           />
         ))}
       </Tabs>
-      <Button
+      {/* <Button
         component={Link}
         to="/"
         color="#D34D4C"
@@ -301,7 +372,7 @@ export default function MenuTop() {
         onClick={() => setValue()}
       >
         Ingresar / Login
-      </Button>
+      </Button> */}
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}
@@ -359,6 +430,36 @@ export default function MenuTop() {
         ))}
         
       </Menu>
+      <Menu
+        id="simple-menu3"
+        anchorEl={anchorEl}
+        open={openMenu3}
+        onClose={handleClose}
+        classes={{ paper: classes.menu }}
+        MenuListProps={{ onMouseLeave: handleClose3 }}
+        autoFocus={false}
+        keepMounted
+      >
+
+          {menuOptions3.map((option, i) => (
+            <MenuItem
+              key={`${option}${i}`}
+              component={Link}
+              to={option.link}
+              classes={{ root: classes.menuItem }}
+              onClick={(event) => {
+                handleMenuItemClick3(event, i);
+                setValue(1);
+                handleClose3();
+              }}
+              //selected={i === selectedIndex && value === 1}
+            >
+              {option.name}
+            </MenuItem>
+        ))}
+        
+      </Menu>
+      
       
     </React.Fragment>
   );

@@ -21,8 +21,9 @@ export default function Resistencia() {
             </div>
             <div className='row'>
                 <div className='item item--3 first--city'>
+                <h6>Defensoría Oficial N° 4:<br /> Dr. Juan Pablo Cerbera</h6>
+
                     <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar3} alt='Defensoría Oficial N° 4: Dr. Juan Pablo Cerbera' /> </figure>
-                    <h6>Defensoría Oficial N° 4:<br /> Dr. Juan Pablo Cerbera</h6>
                     <ul className='item--info'>
                         {/* <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span></li> */}
                         <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono: 3624-4427795</li>

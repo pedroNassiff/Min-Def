@@ -19,8 +19,9 @@ export default function VillaAngela() {
                 </div>
                 <div className='row'>
                     <div className='item item--2 first--city'>
+                    <h6>Defensoría Oficial N° 1: Dra. Cecilia Carauini</h6>
+
                         <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 1: Dra. Cecilia Carauini' /> </figure>
-                        <h6>Defensoría Oficial N° 1: Dra. Cecilia Carauini</h6>
                         <ul className='item--info'>
                             <li><span><img className='img-fluid' src={iconMarker} alt='Dirección'/></span> Dirección:9 de Julio Nº 372</li>
                             <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono fijo: 375-4421213</li>
@@ -30,8 +31,9 @@ export default function VillaAngela() {
                 </div>
                 <div className='row'>
                     <div className='item item--2'>
+                    <h6>Defensoría Oficial N° 2: Dr. Ramón Svenson</h6>
+
                         <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 2: Dr. Ramòn Svenson' /> </figure>
-                        <h6>Defensoría Oficial N° 2: Dr. Ramón Svenson</h6>
                         <ul className='item--info'>
                             <li><span><img className='img-fluid' src={iconMarker} alt='Dirección'/></span> Dirección:9 de Julio Nº 372</li>
                             <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono fijo: 375-4421213</li>

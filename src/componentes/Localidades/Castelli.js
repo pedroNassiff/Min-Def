@@ -21,8 +21,9 @@ export default function Castelli() {
                 </div>
                 <div className='row'>
                     <div className='item item--2 first--city'>
+                    <h6>Defensoría Oficial N° 1: Dr. Gustavo Kleinsinger</h6>
+
                         <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 1: Dr. Gustavo Kleinsinger' /> </figure>
-                        <h6>Defensoría Oficial N° 1: Dr. Gustavo Kleinsinger</h6>
                         <ul className='item--info'>
                             <li><span><img className='img-fluid' src={iconMarker} alt='Dirección'/></span> Dirección: Dr Vazquez esquina Padre Holzer</li>
                             <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono fijo: 3644-472300</li>

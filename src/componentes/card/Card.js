@@ -7,7 +7,7 @@ const CardComponent = (props) => {
     <div className="box gallery">
       <div className="card">
         <div className="background">
-          <img width="100%" alt={title} src={require("../../" + img).default} />
+          <img width="100%" alt={title} src={require("../../" + img)} />
         </div>
         <span className="overlay"></span>
         <span>

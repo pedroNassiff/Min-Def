@@ -58,7 +58,7 @@ export default function RequisitosPenales() {
             container
             style={{padding: "5em"}}    
             >
-            <Grid item>
+        <Grid item>
            
             <Typography
                     variant="h2"
@@ -69,94 +69,83 @@ export default function RequisitosPenales() {
             </Grid>    
         </Grid>
         <Grid item container direction="row">  
-        <Grid container direction="column" spacing={2} style={{ padding: matchesSM ? "2em" : "6em", marginTop: matchesSM ? "-5em" : "-9em"}}> 
-            <Grid item container xs={6} sm={3}>
-                <Grid item>
-                    <AlbumIcon
-                    style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
+            <Grid container direction="column" spacing={2} style={{ padding: matchesSM ? "2em" : "6em", marginTop: matchesSM ? "-5em" : "-9em"}}> 
+                <Grid item container xs={6} sm={3}>
+                    <Grid item>
+                        <AlbumIcon style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
+                    </Grid>
+                    <Grid item>
+                        <Typography ariant="body1" style={{ fontSize:"1.5rem" }} >Citaciones. </Typography>
+                    </Grid>
+
                 </Grid>
-                <Grid item>
-                    <Typography
-                        variant="body1"
-                        style={{ fontSize:"1.5rem" }}
-                        >Citaciones.
-                    </Typography>
-                </Grid>
-            
-            
-            <Grid container direction="column" spacing={3} style={{ marginLeft: matchesSM ? "12em" : "25em", marginTop: matchesSM ? "-3em" : "-1.5em"}}> 
-                <Grid item>
-                    <AlbumIcon
-                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
-                </Grid>
-                <Grid item>
-                    <Typography
-                        variant="body1"
-                        style={{ fontSize:"1.5rem" }}
-                        >Contravenciones.
-                    </Typography>
+                <Grid container xs={6} sm={3} direction="row" spacing={3} style={{ marginLeft: matchesSM ? "12em" : "25em", marginTop: matchesSM ? "-3em" : "-1.5em"}}> 
+                    <Grid item >
+                        <AlbumIcon style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
+                    </Grid>
+                    <Grid item>
+                        <Typography variant="body1" style={{ fontSize:"1.5rem" }} >Contravenciones.</Typography>
+                    </Grid>
                 </Grid>
             </Grid>
-            </Grid>
-        </Grid>
-        <Grid container direction="column" spacing={3} style={{ padding: matchesSM ? "2em" : "6em", marginTop: matchesSM ? "-3em" : "-12em"}}> 
-            <Grid item container xs={6} sm={6}>
-                <Grid item>
-                    <AlbumIcon
-                    style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
+            <Grid container direction="column" spacing={3} style={{ padding: matchesSM ? "2em" : "6em", marginTop: matchesSM ? "-3em" : "-12em"}}> 
+                <Grid item container xs={6} sm={6}>
+                    <Grid item>
+                        <AlbumIcon
+                        style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            variant="body1"
+                            style={{ fontSize:"1.5rem" }}
+                            >Denuncias.
+                        </Typography>
+                    </Grid>
+                
                 </Grid>
-                <Grid item>
-                    <Typography
-                        variant="body1"
-                        style={{ fontSize:"1.5rem" }}
-                        >Denuncias.
-                    </Typography>
-                </Grid>
-            
-            <Grid item container xs={6} sm={3} style={{ marginLeft: matchesSM ? "13em" : "25em", marginTop: "-1.5em"}}>
-                <Grid item>
-                    <AlbumIcon
-                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
-                </Grid>
-                <Grid item>
-                    <Typography
-                        variant="body1"
-                        style={{ fontSize:"1.5rem" }}
-                        >Privaciones de libertad.
-                    </Typography>
-                </Grid>
-            </Grid>
-            </Grid>
-        </Grid>
-        <Grid container direction="column" spacing={3} style={{ padding: matchesSM ? "2em" :"6em", marginTop:matchesSM ? "-4em" : "-12em"}}> 
-            <Grid item container xs={6} sm={6}>
-                <Grid item>
-                    <AlbumIcon
-                    style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
-                </Grid>
-                <Grid item>
-                    <Typography
-                        variant="body1"
-                        style={{ fontSize:"1.5rem" }}
-                        >Delitos.
-                    </Typography>
-                </Grid>
-            
-            <Grid item container xs={6} sm={3} style={{ marginLeft: matchesSM ? "13em" : "25em", marginTop: "-1.5em"}}>
-                <Grid item>
-                    <AlbumIcon
-                    style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
-                </Grid>
-                <Grid item>
-                    <Typography
-                        variant="body1"
-                        style={{ fontSize:"1.5rem" }}
-                        >Violencia policial.
-                    </Typography>
+                <Grid item container xs={6} sm={3} style={{ marginLeft: matchesSM ? "13em" : "25em", marginTop: "-1.5em"}}>
+                    <Grid item>
+                        <AlbumIcon
+                        style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            variant="body1"
+                            style={{ fontSize:"1.5rem" }}
+                            >Privaciones de libertad.
+                        </Typography>
+                    </Grid>
                 </Grid>
             </Grid>
+            <Grid container direction="column" spacing={3} style={{ padding: matchesSM ? "2em" :"6em", marginTop:matchesSM ? "-4em" : "-12em"}}> 
+                <Grid item container xs={6} sm={6}>
+                    <Grid item>
+                        <AlbumIcon
+                        style={{ marginRight:"2rem", visibility: matchesSM ? "hidden" : undefined }} />
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            variant="body1"
+                            style={{ fontSize:"1.5rem" }}
+                            >Delitos.
+                        </Typography>
+                    </Grid>
+                
+                </Grid>
+                <Grid item container xs={6} sm={3} style={{ marginLeft: matchesSM ? "13em" : "25em", marginTop: "-1.5em"}}>
+                    <Grid item>
+                        <AlbumIcon
+                        style={{ marginRight:"1.5rem", visibility: matchesSM ? "hidden" : undefined }} />
+                    </Grid>
+                    <Grid item>
+                        <Typography
+                            variant="body1"
+                            style={{ fontSize:"1.5rem" }}
+                            >Violencia policial.
+                        </Typography>
+                    </Grid>
+                </Grid>
             </Grid>
-        </Grid>
         </Grid> 
         {/*--2do Contenedor---*/}
         <Grid 

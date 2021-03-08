@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import avatar5 from ' ../../assets/img/avatar5.jpg'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
-import iconArroba from '../../assets/img/arroba.png'
+import iconArroba from '../../assets/img/icon-mail.svg';
+import iconPhone from '../../assets/img/icon-phone.svg';
+import iconMarker from '../../assets/img/icon-marker.svg';
 
 const useStyles = makeStyles(theme => ({
 }))
@@ -21,8 +23,8 @@ export default function VillaAngela() {
 
                         <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 1: Dra. Cecilia Carauini' /> </figure>
                         <ul className='item--info'>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='Dirección'/></span> Dirección:9 de Julio Nº 372</li>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span> Teléfono fijo: 375-4421213</li>
+                            <li><span><img className='img-fluid' src={iconMarker} alt='Dirección'/></span> Dirección:9 de Julio Nº 372</li>
+                            <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono fijo: 375-4421213</li>
                             <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> defensoria1-va@justiciachaco.gov.ar</li>
                         </ul>
                     </div>
@@ -33,8 +35,8 @@ export default function VillaAngela() {
 
                         <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 2: Dr. Ramòn Svenson' /> </figure>
                         <ul className='item--info'>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='Dirección'/></span> Dirección:9 de Julio Nº 372</li>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span> Teléfono fijo: 375-4421213</li>
+                            <li><span><img className='img-fluid' src={iconMarker} alt='Dirección'/></span> Dirección:9 de Julio Nº 372</li>
+                            <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono fijo: 375-4421213</li>
                             <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> defensoria2-va@justiciachaco.gov.ar</li>
                         </ul>
                     </div>

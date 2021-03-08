@@ -234,7 +234,7 @@ export default function MenuTop() {
     },
     {
     name: "Miembros Penales",
-      link: "/institucional/organizacion",
+      link: "/miembros",
       activeIndex: 1,
       selectedIndex: 1,
     },

@@ -168,7 +168,7 @@ export default function Home() {
           <article className='panel__item item--right item--second'>
             <div class='card'>
               <div className='card__header'>
-                <h4>Defensorias Públicas Civíles</h4>
+                <h4>Defensorias Públicas Civiles</h4>
               </div>
               <div className='card__body'>
                 <p>Lorem Ipsum Lorem Ipsum lorem ipsum</p>

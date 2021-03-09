@@ -4,7 +4,10 @@ import LayoutMain from 'layouts/LayoutMain'
 //Pages
 import Home from 'pages/Home'
 import Contact from 'pages/Contact'
+
 import biblioteca from 'pages/biblioteca'
+
+
 import RequisitosPenales from 'componentes/ui/RequisitosPenales'
 import RequisitosCiviles from 'componentes/ui/RequisitosCiviles'
 import RequisitosNiños from 'componentes/ui/RequisitosNiños'
@@ -25,6 +28,7 @@ import Acciones from 'config/acciones.routes'
 import Institucional from 'config/institucional.routes'
 import Mienbros from 'config/mienbros.routes'
 import saludMental from 'config/saludMental.routes'
+import BuscadorBibliotecaDemo from 'pages/biblioteca/BuscadorBibliotecaDemo';
 
 const routes = [
     {
@@ -51,6 +55,11 @@ const routes = [
                 component: biblioteca,
                 exact: true
             },
+            // {
+            //     path: "/bibliotecaDemo",
+            //     component: BuscadorBibliotecaDemo,
+            //     exact: true
+            // },
             {
                 path: "/login",
                 component: Login,

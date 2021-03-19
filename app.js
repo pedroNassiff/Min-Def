@@ -19,7 +19,7 @@ app.use(fileUpload());
 const cors = require("cors");
 
 var corsOptions = {
-    origin: ["http://localhost:5000/", "http://127.0.0.1:5000/"]
+    origin: ["http://localhost:5000", "http://127.0.0.1:5000"]
 };
 
 app.use(cors(corsOptions));

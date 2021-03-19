@@ -67,11 +67,11 @@ const Dashboard = () => {
 
     //extraer dato
 
-    const { nombre } = elemento;
+    const { nombre, categoria, } = elemento;
 
-    const { nombre, categoria, img, title, description, meta } = elemento2;
+    const {  img, title, description, meta } = noticias;
 
-    const { name, role, last_name, email, password } = elemento3;
+    const { name, role, last_name, email, password } = usuarios;
 
 
     const onChangeElemento = e => {
@@ -178,16 +178,32 @@ const Dashboard = () => {
                     type="text"
                     className="input-text"
                     placeholder="Rol"
-                    name="description"
-                    value={description}
+                    name="role"
+                    value={role}
                     onChange={onChangeElemento}
                 />
                    <input 
                     type="text"
                     className="input-text"
-                    placeholder="fecha"
-                    name="meta"
-                    value={meta}
+                    placeholder="Apellido"
+                    name="last_name"
+                    value={last_name}
+                    onChange={onChangeElemento}
+                />
+                      <input 
+                    type="text"
+                    className="input-text"
+                    placeholder="Email"
+                    name="email"
+                    value={email}
+                    onChange={onChangeElemento}
+                />
+                      <input 
+                    type="text"
+                    className="input-text"
+                    placeholder="Password"
+                    name="password"
+                    value={password}
                     onChange={onChangeElemento}
                 />
                 <button type="text">

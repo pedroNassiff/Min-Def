@@ -14,10 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Bibliotecas.init({
-    img: DataTypes.STRING,
-    title: DataTypes.STRING,
-    description: DataTypes.STRING,
-    meta: DataTypes.STRING
+    nombre: DataTypes.STRING,
+    categoria: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Bibliotecas',

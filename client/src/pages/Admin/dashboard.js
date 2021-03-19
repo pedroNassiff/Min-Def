@@ -46,17 +46,33 @@ const Dashboard = () => {
     }
     //state
     const [elemento, guardarElemento] = useState({
-        nombre: '',
+        nombre: ''
+     
+    });
+    const [noticias, guardarNoticias] = useState({
         categoria: '', 
         img: '', 
         title: '', 
         description: '', 
         meta: ''
     });
+    const [usuarios, guardarUsuarios] = useState({
+        name: '',
+        role: '',
+        last_name: '',
+        email: '',
+        password: '' 
+    });
+
 
     //extraer dato
 
-    const { nombre, categoria, img, title, description, meta } = elemento;
+    const { nombre } = elemento;
+
+    const { nombre, categoria, img, title, description, meta } = elemento2;
+
+    const { name, role, last_name, email, password } = elemento3;
+
 
     const onChangeElemento = e => {
         guardarElemento({
@@ -78,7 +94,7 @@ const Dashboard = () => {
              
         <Fragment>
 
-             <h1>Noticias</h1>
+        <h1>Noticias</h1>
             <button
                 type="button"
                 className="btn btn-block btn-primario"
@@ -114,6 +130,47 @@ const Dashboard = () => {
                     placeholder="Titulo"
                     name="title"
                     value={title}
+                    onChange={onChangeElemento}
+                />
+
+                    <input 
+                    type="text"
+                    className="input-text"
+                    placeholder="Description"
+                    name="description"
+                    value={description}
+                    onChange={onChangeElemento}
+                />
+                   <input 
+                    type="text"
+                    className="input-text"
+                    placeholder="fecha"
+                    name="meta"
+                    value={meta}
+                    onChange={onChangeElemento}
+                />
+                <button type="text">
+                    Actualizar
+                </button>
+            </form>
+
+             <h1>Usuarios</h1>
+            <button
+                type="button"
+                className="btn btn-block btn-primario"
+            >Nuevo usuario</button>
+
+            <form
+                className="formulario-nuevo-proyecto"
+                onSubmit={onSubmitElemento}
+            >
+               
+                <input 
+                    type="text"
+                    className="input-text"
+                    placeholder="Nombre"
+                    name="nombre"
+                    value={nombre}
                     onChange={onChangeElemento}
                 />
 

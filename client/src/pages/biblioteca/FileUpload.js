@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
 
 import Mensaje from './Mensaje';
+import AuthService from '../../services/ApiService'
 
 const FileUpload = (props) => {
     const [file, setFile] = useState();
@@ -21,25 +22,46 @@ const FileUpload = (props) => {
         const formData = new FormData();
         formData.append('file', file);
 
-        try {
-            const res = await axios.post('/upload', formData, {
+        console.log('==========================================================');
+        AuthService.upload(formData).then(
+            data => {
+                console.log('Data', data);
+                if (data.ok) {
+                    console.log('Data ok');
+
+                }else{
+                    console.log('Data mal');
+                }
+            },
+            error => {
+                //mensaje de error sacael el spiner 
+            }
+        );
+        /* try {
+            console.log('=================> 1');
+            const res = await axios.post('http://localhost:5000/api/upload', formData, {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data',
+                    "Access-Control-Allow-Origin": "*"
                 }
             });
 
             const { fileName, filePath } = res.data;
-
+            console.log('=================> 2');
             setUploadeddFile({ fileName, filePath });
-
+            console.log('=================> 3');
             setMessage('¡Archivo subido con éxito!');
+            console.log('=================> 4');
         }catch(err) {
+            console.log('=================> 5');
             if(err.response.status === 500) {
+                console.log('=================> 6');
                 setMessage('Hay bardo en el server');
             } else {
+                console.log('=================> 7');
                 setMessage(err.response.data.msg);
             }
-        }
+        } */
     }
 
     return (

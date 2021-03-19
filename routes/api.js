@@ -5,6 +5,6 @@ const apiUpload = require('./api/upload')
 
 //router.use('/otracosa', middlewares.checkToken, otraRuras)
 router.use('/users', apiUsers); 
-router.use('/apiUpload', apiUsers); 
+router.use('/apiUpload', apiUpload); 
 
 module.exports = router

@@ -3,6 +3,8 @@ const { development } = require('./config/config.json')
 
 //models
 const UsersModel = require('./models/users')
+const NoticiasModel = require('./models/noticias')
+const BibliotecasModel = require('./models/bibliotecas')
 
 // Option 2: Passing parameters separately (other dialects)
 const sequelize = new Sequelize(development.database, development.username, development.password, {
@@ -12,6 +14,8 @@ const sequelize = new Sequelize(development.database, development.username, deve
 });
 
 const User = UsersModel(sequelize, Sequelize)
+const Noticias = NoticiasModel(sequelize, Sequelize)
+const Bibliotecas = BibliotecasModel(sequelize, Sequelize)
 
 sequelize.sync({ force: false })
     .then(() => {
@@ -19,7 +23,9 @@ sequelize.sync({ force: false })
     })
 
 module.exports = {
-    User
+    User,
+    Noticias,
+    Bibliotecas
 }
 
 // npx sequelize-cli db:migrate --config "config/config.json" --env "development"

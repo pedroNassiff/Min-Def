@@ -7,6 +7,7 @@ import './css/ui.css';
 import axios from 'axios';
 import Mensaje from '../../pages/biblioteca/Mensaje';
 import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
+import AuthService from '../../services/ApiService'
 
 const Dashboard = () => {
     const [file, setFile] = useState();
@@ -24,25 +25,19 @@ const Dashboard = () => {
         const formData = new FormData();
         formData.append('file', file);
 
-        try {
-            const res = await axios.post('/api/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+        AuthService.upload(formData).then(
+            data => {
+                if (data.ok) {
+                    console.log('Data ok');
+
+                }else{
+                    console.log('Data mal');
                 }
-            });
-
-            const { fileName, filePath } = res.data;
-
-            setUploadeddFile({ fileName, filePath });
-
-            setMessage('¡Archivo subido con éxito!');
-        }catch(err) {
-            if(err.response.status === 500) {
-                setMessage('Hay bardo en el server');
-            } else {
-                setMessage(err.response.data.msg);
+            },
+            error => {
+                //mensaje de error sacael el spiner 
             }
-        }
+        );
     }
     //state
     const [elemento, guardarElemento] = useState({

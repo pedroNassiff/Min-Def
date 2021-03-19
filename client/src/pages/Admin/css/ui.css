@@ -1,0 +1,12 @@
+.container{
+    padding: 6%;
+}
+
+@media(max-width:767px){
+    .container{
+        padding: 30%;
+    }
+    .textInput{
+        font-size: 1.3rem;
+    }
+}

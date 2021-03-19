@@ -22,10 +22,8 @@ const FileUpload = (props) => {
         const formData = new FormData();
         formData.append('file', file);
 
-        console.log('==========================================================');
         AuthService.upload(formData).then(
             data => {
-                console.log('Data', data);
                 if (data.ok) {
                     console.log('Data ok');
 
@@ -69,8 +67,8 @@ const FileUpload = (props) => {
             {message ? <Mensaje msg={message} /> : null }
             <Form onSubmit={onSubmit}>
                 <FormGroup>
-                    <Label for="exampleFile">Archivo</Label>
-                        <Input type="file" name="file" id="exampleFile" onChange={onChange} />
+                    {/* <Label for="exampleFile">Archivo</Label> */}
+                        <Input type="file" name="file" id="exampleFile" onChange={onChange}  className="textInput"/>
                             <label className="custom-file-label" htmlFor='customFile'>
                                
                             </label>

@@ -7,7 +7,6 @@ import './css/ui.css';
 import axios from 'axios';
 import Mensaje from '../../pages/biblioteca/Mensaje';
 import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
-import AuthService from '../../services/ApiService'
 
 const Dashboard = () => {
     const [file, setFile] = useState();
@@ -25,27 +24,33 @@ const Dashboard = () => {
         const formData = new FormData();
         formData.append('file', file);
 
-        AuthService.upload(formData).then(
-            data => {
-                if (data.ok) {
-                    console.log('Data ok');
-
-                }else{
-                    console.log('Data mal');
+        try {
+            const res = await axios.post('/api/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
                 }
-            },
-            error => {
-                //mensaje de error sacael el spiner 
+            });
+
+            const { fileName, filePath } = res.data;
+
+            setUploadeddFile({ fileName, filePath });
+
+            setMessage('¡Archivo subido con éxito!');
+        }catch(err) {
+            if(err.response.status === 500) {
+                setMessage('Hay bardo en el server');
+            } else {
+                setMessage(err.response.data.msg);
             }
-        );
+        }
     }
     //state
     const [elemento, guardarElemento] = useState({
-        nombre: ''
+        nombre: '',
+        categoria: '', 
      
     });
     const [noticias, guardarNoticias] = useState({
-        categoria: '', 
         img: '', 
         title: '', 
         description: '', 
@@ -164,15 +169,15 @@ const Dashboard = () => {
                     type="text"
                     className="input-text"
                     placeholder="Nombre"
-                    name="nombre"
-                    value={nombre}
+                    name="name"
+                    value={name}
                     onChange={onChangeElemento}
                 />
 
                     <input 
                     type="text"
                     className="input-text"
-                    placeholder="Description"
+                    placeholder="Rol"
                     name="description"
                     value={description}
                     onChange={onChangeElemento}

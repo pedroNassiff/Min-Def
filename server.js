@@ -9,7 +9,7 @@ app.use(fileUpload());
 
 //upload endpoint
 
-app.post('/upload', (req, res) => {
+app.post('/apiUpload', (req, res) => {
     if(req.files === null) {
         return res.status(400).json({msg: 'Archivo no subido'});
     }

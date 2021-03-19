@@ -12,7 +12,7 @@ router.use(function(req, res, next) {
 
 //cargar archivos solo si esta logeado 
 router.post('/upload',[
-	checkToken
+	
 ], async (req, res) => {
 	
 	if(req.files === null) {

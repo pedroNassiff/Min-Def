@@ -7,6 +7,7 @@ import Contact from 'pages/Contact'
 
 import biblioteca from 'pages/biblioteca'
 
+import Dashboard from 'pages/Admin/dashboard'
 
 import RequisitosPenales from 'componentes/ui/RequisitosPenales'
 import RequisitosCiviles from 'componentes/ui/RequisitosCiviles'
@@ -43,6 +44,11 @@ const routes = [
             {
                 path: "/",
                 component: Home,
+                exact: true
+            },
+            {
+                path: "/dashboard",
+                component: Dashboard,
                 exact: true
             },
             {

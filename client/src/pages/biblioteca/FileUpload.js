@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
 
 import Mensaje from './Mensaje';
+import '../Admin/css/ui.css';
 
 const FileUpload = (props) => {
     const [file, setFile] = useState();
@@ -22,7 +23,7 @@ const FileUpload = (props) => {
         formData.append('file', file);
 
         try {
-            const res = await axios.post('/upload', formData, {
+            const res = await axios.post('/api/upload', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
@@ -47,8 +48,8 @@ const FileUpload = (props) => {
             {message ? <Mensaje msg={message} /> : null }
             <Form onSubmit={onSubmit}>
                 <FormGroup>
-                    <Label for="exampleFile">Archivo</Label>
-                        <Input type="file" name="file" id="exampleFile" onChange={onChange} />
+                    {/* <Label for="exampleFile">Archivo</Label> */}
+                        <Input type="file" name="file" id="exampleFile" onChange={onChange}  className="textInput"/>
                             <label className="custom-file-label" htmlFor='customFile'>
                                
                             </label>

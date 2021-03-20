@@ -9,8 +9,21 @@ import Sidebar from './Sidebar';
 import './css/ui.css';
 
 import Mensaje from '../../pages/biblioteca/Mensaje';
-import { Form, FormGroup, Input, Row, Col } from 'reactstrap';
 import AuthService from "services/AuthService";
+
+import { Form, FormGroup, Input, Row, Col, Container } from 'reactstrap';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            margin: theme.spacing(1),
+
+        },
+    },
+}));
+
 
 const Dashboard = () => {
     const [file, setFile] = useState();
@@ -18,13 +31,14 @@ const Dashboard = () => {
     const [uploadedFile, setUploadeddFile] = useState({});
     const [message, setMessage] = useState('');
     const history = useHistory();
+    const classes = useStyles();
 
     const onChange = e => {
         setFile(e.target.files[0]);
         setFilename(e.target.files[0].name);
     };
 
-    
+
     //state
     const [elemento, guardarElemento] = useState({
         nombre: '',
@@ -113,7 +127,7 @@ const Dashboard = () => {
 
         AuthService.register(usuarios).then(
             (data) => {
-                if(data.ok){
+                if (data.ok) {
                     history.push({
                         pathname: '/',
                         reload: true
@@ -127,7 +141,7 @@ const Dashboard = () => {
 
 
     }
-    
+
 
     return (
 
@@ -135,66 +149,78 @@ const Dashboard = () => {
 
 
             <Fragment>
+                <Container className="py-5 mt-5">
+                    <h1>Noticias</h1>
 
-                <h1>Noticias</h1>
-                <button
-                    type="button"
-                    className="btn btn-block btn-primario"
-                >Nuevo Archivo</button>
-                <Row>
-                    <Col>
-                    </Col>
-                </Row>
-                <form
-                    className="formulario-nuevo-proyecto"
-                    onSubmit={onSubmitElemento}
-                >
-                    {message ? <Mensaje msg={message} /> : null}
-                    <Form onSubmit={onSubmit}>
-                        <FormGroup>
-                            {/* <Label for="exampleFile">Archivo</Label> */}
-                            <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
-                            <label className="custom-file-label" htmlFor='customFile'>
+                    <Row className="justify-content-center rowFormCenter">
+                        <Col>
+                        <Form
+                        // className="formulario-nuevo-proyecto"
+                        onSubmit={onSubmit}
+                        // className={classes.root}
+                        noValidate autoComplete="off"
+                    >
+                        {message ? <Mensaje msg={message} /> : null}
+                            <FormGroup>
+                                {/* <Label for="exampleFile">Archivo</Label> */}
+                                {/* <label className="custom-file-label" htmlFor='customFile'>
 
-                            </label>
-                            <input
-                                type="text"
-                                className="input-text"
-                                placeholder="Titulo"
-                                name="title"
-                                value={title}
-                                onChange={onChangeElemento}
-                            />
+                                </label> */}
+                                <Row className="justify-content-center contentformInfo">
+                                    <Col>
+                                        <TextField
+                                            type="text"
+                                            className="input-text espacioForm"
+                                            // placeholder="Titulo"
+                                            name="title"
+                                            value={title}
+                                            onChange={onChangeElemento}
+                                            id="standard-basic" label="Titulo"
+                                        />
 
-                            <input
-                                type="text"
-                                className="input-text"
-                                placeholder="Description"
-                                name="description"
-                                value={description}
-                                onChange={onChangeElemento}
-                            />
-                            <input
-                                type="text"
-                                className="input-text"
-                                placeholder="fecha"
-                                name="meta"
-                                value={meta}
-                                onChange={onChangeElemento}
-                            />
-                            <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4 botonCheto" />
-                            {uploadedFile ? (
-                                <Row className="mt-5">
-                                    <Col className="m-auto">
-                                        <h3 className="text-center">{uploadedFile.fileName}</h3>
-                                        <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+                                        <TextField
+                                            type="text"
+                                            className="input-text espacioForm"
+                                            placeholder="Description"
+                                            name="description"
+                                            value={description}
+                                            onChange={onChangeElemento}
+                                            id="standard-basic" label="Description"
+
+                                        />
+                                        <TextField
+                                            type="text espacioForm"
+                                            className="input-text"
+                                            placeholder="fecha"
+                                            name="meta"
+                                            value={meta}
+                                            onChange={onChangeElemento}
+                                            id="standard-basic" label="fecha"
+                                        />
+
                                     </Col>
                                 </Row>
-                            ) : null}
+                                <Row>
+                                    <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
 
-                        </FormGroup>
-                    </Form>               
-                </form>
+                                </Row>
+                                <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4 botonCheto" />
+                                {uploadedFile ? (
+                                    <Row className="mt-5">
+                                        <Col className="m-auto">
+                                            <h3 className="text-center">{uploadedFile.fileName}</h3>
+                                            <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+                                        </Col>
+                                    </Row>
+                                ) : null}
+
+                            </FormGroup>
+                    </Form>
+                        </Col>
+                    </Row>
+                    
+                </Container>
+
 
                 <h1>Usuarios</h1>
                 <button

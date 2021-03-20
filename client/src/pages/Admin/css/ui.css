@@ -2,6 +2,20 @@
     padding: 6%;
 }
 
+.rowFormCenter{
+    text-align: center;
+    padding: 2em;
+}
+
+.contentformInfo{
+    margin: 2%;
+    margin-top: -2%;
+}
+
+.espacioForm{
+    margin: 10%!important;
+}
+
 .botonCheto{
     border: 2px solid #00a0dc;
     border-radius: 50px;

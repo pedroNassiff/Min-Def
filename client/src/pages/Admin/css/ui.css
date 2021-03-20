@@ -2,6 +2,20 @@
     padding: 6%;
 }
 
+.botonCheto{
+    border: 2px solid #00a0dc;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 8px 20px 7px;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    background-color: #00a0dc;
+    cursor: pointer;
+}
+
 @media(max-width:767px){
     .container{
         padding: 30%;

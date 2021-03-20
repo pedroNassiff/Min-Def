@@ -1,12 +1,17 @@
 import React, { Fragment, useState } from 'react';
+import axios from 'axios';
+
+import FileUpload from '../../pages/biblioteca/FileUpload';
 
 // import AdminBiblioteca from '../../pages/biblioteca/AdminBiblioteca';
-import FileUpload from '../../pages/biblioteca/FileUpload';
 import Sidebar from './Sidebar';
 import './css/ui.css';
-import axios from 'axios';
+
 import Mensaje from '../../pages/biblioteca/Mensaje';
-import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
+
+import { Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 const Dashboard = () => {
     const [file, setFile] = useState();
@@ -47,7 +52,14 @@ const Dashboard = () => {
     //state
     const [elemento, guardarElemento] = useState({
         nombre: '',
-        categoria: '', 
+        categoria: [
+            {asd: 'reglamentos'},
+            {2: 'resoluciones'},
+            { 3: 'leyes'},
+            {4: 'legislaciones'},
+            {5: 'secretariaCivil'},
+            { 6: 'secretariaPenal'},
+        ] , 
      
     });
     const [noticias, guardarNoticias] = useState({
@@ -149,7 +161,7 @@ const Dashboard = () => {
                     value={meta}
                     onChange={onChangeElemento}
                 />
-                <button type="text">
+                <button className="botonCheto" type="text">
                     Actualizar
                 </button>
             </form>
@@ -206,7 +218,7 @@ const Dashboard = () => {
                     value={password}
                     onChange={onChangeElemento}
                 />
-                <button type="text">
+                <button className="botonCheto" type="text">
                     Actualizar
                 </button>
             </form>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import 'componentes/auth/Login.scss'
-import { notification } from 'antd'
+import { useHistory } from "react-router-dom";
 
-import ApiRegister from 'services/ApiService'
+import AuthService from 'services/AuthService'
 
-const NuevaCuenta = () => {
-
+const NuevaCuenta = (props) => {
+    const history = useHistory();
     //state para iniciar sesión
 
     const [usuario, guardarUsuario] = useState({
@@ -32,18 +32,21 @@ const NuevaCuenta = () => {
     const register = async e => {
         e.preventDefault();
 
-        const result = await ApiRegister.post("auth/signup",usuario)
-
-        if (result.message) {
-            notification["error"]({
-                message: result.message
-            })
-        } else {
-            notification["success"]({
-                message: "Creado Correcto."
-            })
-            window.location.href = "/"
-        }
+        AuthService.register(usuario).then(
+            (data) => {
+                //vulve a donde estaba antes del logeo
+                console.log(data);
+                if(data.ok){
+                    history.push({
+                        pathname: '/',
+                        reload: true
+                    });
+                }
+            },
+            error => {
+                //mensaje de error
+            }
+        );
     }
 
     return (

@@ -24,6 +24,7 @@ const FileUpload = (props) => {
 
         AuthService.upload(formData).then(
             data => {
+                console.log(data);
                 if (data.ok) {
                     console.log('Data ok');
 

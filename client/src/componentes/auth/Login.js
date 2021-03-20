@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import 'componentes/auth/Login.scss'
-import Api from 'services/AuthService'
-import { notification } from 'antd'
+import AuthService from 'services/AuthService'
+import { useHistory } from "react-router-dom";
 
-const Login = () => {
-
+const Login = (props) => {
+    const history = useHistory();
     const [usuario, guardarUsuario] = useState({
         email: '',
         password: ''
@@ -22,17 +22,23 @@ const Login = () => {
     //Cuando el usuario quieren logearse
     const login = async e => {
         e.preventDefault()
-        const result = await Api.login(usuario.email, usuario.password)
-        if (result.message) {
-            notification["error"]({
-                message: result.message
-            })
-        } else {
-            notification["success"]({
-                message: "Login Correcto."
-            })
-            window.location.href = "/"
-        }
+        AuthService.login(email, password).then(
+            data => {
+                if (data.ok) {
+                    history.push({
+                        pathname:  props.location.customroute,
+                        reload: true
+                    });
+
+                }else{
+                    //no pudo logear ya se por clave erronea o usuario
+                }
+               
+            },
+            error => {
+                //mensaje de error sacael el spiner 
+            }
+        );
     }
 
     return (

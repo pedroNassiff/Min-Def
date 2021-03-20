@@ -322,7 +322,7 @@ export default function MenuTop() {
     { name: "BIBLIOTECA", link: "/biblioteca", activeIndex: 4 },
     { name: "SALUD MENTAL", link: "/saludMental", activeIndex: 5 },
     { name: "CONTACTO", link: "/contact", activeIndex: 6 },
-    { name: "INGRESAR", link: "/contact", activeIndex: 6 },
+    { name: "INGRESAR", link: "/login", activeIndex: 6 },
   ];
 
   useEffect(() => {

@@ -1,12 +1,19 @@
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
-import { useHistory } from "react-router-dom";
+
+import FileUpload from '../../pages/biblioteca/FileUpload';
+
+// import AdminBiblioteca from '../../pages/biblioteca/AdminBiblioteca';
+import Sidebar from './Sidebar';
 import './css/ui.css';
+
 import Mensaje from '../../pages/biblioteca/Mensaje';
-import { Form, FormGroup, Input, Row, Col } from 'reactstrap';
+
+import { Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 const Dashboard = () => {
-    const history = useHistory();
     const [file, setFile] = useState();
     const [filename, setFilename] = useState('Cargar archivo');
     const [uploadedFile, setUploadeddFile] = useState({});
@@ -17,31 +24,7 @@ const Dashboard = () => {
         setFilename(e.target.files[0].name);
     };
 
-    const onSubmit = async e => {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append('file', file);
-
-        try {
-            const res = await axios.post('/api/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-
-            const { fileName, filePath } = res.data;
-
-            setUploadeddFile({ fileName, filePath });
-
-            setMessage('¡Archivo subido con éxito!');
-        } catch (err) {
-            if (err.response.status === 500) {
-                setMessage('Hay bardo en el server');
-            } else {
-                setMessage(err.response.data.msg);
-            }
-        }
-    }
+    
     //state
     const [elemento, guardarElemento] = useState({
         nombre: '',
@@ -98,24 +81,39 @@ const Dashboard = () => {
 
 
     }
-    const onSubmitUsuarios = e => {
-        e.preventDefault();
 
-        AuthService.register(inputs).then(
-            (data) => {
-                if(data.ok){
-                    history.push({
-                        pathname: '/',
-                        reload: true
-                    });
+    const onSubmit = async e => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const res = await axios.post('/api/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
                 }
-            },
-            error => {
-                //mensaje de error
+            });
+
+            const { fileName, filePath } = res.data;
+
+            setUploadeddFile({ fileName, filePath });
+
+            setMessage('¡Archivo subido con éxito!');
+        } catch (err) {
+            if (err.response.status === 500) {
+                setMessage('Hay bardo en el server');
+            } else {
+                setMessage(err.response.data.msg);
             }
-        );
+        }
+    }
+
+    const onSubmitUsuarios = e => {
+        console.log('cargar usuario');
+
 
     }
+    
 
     return (
 

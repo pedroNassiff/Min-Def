@@ -1,19 +1,12 @@
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
-
-import FileUpload from '../../pages/biblioteca/FileUpload';
-
-// import AdminBiblioteca from '../../pages/biblioteca/AdminBiblioteca';
-import Sidebar from './Sidebar';
+import { useHistory } from "react-router-dom";
 import './css/ui.css';
-
 import Mensaje from '../../pages/biblioteca/Mensaje';
-
-import { Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import { Form, FormGroup, Input, Row, Col } from 'reactstrap';
 
 const Dashboard = () => {
+    const history = useHistory();
     const [file, setFile] = useState();
     const [filename, setFilename] = useState('Cargar archivo');
     const [uploadedFile, setUploadeddFile] = useState({});
@@ -106,8 +99,21 @@ const Dashboard = () => {
 
     }
     const onSubmitUsuarios = e => {
-        console.log('cargar usuario');
+        e.preventDefault();
 
+        AuthService.register(inputs).then(
+            (data) => {
+                if(data.ok){
+                    history.push({
+                        pathname: '/',
+                        reload: true
+                    });
+                }
+            },
+            error => {
+                //mensaje de error
+            }
+        );
 
     }
 

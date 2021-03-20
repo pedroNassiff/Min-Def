@@ -107,7 +107,21 @@ const Dashboard = () => {
     }
 
     const onSubmitUsuarios = e => {
-        console.log('cargar usuario');
+        e.preventDefault();
+
+        AuthService.register(usuarios).then(
+            (data) => {
+                if(data.ok){
+                    history.push({
+                        pathname: '/',
+                        reload: true
+                    });
+                }
+            },
+            error => {
+                //mensaje de error
+            }
+        );
 
 
     }

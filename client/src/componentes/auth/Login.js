@@ -26,12 +26,17 @@ const Login = (props) => {
             data => {
                 if (data.ok) {
                     history.push({
-                        pathname:  props.location.customroute,
+                        pathname: '/',
                         reload: true
                     });
 
                 }else{
+                    console.log('error ==>', data);
                     //no pudo logear ya se por clave erronea o usuario
+                    /*  
+                        error: "Error en contraseña"
+                        ok: false 
+                    */
                 }
                
             },

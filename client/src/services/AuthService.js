@@ -17,12 +17,12 @@ class AuthService {
           headers: headers
       }).then(response => {
         if (response.data.ok) {
-          localStorage.removeItem("user");
-          localStorage.removeItem("userfecha");
-          localStorage.setItem("user", JSON.stringify(response.data));
-          localStorage.setItem("userfecha", new Date());
+          
+            localStorage.removeItem("user");
+            localStorage.removeItem("userfecha");
+            localStorage.setItem("user", JSON.stringify(response.data));
+            localStorage.setItem("userfecha", new Date());
         }
-
         return response.data;
       })
 

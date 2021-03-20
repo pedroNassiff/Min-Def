@@ -10,6 +10,7 @@ import './css/ui.css';
 
 import Mensaje from '../../pages/biblioteca/Mensaje';
 import AuthService from "services/AuthService";
+import ApiService from "services/ApiService";
 
 import { Form, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 import { makeStyles } from '@material-ui/core/styles';
@@ -74,6 +75,21 @@ const Dashboard = () => {
 
     const onSubmitNoticas = e => {
         e.preventDefault();
+       
+        ApiService.uploadNoticia(noticias).then(
+            (data) => {
+                if (data.ok) {
+                    history.push({
+                        pathname: '/',
+                        reload: true
+                    });
+                }
+            },
+            error => {
+                //mensaje de error
+            }
+        );
+
     }
 
     const onChangeNoticias = e => {

@@ -1,13 +1,17 @@
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
-import { useHistory } from "react-router-dom";
+
+import FileUpload from '../../pages/biblioteca/FileUpload';
+
+// import AdminBiblioteca from '../../pages/biblioteca/AdminBiblioteca';
+import Sidebar from './Sidebar';
 import './css/ui.css';
+
 import Mensaje from '../../pages/biblioteca/Mensaje';
 import { Form, FormGroup, Input, Row, Col } from 'reactstrap';
 import AuthService from "services/AuthService";
 
 const Dashboard = () => {
-    const history = useHistory();
     const [file, setFile] = useState();
     const [filename, setFilename] = useState('Cargar archivo');
     const [uploadedFile, setUploadeddFile] = useState({});
@@ -18,31 +22,7 @@ const Dashboard = () => {
         setFilename(e.target.files[0].name);
     };
 
-    const onSubmit = async e => {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append('file', file);
-
-        try {
-            const res = await axios.post('/api/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
-                }
-            });
-
-            const { fileName, filePath } = res.data;
-
-            setUploadeddFile({ fileName, filePath });
-
-            setMessage('¡Archivo subido con éxito!');
-        } catch (err) {
-            if (err.response.status === 500) {
-                setMessage('Hay bardo en el server');
-            } else {
-                setMessage(err.response.data.msg);
-            }
-        }
-    }
+    
     //state
     const [elemento, guardarElemento] = useState({
         nombre: '',
@@ -99,6 +79,33 @@ const Dashboard = () => {
 
 
     }
+
+    const onSubmit = async e => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('file', file);
+
+        try {
+            const res = await axios.post('/api/upload', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data'
+                }
+            });
+
+            const { fileName, filePath } = res.data;
+
+            setUploadeddFile({ fileName, filePath });
+
+            setMessage('¡Archivo subido con éxito!');
+        } catch (err) {
+            if (err.response.status === 500) {
+                setMessage('Hay bardo en el server');
+            } else {
+                setMessage(err.response.data.msg);
+            }
+        }
+    }
+
     const onSubmitUsuarios = e => {
         e.preventDefault();
 
@@ -116,7 +123,9 @@ const Dashboard = () => {
             }
         );
 
+
     }
+    
 
     return (
 

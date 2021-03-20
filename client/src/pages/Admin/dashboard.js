@@ -23,7 +23,7 @@ const Dashboard = () => {
         setFile(e.target.files[0]);
         setFilename(e.target.files[0].name);
     };
-   
+
     const onSubmit = async e => {
         e.preventDefault();
         const formData = new FormData();
@@ -41,8 +41,8 @@ const Dashboard = () => {
             setUploadeddFile({ fileName, filePath });
 
             setMessage('¡Archivo subido con éxito!');
-        }catch(err) {
-            if(err.response.status === 500) {
+        } catch (err) {
+            if (err.response.status === 500) {
                 setMessage('Hay bardo en el server');
             } else {
                 setMessage(err.response.data.msg);
@@ -53,19 +53,19 @@ const Dashboard = () => {
     const [elemento, guardarElemento] = useState({
         nombre: '',
         categoria: [
-            {asd: 'reglamentos'},
-            {2: 'resoluciones'},
-            { 3: 'leyes'},
-            {4: 'legislaciones'},
-            {5: 'secretariaCivil'},
-            { 6: 'secretariaPenal'},
-        ] , 
-     
+            { asd: 'reglamentos' },
+            { 2: 'resoluciones' },
+            { 3: 'leyes' },
+            { 4: 'legislaciones' },
+            { 5: 'secretariaCivil' },
+            { 6: 'secretariaPenal' },
+        ],
+
     });
     const [noticias, guardarNoticias] = useState({
-        img: '', 
-        title: '', 
-        description: '', 
+        img: '',
+        title: '',
+        description: '',
         meta: ''
     });
     const [usuarios, guardarUsuarios] = useState({
@@ -73,7 +73,7 @@ const Dashboard = () => {
         role: '',
         last_name: '',
         email: '',
-        password: '' 
+        password: ''
     });
 
 
@@ -81,7 +81,7 @@ const Dashboard = () => {
 
     const { nombre, categoria, } = elemento;
 
-    const {  img, title, description, meta } = noticias;
+    const { img, title, description, meta } = noticias;
 
     const { name, role, last_name, email, password } = usuarios;
 
@@ -89,197 +89,201 @@ const Dashboard = () => {
     const onChangeElemento = e => {
         guardarElemento({
             ...elemento,
-            [e.target.name] : e.target.value
+            [e.target.name]: e.target.value
+        })
+    }
+
+    const onChangeUsuarios = e => {
+        guardarUsuarios({
+            ...usuarios,
+            [e.target.name]: e.target.value
         })
     }
 
     const onSubmitElemento = e => {
-            e.preventDefault();
+        e.preventDefault();
 
 
     }
 
-    return ( 
+    return (
 
         <div className="container">
-         
-             
-        <Fragment>
 
-        <h1>Noticias</h1>
-            <button
-                type="button"
-                className="btn btn-block btn-primario"
-            >Nuevo Archivo</button>
-            <Row>
-                <Col>
-                </Col>
-            </Row>
-            <form
-                className="formulario-nuevo-proyecto"
-                onSubmit={onSubmitElemento}
-            >
-                {message ? <Mensaje msg={message} /> : null }
-                <Form onSubmit={onSubmit}>
-                    <FormGroup>
-                        {/* <Label for="exampleFile">Archivo</Label> */}
-                            <Input type="file" name="file" id="exampleFile" onChange={onChange}  className="textInput"/>
-                                <label className="custom-file-label" htmlFor='customFile'>
-                                
-                                </label>
-                                <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4"/>
-                                {uploadedFile ? (
-                                    <Row className="mt-5">
-                                        <Col className="m-auto">
-                                            <h3 className="text-center">{uploadedFile.fileName}</h3>
-                                            <file style={{width: '100%'}} src={uploadedFile.filePath} alt='' />
-                                        </Col>
-                                    </Row>
-                                ) : null}
 
-                    </FormGroup>
-            </Form>
-                <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Titulo"
-                    name="title"
-                    value={title}
-                    onChange={onChangeElemento}
-                />
+            <Fragment>
 
-                    <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Description"
-                    name="description"
-                    value={description}
-                    onChange={onChangeElemento}
-                />
-                   <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="fecha"
-                    name="meta"
-                    value={meta}
-                    onChange={onChangeElemento}
-                />
-                <button className="botonCheto" type="text">
-                    Actualizar
+                <h1>Noticias</h1>
+                <button
+                    type="button"
+                    className="btn btn-block btn-primario"
+                >Nuevo Archivo</button>
+                <Row>
+                    <Col>
+                    </Col>
+                </Row>
+                <form
+                    className="formulario-nuevo-proyecto"
+                    // onSubmit={onSubmitElemento}
+                >
+                    {message ? <Mensaje msg={message} /> : null}
+                    <Form onSubmit={onSubmit}>
+                        <FormGroup>
+                            {/* <Label for="exampleFile">Archivo</Label> */}
+                            <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
+                            <label className="custom-file-label" htmlFor='customFile'>
+
+                            </label>
+                            <input
+                                type="text"
+                                className="input-text"
+                                placeholder="Titulo"
+                                name="title"
+                                value={title}
+                                onChange={onChangeElemento}
+                            />
+
+                            <input
+                                type="text"
+                                className="input-text"
+                                placeholder="Description"
+                                name="description"
+                                value={description}
+                                onChange={onChangeElemento}
+                            />
+                            <input
+                                type="text"
+                                className="input-text"
+                                placeholder="fecha"
+                                name="meta"
+                                value={meta}
+                                onChange={onChangeElemento}
+                            />
+                            <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4 botonCheto" />
+                            {uploadedFile ? (
+                                <Row className="mt-5">
+                                    <Col className="m-auto">
+                                        <h3 className="text-center">{uploadedFile.fileName}</h3>
+                                        <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+                                    </Col>
+                                </Row>
+                            ) : null}
+
+                        </FormGroup>
+                    </Form>               
+                </form>
+
+                <h1>Usuarios</h1>
+                <button
+                    type="button"
+                    className="btn btn-block btn-primario"
+                >Nuevo usuario</button>
+
+                <form
+                    className="formulario-nuevo-proyecto"
+                    onSubmit={onSubmitElemento}
+                >
+
+                    <input
+                        type="text"
+                        className="input-text"
+                        placeholder="Nombre"
+                        name="name"
+                        value={name}
+                        onChange={onChangeUsuarios}
+                    />
+
+                    <input
+                        type="text"
+                        className="input-text"
+                        placeholder="Rol"
+                        name="role"
+                        value={role}
+                        onChange={onChangeUsuarios}
+                    />
+                    <input
+                        type="text"
+                        className="input-text"
+                        placeholder="Apellido"
+                        name="last_name"
+                        value={last_name}
+                        onChange={onChangeUsuarios}
+                    />
+                    <input
+                        type="text"
+                        className="input-text"
+                        placeholder="Email"
+                        name="email"
+                        value={email}
+                        onChange={onChangeUsuarios}
+                    />
+                    <input
+                        type="text"
+                        className="input-text"
+                        placeholder="Password"
+                        name="password"
+                        value={password}
+                        onChange={onChangeUsuarios}
+                    />
+                    <button className="botonCheto" type="text">
+                        Actualizar
                 </button>
-            </form>
+                </form>
+                <h1>Biblioteca</h1>
+                <button
+                    type="button"
+                    className="btn btn-block btn-primario"
+                >Nuevo Archivo</button>
 
-             <h1>Usuarios</h1>
-            <button
-                type="button"
-                className="btn btn-block btn-primario"
-            >Nuevo usuario</button>
+                <form
+                    className="formulario-nuevo-proyecto"
+                    onSubmit={onSubmitElemento}
+                >
+                    <input
+                        type="text"
+                        className="input-text"
+                        placeholder="Nombre del archivo"
+                        name="nombre"
+                        value={nombre}
+                        onChange={onChangeElemento}
+                    />
+                    <input
+                        type="text"
+                        className="input-text"
+                        placeholder="Categoria"
+                        name="categoria"
+                        value={categoria}
+                        onChange={onChangeElemento}
+                    />
+                    {message ? <Mensaje msg={message} /> : null}
+                    <Form onSubmit={onSubmit}>
+                        <FormGroup>
+                            {/* <Label for="exampleFile">Archivo</Label> */}
+                            <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
+                            <label className="custom-file-label" htmlFor='customFile'>
 
-            <form
-                className="formulario-nuevo-proyecto"
-                onSubmit={onSubmitElemento}
-            >
-               
-                <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Nombre"
-                    name="name"
-                    value={name}
-                    onChange={onChangeElemento}
-                />
+                            </label>
+                            <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4" />
+                            {uploadedFile ? (
+                                <Row className="mt-5">
+                                    <Col className="m-auto">
+                                        <h3 className="text-center">{uploadedFile.fileName}</h3>
+                                        <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+                                    </Col>
+                                </Row>
+                            ) : null}
 
-                    <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Rol"
-                    name="role"
-                    value={role}
-                    onChange={onChangeElemento}
-                />
-                   <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Apellido"
-                    name="last_name"
-                    value={last_name}
-                    onChange={onChangeElemento}
-                />
-                      <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Email"
-                    name="email"
-                    value={email}
-                    onChange={onChangeElemento}
-                />
-                      <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Password"
-                    name="password"
-                    value={password}
-                    onChange={onChangeElemento}
-                />
-                <button className="botonCheto" type="text">
-                    Actualizar
-                </button>
-            </form>
-            <h1>Biblioteca</h1>
-            <button
-                type="button"
-                className="btn btn-block btn-primario"
-            >Nuevo Archivo</button>
+                        </FormGroup>
+                    </Form>
+                </form>
 
-            <form
-                className="formulario-nuevo-proyecto"
-                onSubmit={onSubmitElemento}
-            >
-                <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Nombre del archivo"
-                    name="nombre"
-                    value={nombre}
-                    onChange={onChangeElemento}
-                />
-                    <input 
-                    type="text"
-                    className="input-text"
-                    placeholder="Categoria"
-                    name="categoria"
-                    value={categoria}
-                    onChange={onChangeElemento}
-                />
-                {message ? <Mensaje msg={message} /> : null }
-                <Form onSubmit={onSubmit}>
-                    <FormGroup>
-                        {/* <Label for="exampleFile">Archivo</Label> */}
-                            <Input type="file" name="file" id="exampleFile" onChange={onChange}  className="textInput"/>
-                                <label className="custom-file-label" htmlFor='customFile'>
-                                
-                                </label>
-                                <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4"/>
-                                {uploadedFile ? (
-                                    <Row className="mt-5">
-                                        <Col className="m-auto">
-                                            <h3 className="text-center">{uploadedFile.fileName}</h3>
-                                            <file style={{width: '100%'}} src={uploadedFile.filePath} alt='' />
-                                        </Col>
-                                    </Row>
-                                ) : null}
 
-                    </FormGroup>
-            </Form>
-            </form>
-            
 
-           
-            
-        </Fragment>
+
+            </Fragment>
         </div>
 
-     );
+    );
 }
- 
+
 export default Dashboard;

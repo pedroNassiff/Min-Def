@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react';
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 import FileUpload from '../../pages/biblioteca/FileUpload';
 
@@ -16,6 +17,7 @@ const Dashboard = () => {
     const [filename, setFilename] = useState('Cargar archivo');
     const [uploadedFile, setUploadeddFile] = useState({});
     const [message, setMessage] = useState('');
+    const history = useHistory();
 
     const onChange = e => {
         setFile(e.target.files[0]);

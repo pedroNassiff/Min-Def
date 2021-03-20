@@ -8,15 +8,8 @@ import Sidebar from './Sidebar';
 import './css/ui.css';
 
 import Mensaje from '../../pages/biblioteca/Mensaje';
-<<<<<<< HEAD
-
-import { Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-=======
 import { Form, FormGroup, Input, Row, Col } from 'reactstrap';
 import AuthService from "services/AuthService";
->>>>>>> 2c6190f7756c4f6f6fa51affc50bc06ccce17737
 
 const Dashboard = () => {
     const [file, setFile] = useState();

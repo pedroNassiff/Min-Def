@@ -17,12 +17,12 @@ class AuthService {
           headers: headers
       }).then(response => {
         if (response.data.ok) {
-          localStorage.removeItem("user");
-          localStorage.removeItem("userfecha");
-          localStorage.setItem("user", JSON.stringify(response.data));
-          localStorage.setItem("userfecha", new Date());
+          
+            localStorage.removeItem("user");
+            localStorage.removeItem("userfecha");
+            localStorage.setItem("user", JSON.stringify(response.data));
+            localStorage.setItem("userfecha", new Date());
         }
-
         return response.data;
       })
 
@@ -70,14 +70,14 @@ class AuthService {
 
       return axios.post(API_URL + "users/register", {
         'email': input.email,
-        'name': input.username,
-        'last_name': input.username,
+        'name': input.name,
+        'last_name': input.last_name,
         'role': input.role,
         'password': input.password
       }, {
         headers: headers
      }).then(response => {
-
+        console.log('=============================');
         if (response.data.ok) {
           localStorage.removeItem("user");
           localStorage.removeItem("userfecha");

@@ -105,6 +105,11 @@ const Dashboard = () => {
 
 
     }
+    const onSubmitUsuarios = e => {
+        console.log('cargar usuario');
+
+
+    }
 
     return (
 
@@ -124,7 +129,7 @@ const Dashboard = () => {
                 </Row>
                 <form
                     className="formulario-nuevo-proyecto"
-                    // onSubmit={onSubmitElemento}
+                    onSubmit={onSubmitElemento}
                 >
                     {message ? <Mensaje msg={message} /> : null}
                     <Form onSubmit={onSubmit}>
@@ -181,7 +186,7 @@ const Dashboard = () => {
 
                 <form
                     className="formulario-nuevo-proyecto"
-                    onSubmit={onSubmitElemento}
+                    onSubmit={onSubmitUsuarios}
                 >
 
                     <input

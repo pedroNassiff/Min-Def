@@ -221,8 +221,7 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
-
+                                    <Input type="file" name="img" value={img} id="exampleFile" onChange={onChangeNoticias} className="textInput" />
                                 </Row>
                                 <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4 botonCheto" />
                                 {uploadedFile ? (

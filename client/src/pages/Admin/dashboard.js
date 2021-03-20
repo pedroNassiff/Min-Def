@@ -111,7 +111,10 @@ const Dashboard = () => {
                 type="button"
                 className="btn btn-block btn-primario"
             >Nuevo Archivo</button>
-
+            <Row>
+                <Col>
+                </Col>
+            </Row>
             <form
                 className="formulario-nuevo-proyecto"
                 onSubmit={onSubmitElemento}

@@ -90,7 +90,7 @@ const Dashboard = () => {
         })
     }
 
-    const onSubmitElemento = e => {
+    const onSubmitNoticas = e => {
         e.preventDefault();
 
 

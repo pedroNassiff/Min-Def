@@ -102,7 +102,7 @@ const Dashboard = () => {
     const onSubmitUsuarios = e => {
         e.preventDefault();
 
-        AuthService.register(inputs).then(
+        AuthService.register(usuarios).then(
             (data) => {
                 if(data.ok){
                     history.push({

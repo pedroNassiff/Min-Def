@@ -40,7 +40,7 @@ const Dashboard = () => {
 
 
     //state
-    const [elemento, guardarElemento] = useState({
+    const [biblioteca, guardarBiblioteca] = useState({
         nombre: '',
         categoria: [
             { asd: 'reglamentos' },
@@ -68,20 +68,21 @@ const Dashboard = () => {
 
 
     //extraer dato
-
-    const { nombre, categoria, } = elemento;
-
     const { img, title, description, meta } = noticias;
-
     const { name, role, last_name, email, password } = usuarios;
+    const { nombre, categoria, } = biblioteca;
 
+    const onSubmitNoticas = e => {
+        e.preventDefault();
+    }
 
-    const onChangeElemento = e => {
-        guardarElemento({
-            ...elemento,
+    const onChangeNoticias = e => {
+        guardarNoticias({
+            ...noticias,
             [e.target.name]: e.target.value
         })
     }
+
 
     const onChangeUsuarios = e => {
         guardarUsuarios({
@@ -90,13 +91,16 @@ const Dashboard = () => {
         })
     }
 
-    const onSubmitNoticas = e => {
-        e.preventDefault();
-
-
+    const onChangeBiblioteca = e => {
+        guardarBiblioteca({
+            ...biblioteca,
+            [e.target.name]: e.target.value
+        })
     }
 
-    const onSubmit = async e => {
+ 
+
+    const onSubmitBiblioteca = async e => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('file', file);
@@ -156,7 +160,7 @@ const Dashboard = () => {
                         <Col>
                         <Form
                         // className="formulario-nuevo-proyecto"
-                        onSubmit={onSubmit}
+                        onSubmit={onSubmitNoticas}
                         // className={classes.root}
                         noValidate autoComplete="off"
                     >
@@ -174,7 +178,7 @@ const Dashboard = () => {
                                             // placeholder="Titulo"
                                             name="title"
                                             value={title}
-                                            onChange={onChangeElemento}
+                                            onChange={onChangeNoticias}
                                             id="standard-basic" label="Titulo"
                                         />
 
@@ -184,7 +188,7 @@ const Dashboard = () => {
                                             placeholder="Description"
                                             name="description"
                                             value={description}
-                                            onChange={onChangeElemento}
+                                            onChange={onChangeNoticias}
                                             id="standard-basic" label="Description"
 
                                         />
@@ -194,7 +198,7 @@ const Dashboard = () => {
                                             placeholder="fecha"
                                             name="meta"
                                             value={meta}
-                                            onChange={onChangeElemento}
+                                            onChange={onChangeNoticias}
                                             id="standard-basic" label="fecha"
                                         />
 
@@ -284,17 +288,15 @@ const Dashboard = () => {
                     className="btn btn-block btn-primario"
                 >Nuevo Archivo</button>
 
-                <form
-                    className="formulario-nuevo-proyecto"
-                    onSubmit={onSubmitElemento}
-                >
+<Form onSubmit={onSubmitBiblioteca}>
+                        <FormGroup>
                     <input
                         type="text"
                         className="input-text"
                         placeholder="Nombre del archivo"
                         name="nombre"
                         value={nombre}
-                        onChange={onChangeElemento}
+                        onChange={onChangeBiblioteca}
                     />
                     <input
                         type="text"
@@ -302,16 +304,13 @@ const Dashboard = () => {
                         placeholder="Categoria"
                         name="categoria"
                         value={categoria}
-                        onChange={onChangeElemento}
+                        onChange={onChangeBiblioteca}
                     />
                     {message ? <Mensaje msg={message} /> : null}
-                    <Form onSubmit={onSubmit}>
-                        <FormGroup>
+                    
                             {/* <Label for="exampleFile">Archivo</Label> */}
                             <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
-                            <label className="custom-file-label" htmlFor='customFile'>
-
-                            </label>
+                         
                             <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4" />
                             {uploadedFile ? (
                                 <Row className="mt-5">
@@ -324,7 +323,7 @@ const Dashboard = () => {
 
                         </FormGroup>
                     </Form>
-                </form>
+   
 
 
 

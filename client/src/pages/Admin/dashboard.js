@@ -27,28 +27,16 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Dashboard = () => {
-    const [file, setFile] = useState();
-    const [filename, setFilename] = useState('Cargar archivo');
     const [uploadedFile, setUploadeddFile] = useState({});
     const [message, setMessage] = useState('');
     const history = useHistory();
     const classes = useStyles();
 
- 
-
-
     //state
     const [biblioteca, guardarBiblioteca] = useState({
         nombre: '',
-        categoria: [
-            { asd: 'reglamentos' },
-            { 2: 'resoluciones' },
-            { 3: 'leyes' },
-            { 4: 'legislaciones' },
-            { 5: 'secretariaCivil' },
-            { 6: 'secretariaPenal' },
-        ],
-
+        file:'',
+        categoria: '',
     });
     const [noticias, guardarNoticias] = useState({
         img: '',
@@ -68,7 +56,7 @@ const Dashboard = () => {
     //extraer dato
     const { img, title, description, meta } = noticias;
     const { name, role, last_name, email, password } = usuarios;
-    const { nombre, categoria, } = biblioteca;
+    const { file, nombre, categoria, } = biblioteca;
 
     const onChange = e => {
         guardarNoticias({
@@ -140,35 +128,35 @@ const Dashboard = () => {
                 //mensaje de error
             }
         );
-
-
     }
     
+    const onChangeBibliotecas = e => {
+        guardarNoticias({
+            ...biblioteca,
+            file: e.target.files[0]
+        })
+    };
 
     const onSubmitBiblioteca = async e => {
         e.preventDefault();
         const formData = new FormData();
         formData.append('file', file);
-
-        try {
-            const res = await axios.post('/api/upload', formData, {
-                headers: {
-                    'Content-Type': 'multipart/form-data'
+        formData.append('nombre', nombre);
+        formData.append('categoria', categoria);
+        ApiService.uploadBiblioteca(formData).then(
+            (data) => {
+                console.log('retorno',data);
+                if (data.ok) {
+                    history.push({
+                        pathname: '/',
+                        reload: true
+                    });
                 }
-            });
-
-            const { fileName, filePath } = res.data;
-
-            setUploadeddFile({ fileName, filePath });
-
-            setMessage('¡Archivo subido con éxito!');
-        } catch (err) {
-            if (err.response.status === 500) {
-                setMessage('Hay bardo en el server');
-            } else {
-                setMessage(err.response.data.msg);
+            },
+            error => {
+                //mensaje de error
             }
-        }
+        );
     }
 
     return (
@@ -367,7 +355,7 @@ const Dashboard = () => {
                                                     {/* <Label for="exampleFile">Archivo</Label> */}
 
                                                     <Row className="rowBtnUploadFile">
-                                                        <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
+                                                        <Input type="file" name="file" id="exampleFile" onChange={onChangeBibliotecas} className="textInput" />
 
                                                     </Row>
 

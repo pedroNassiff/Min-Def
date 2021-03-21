@@ -22,6 +22,25 @@ class ApiService {
     }
   }
 
+  uploadBiblioteca(formData) {
+    try {
+      console.log('uploadBiblioteca: ',formData);
+      return axios.post(API_URL + 'apiUpload/uploadBiblioteca', formData,
+      { 
+        headers: authHeader() 
+      }
+      ).then(response => {
+        console.log('anda');
+        return response.data;
+      }).catch((err) => {
+        return { err, data: { noticias: [] } };
+      });
+
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  }
+
   getNoticia() {
     try {
       return axios.get(API_URL + 'apiUpload/getNoticia',

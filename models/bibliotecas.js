@@ -15,6 +15,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   Bibliotecas.init({
     nombre: DataTypes.STRING,
+    fileurl: DataTypes.STRING,
     categoria: DataTypes.STRING
   }, {
     sequelize,

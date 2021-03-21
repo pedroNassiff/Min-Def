@@ -340,7 +340,7 @@ export default function MenuTop() {
           break;
       }
     });
-  }, [value, menuOptions, menuOptions2, selectedIndex, routes]);
+  }, [value, menuOptions, menuOptions2,  menuOptions3, selectedIndex, routes]);
 
   const tabs = (
     <React.Fragment>

@@ -56,15 +56,6 @@ const Dashboard = () => {
         categoria: '',
     });
 
-    const [categorias, guardarCategorias] = useState({
-        reglamentos: '',
-        resoluciones: '',
-        leyes: '',
-        secretariaCivil: '',
-        secretariaPenal: '',
-        legislaciones: ''
-
-    });
 
     const [noticias, guardarNoticias] = useState({
         img: '',
@@ -85,7 +76,6 @@ const Dashboard = () => {
     const { img, title, description, meta } = noticias;
     const { name, role, last_name, email, password } = usuarios;
     const { file, nombre, categoria, } = biblioteca;
-    const { reglamentos, resoluciones, leyes, secretariaCivil, secretariaPenal, legislaciones } = categorias;
 
 
     
@@ -97,14 +87,7 @@ const Dashboard = () => {
     };
 
     
-    const onChangeCategoria = e => {
-        guardarCategorias({
-            ...categorias,
-            [e.target.categoria]: e.target.value
-        })
-    };
-  
-
+   
     const onChangeNoticias = e => {
         guardarNoticias({
             ...noticias,
@@ -377,7 +360,7 @@ const Dashboard = () => {
                                                 onChange={onChangeBiblioteca}
                                                 id="standard-basic" label="Nombre"
                                             />
-                                            <TextField
+                                            {/* <TextField
                                                 type="text"
                                                 className="input-text espacioForm"
                                                 // placeholder="Categoria"
@@ -386,21 +369,22 @@ const Dashboard = () => {
                                                 onChange={onChangeBiblioteca}
                                                 id="standard-basic" label="Categoria"
 
-                                            />
+                                            /> */}
                                             <FormControl className={classes.formControl}>
                                                 <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
                                                 <Select
                                                     labelId="demo-simple-select-label"
                                                     id="demo-simple-select"
                                                     value={categoria}
-                                                    onChange={onChangeCategoria}
+                                                    onChange={onChangeBiblioteca}
+                                                    name="categoria"
                                                 >
-                                                    <MenuItem value={reglamentos}>Reglamentos</MenuItem>
-                                                    <MenuItem value={resoluciones}>Resoluciones</MenuItem>
-                                                    <MenuItem value={leyes}>Leyes</MenuItem>
-                                                    <MenuItem value={secretariaCivil}>Secretaria Civil</MenuItem>
-                                                    <MenuItem value={secretariaPenal}>Secretaria Penal</MenuItem>
-                                                    <MenuItem value={legislaciones}>Legislaciones</MenuItem>
+                                                    <MenuItem  value="reglamentos">Reglamentos</MenuItem>
+                                                    <MenuItem value="resoluciones">Resoluciones</MenuItem>
+                                                    <MenuItem value="leyes">Leyes</MenuItem>
+                                                    <MenuItem value="secretariaCivil">Secretaria Civil</MenuItem>
+                                                    <MenuItem value="secretariaPenal">Secretaria Penal</MenuItem>
+                                                    <MenuItem value="legislaciones">Legislaciones</MenuItem>
   
                                                 </Select>
                                             </FormControl>

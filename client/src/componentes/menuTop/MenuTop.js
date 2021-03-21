@@ -87,7 +87,7 @@ const useStyles = makeStyles((theme) => ({
 
     "&:hover": {
       opacity: 1,
-      height: "3em",
+      // height: "3em",
       backgroundColor: "#00a0dc",
     },
   },
@@ -326,7 +326,7 @@ export default function MenuTop() {
   ];
 
   useEffect(() => {
-    [...menuOptions, ...menuOptions2, ...routes].forEach((route) => {
+    [...menuOptions, ...menuOptions2, ...menuOptions3, ...routes].forEach((route) => {
       switch (window.location.pathname) {
         case `{$route.link}`:
           if (value !== route.activeIndex) {

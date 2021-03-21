@@ -42,7 +42,11 @@ const BuscadorBiblioteca = () => {
                 <Button className='selectButton1'>Reglamentos</Button>
                 <Button className='selectButton2'>Resoluciones</Button>
                 <Button className='selectButton3'>Leyes</Button>
+                <Button className='selectButton3'>Secretaría Civil</Button>
+                <Button className='selectButton3'>Secretaría Penal</Button>
                 <Button className='selectButton4'>Legislaciones</Button>
+
+
             </div>
             <div className="SearchContainer">
                 <Input

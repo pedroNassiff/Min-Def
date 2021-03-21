@@ -15,6 +15,11 @@ import Mensaje from '../../pages/biblioteca/Mensaje';
 import { Form, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -22,6 +27,13 @@ const useStyles = makeStyles((theme) => ({
             margin: theme.spacing(1),
 
         },
+    },
+    formControl: {
+        margin: theme.spacing(1),
+        minWidth: 120,
+    },
+    selectEmpty: {
+        marginTop: theme.spacing(2),
     },
 }));
 
@@ -32,12 +44,28 @@ const Dashboard = () => {
     const history = useHistory();
     const classes = useStyles();
 
+
+
+  
+
+
     //state
     const [biblioteca, guardarBiblioteca] = useState({
         nombre: '',
-        file:'',
+        file: '',
         categoria: '',
     });
+
+    const [categorias, guardarCategorias] = useState({
+        reglamentos: '',
+        resoluciones: '',
+        leyes: '',
+        secretariaCivil: '',
+        secretariaPenal: '',
+        legislaciones: ''
+
+    });
+
     const [noticias, guardarNoticias] = useState({
         img: '',
         title: '',
@@ -57,7 +85,10 @@ const Dashboard = () => {
     const { img, title, description, meta } = noticias;
     const { name, role, last_name, email, password } = usuarios;
     const { file, nombre, categoria, } = biblioteca;
+    const { reglamentos, resoluciones, leyes, secretariaCivil, secretariaPenal, legislaciones } = categorias;
 
+
+    
     const onChange = e => {
         guardarNoticias({
             ...noticias,
@@ -65,13 +96,22 @@ const Dashboard = () => {
         })
     };
 
+    
+    const onChangeCategoria = e => {
+        guardarCategorias({
+            ...categorias,
+            [e.target.categoria]: e.target.value
+        })
+    };
+  
+
     const onChangeNoticias = e => {
         guardarNoticias({
             ...noticias,
             [e.target.name]: e.target.value
         })
     }
- 
+
 
     const onChangeUsuarios = e => {
         guardarUsuarios({
@@ -97,7 +137,7 @@ const Dashboard = () => {
         formData.append('meta', meta);
         ApiService.uploadNoticia(formData).then(
             (data) => {
-                console.log('retorno',data);
+                console.log('retorno', data);
                 if (data.ok) {
                     history.push({
                         pathname: '/',
@@ -129,7 +169,7 @@ const Dashboard = () => {
             }
         );
     }
-    
+
     const onChangeBibliotecas = e => {
         guardarBiblioteca({
             ...biblioteca,
@@ -145,7 +185,7 @@ const Dashboard = () => {
         formData.append('categoria', categoria);
         ApiService.uploadBiblioteca(formData).then(
             (data) => {
-                console.log('retorno',data);
+                console.log('retorno', data);
                 if (data.ok) {
                     history.push({
                         pathname: '/',
@@ -314,11 +354,11 @@ const Dashboard = () => {
                 </Container>
 
 
-                
+
 
                 <Container className="containerEspacio">
 
-                <h1>Biblioteca</h1>
+                    <h1>Biblioteca</h1>
                     <Row className="justify-content-center rowFormCenter">
                         <Col>
                             <Form
@@ -347,6 +387,23 @@ const Dashboard = () => {
                                                 id="standard-basic" label="Categoria"
 
                                             />
+                                            <FormControl className={classes.formControl}>
+                                                <InputLabel id="demo-simple-select-label">Categoria</InputLabel>
+                                                <Select
+                                                    labelId="demo-simple-select-label"
+                                                    id="demo-simple-select"
+                                                    value={categoria}
+                                                    onChange={onChangeCategoria}
+                                                >
+                                                    <MenuItem value={reglamentos}>Reglamentos</MenuItem>
+                                                    <MenuItem value={resoluciones}>Resoluciones</MenuItem>
+                                                    <MenuItem value={leyes}>Leyes</MenuItem>
+                                                    <MenuItem value={secretariaCivil}>Secretaria Civil</MenuItem>
+                                                    <MenuItem value={secretariaPenal}>Secretaria Penal</MenuItem>
+                                                    <MenuItem value={legislaciones}>Legislaciones</MenuItem>
+  
+                                                </Select>
+                                            </FormControl>
 
                                             <Row>
                                                 <Col>

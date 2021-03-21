@@ -69,8 +69,6 @@ const Dashboard = () => {
     const { name, role, last_name, email, password } = usuarios;
     const { nombre, categoria, } = biblioteca;
 
-<<<<<<< HEAD
-=======
     const onSubmitNoticas = e => {
         e.preventDefault();
         const formData = new FormData();
@@ -94,7 +92,6 @@ const Dashboard = () => {
         );
 
     }
->>>>>>> 07ec551357a30ab54823792e0fc34d83abfb1096
 
     const onChangeNoticias = e => {
         guardarNoticias({
@@ -297,30 +294,7 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                                 <Row>
-<<<<<<< HEAD
-                                    <Col>
-                                        <TextField
-                                            type="text"
-                                            className="input-text espacioForm"
-                                            // placeholder="Email"
-                                            name="email"
-                                            value={email}
-                                            onChange={onChangeUsuarios}
-                                            id="standard-basic" label="Email"
-                                        />
-                                        <TextField
-                                            type="text"
-                                            className="input-text espacioForm"
-                                            placeholder="Password"
-                                            name="password"
-                                            value={password}
-                                            onChange={onChangeUsuarios}
-                                            id="standard-basic" label="Password"
-                                        />
-                                    </Col>
-=======
                                     <Input type="file" name="img" id="exampleFile" onChange={onChange} className="textInput" />
->>>>>>> 07ec551357a30ab54823792e0fc34d83abfb1096
                                 </Row>
                                 <Row className="rowContene">
                                     <Col>

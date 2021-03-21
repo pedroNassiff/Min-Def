@@ -131,7 +131,7 @@ const Dashboard = () => {
     }
     
     const onChangeBibliotecas = e => {
-        guardarNoticias({
+        guardarBiblioteca({
             ...biblioteca,
             file: e.target.files[0]
         })

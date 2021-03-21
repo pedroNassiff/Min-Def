@@ -20,6 +20,14 @@ router.get('/getNoticia', async (req, res) => {
   });
 })
 
+router.get('/getBiblioteca', async (req, res) => {
+  const biblioteca = await Bibliotecas.findAll()
+  res.status(200).send({
+    biblioteca: biblioteca,
+    ok:true
+  });
+})
+
 router.post('/uploadBiblioteca', async (req, res) => {
 	
 	if(req.files.file === null) {

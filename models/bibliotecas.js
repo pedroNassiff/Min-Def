@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
   Bibliotecas.init({
     nombre: DataTypes.STRING,
     fileurl: DataTypes.STRING,
-    categoria: DataTypes.STRING
+    categoria: DataTypes.STRING,
+    descripcion: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Bibliotecas',

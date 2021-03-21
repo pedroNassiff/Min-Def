@@ -59,6 +59,24 @@ class ApiService {
     }
   }
 
+  getBiblioteca() {
+    try {
+      return axios.get(API_URL + 'apiUpload/getBiblioteca',
+      { 
+        headers: authHeader() 
+      }
+      ).then(response => {
+        console.log('anda biblioteca');
+        return response.data;
+      }).catch((err) => {
+        return {biblioteca: [] };
+      });
+
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  }
+
   upload(formData) {
     try {
       return axios.post(API_URL + 'apiUpload/upload', formData,

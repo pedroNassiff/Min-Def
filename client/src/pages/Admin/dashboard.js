@@ -10,6 +10,7 @@ import './css/ui.css';
 
 import Mensaje from '../../pages/biblioteca/Mensaje';
 import AuthService from "services/AuthService";
+import ApiService from "services/ApiService";
 
 import { Form, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 import { makeStyles } from '@material-ui/core/styles';
@@ -33,11 +34,7 @@ const Dashboard = () => {
     const history = useHistory();
     const classes = useStyles();
 
-    const onChange = e => {
-        setFile(e.target.files[0]);
-        setFilename(e.target.files[0].name);
-    };
-
+    
 
     //state
     const [biblioteca, guardarBiblioteca] = useState({
@@ -72,6 +69,32 @@ const Dashboard = () => {
     const { name, role, last_name, email, password } = usuarios;
     const { nombre, categoria, } = biblioteca;
 
+<<<<<<< HEAD
+=======
+    const onSubmitNoticas = e => {
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append('img', img);
+        formData.append('description', description);
+        formData.append('title', title);
+        formData.append('meta', meta);
+        ApiService.uploadNoticia(formData).then(
+            (data) => {
+                console.log('retorno',data);
+                if (data.ok) {
+                    history.push({
+                        pathname: '/',
+                        reload: true
+                    });
+                }
+            },
+            error => {
+                //mensaje de error
+            }
+        );
+
+    }
+>>>>>>> 07ec551357a30ab54823792e0fc34d83abfb1096
 
     const onChangeNoticias = e => {
         guardarNoticias({
@@ -79,6 +102,13 @@ const Dashboard = () => {
             [e.target.name]: e.target.value
         })
     }
+
+    const onChange = e => {
+        guardarNoticias({
+            ...noticias,
+            img: e.target.files[0]
+        })
+    };
 
 
     const onChangeUsuarios = e => {
@@ -267,6 +297,7 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                                 <Row>
+<<<<<<< HEAD
                                     <Col>
                                         <TextField
                                             type="text"
@@ -287,6 +318,9 @@ const Dashboard = () => {
                                             id="standard-basic" label="Password"
                                         />
                                     </Col>
+=======
+                                    <Input type="file" name="img" id="exampleFile" onChange={onChange} className="textInput" />
+>>>>>>> 07ec551357a30ab54823792e0fc34d83abfb1096
                                 </Row>
                                 <Row className="rowContene">
                                     <Col>

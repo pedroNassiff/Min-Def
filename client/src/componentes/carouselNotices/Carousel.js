@@ -5,6 +5,7 @@ import { Carousel, Avatar } from "antd";
 import Card from "../card";
 import DummyData from "dummyData/dummyDataCarousel";
 import { LeftOutlined, RightOutlined } from '@ant-design/icons';
+import ApiService from '../../services/ApiService'
 
 const CarouselNotice = () => {
   const [cards, setCards] = useState();
@@ -17,20 +18,48 @@ const CarouselNotice = () => {
   const handlePrev = () => carousel.current.prev();
 
   useEffect(() => {
-    setCards(
-      DummyData.map(
-        (item, i) => (
-          <div key={i}>
-            <Card
-              img={item.img}
-              title={item.title}
-              description={item.description}
-              meta={item.meta}
-            />
-          </div>
-        )
-      )
-    );
+    ApiService.getNoticia().then(
+      (data) => {
+          console.log('retorno',data); 
+          if (data.noticias.length > 0) {
+            console.log(data.noticias);
+            setCards(
+              data.noticias.map(
+                (item, i) => (
+                  <div key={i}>
+                    <Card
+                      img={item.img}
+                      web={true}
+                      title={item.title}
+                      description={item.description}
+                      meta={item.meta}
+                    />
+                  </div>
+                )
+              )
+            )
+          }else{
+            setCards(
+              DummyData.map(
+                (item, i) => (
+                  <div key={i}>
+                    <Card
+                      img={item.img}
+                      web={false}
+                      title={item.title}
+                      description={item.description}
+                      meta={item.meta}
+                    />
+                  </div>
+                )
+              )
+            )
+          }
+      },
+      error => {
+        console.log(error);
+      }
+    )
 
     function handleResize() {
       setToShow(window.innerWidth >= 800 ?2:1)

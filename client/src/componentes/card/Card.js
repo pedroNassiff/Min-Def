@@ -7,7 +7,13 @@ const CardComponent = (props) => {
     <div className="box gallery">
       <div className="card">
         <div className="background">
-          <img width="100%" alt={title} src={require(`../../${img}`).default} />
+          {
+            props.web?
+            <img width="100%" style={{maxHeight: '40em'}} alt={title} src={props.img} />
+            :
+            <img width="100%" style={{maxHeight: '40em'}} alt={title} src={require(`../../${img}`).default} />
+          }
+          
         </div>
         <span className="overlay"></span>
         <span>

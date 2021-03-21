@@ -2,14 +2,15 @@ import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
 
-import FileUpload from '../../pages/biblioteca/FileUpload';
 
+import AuthService from "services/AuthService";
+import ApiService from "services/ApiService";
+import FileUpload from '../../pages/biblioteca/FileUpload';
 // import AdminBiblioteca from '../../pages/biblioteca/AdminBiblioteca';
 import Sidebar from './Sidebar';
 import './css/ui.css';
 
 import Mensaje from '../../pages/biblioteca/Mensaje';
-import AuthService from "services/AuthService";
 
 import { Form, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 import { makeStyles } from '@material-ui/core/styles';
@@ -33,10 +34,7 @@ const Dashboard = () => {
     const history = useHistory();
     const classes = useStyles();
 
-    const onChange = e => {
-        setFile(e.target.files[0]);
-        setFilename(e.target.files[0].name);
-    };
+ 
 
 
     //state
@@ -72,6 +70,12 @@ const Dashboard = () => {
     const { name, role, last_name, email, password } = usuarios;
     const { nombre, categoria, } = biblioteca;
 
+    const onChange = e => {
+        guardarNoticias({
+            ...noticias,
+            img: e.target.files[0]
+        })
+    };
 
     const onChangeNoticias = e => {
         guardarNoticias({
@@ -79,7 +83,7 @@ const Dashboard = () => {
             [e.target.name]: e.target.value
         })
     }
-
+ 
 
     const onChangeUsuarios = e => {
         guardarUsuarios({
@@ -98,8 +102,27 @@ const Dashboard = () => {
 
     const onSubmitNoticas = e => {
         e.preventDefault();
-    }
+        const formData = new FormData();
+        formData.append('img', img);
+        formData.append('description', description);
+        formData.append('title', title);
+        formData.append('meta', meta);
+        ApiService.uploadNoticia(formData).then(
+            (data) => {
+                console.log('retorno',data);
+                if (data.ok) {
+                    history.push({
+                        pathname: '/',
+                        reload: true
+                    });
+                }
+            },
+            error => {
+                //mensaje de error
+            }
+        );
 
+    }
 
     const onSubmitUsuarios = e => {
         e.preventDefault();
@@ -120,6 +143,7 @@ const Dashboard = () => {
 
 
     }
+    
 
     const onSubmitBiblioteca = async e => {
         e.preventDefault();

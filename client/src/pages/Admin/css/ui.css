@@ -20,6 +20,10 @@
     margin-bottom: 2%;
 }
 
+
+.containerEspacio{
+    margin-top: -10%;
+}
 .botonCheto{
     border: 2px solid #00a0dc;
     border-radius: 50px;

@@ -10,7 +10,6 @@ import './css/ui.css';
 
 import Mensaje from '../../pages/biblioteca/Mensaje';
 import AuthService from "services/AuthService";
-import ApiService from "services/ApiService";
 
 import { Form, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 import { makeStyles } from '@material-ui/core/styles';
@@ -34,7 +33,11 @@ const Dashboard = () => {
     const history = useHistory();
     const classes = useStyles();
 
-    
+    const onChange = e => {
+        setFile(e.target.files[0]);
+        setFilename(e.target.files[0].name);
+    };
+
 
     //state
     const [biblioteca, guardarBiblioteca] = useState({
@@ -69,32 +72,6 @@ const Dashboard = () => {
     const { name, role, last_name, email, password } = usuarios;
     const { nombre, categoria, } = biblioteca;
 
-<<<<<<< HEAD
-=======
-    const onSubmitNoticas = e => {
-        e.preventDefault();
-        const formData = new FormData();
-        formData.append('img', img);
-        formData.append('description', description);
-        formData.append('title', title);
-        formData.append('meta', meta);
-        ApiService.uploadNoticia(formData).then(
-            (data) => {
-                console.log('retorno',data);
-                if (data.ok) {
-                    history.push({
-                        pathname: '/',
-                        reload: true
-                    });
-                }
-            },
-            error => {
-                //mensaje de error
-            }
-        );
-
-    }
->>>>>>> 07ec551357a30ab54823792e0fc34d83abfb1096
 
     const onChangeNoticias = e => {
         guardarNoticias({
@@ -102,13 +79,6 @@ const Dashboard = () => {
             [e.target.name]: e.target.value
         })
     }
-
-    const onChange = e => {
-        guardarNoticias({
-            ...noticias,
-            img: e.target.files[0]
-        })
-    };
 
 
     const onChangeUsuarios = e => {
@@ -255,7 +225,7 @@ const Dashboard = () => {
 
                 </Container>
 
-                <Container className="py-5 mt-5">
+                <Container className="containerEspacio">
                     <h1>Usuarios</h1>
 
                     <Row className="justify-content-center rowFormCenter">
@@ -297,7 +267,6 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                                 <Row>
-<<<<<<< HEAD
                                     <Col>
                                         <TextField
                                             type="text"
@@ -311,74 +280,91 @@ const Dashboard = () => {
                                         <TextField
                                             type="text"
                                             className="input-text espacioForm"
-                                            placeholder="Password"
+                                            // placeholder="Password"
                                             name="password"
                                             value={password}
                                             onChange={onChangeUsuarios}
                                             id="standard-basic" label="Password"
                                         />
                                     </Col>
-=======
-                                    <Input type="file" name="img" id="exampleFile" onChange={onChange} className="textInput" />
->>>>>>> 07ec551357a30ab54823792e0fc34d83abfb1096
                                 </Row>
                                 <Row className="rowContene">
                                     <Col>
                                         <button className="botonCheto" type="text">
-                                        Agregar
+                                            Agregar
                                         </button>
                                     </Col>
                                 </Row>
-                             
+
                             </Form>
                         </Col>
                     </Row>
                 </Container>
 
 
+                
+
+                <Container className="containerEspacio">
+
                 <h1>Biblioteca</h1>
-                <button
-                    type="button"
-                    className="btn btn-block btn-primario"
-                >Nuevo Archivo</button>
+                    <Row className="justify-content-center rowFormCenter">
+                        <Col>
+                            <Form
+                                className="formulario-nuevo-proyecto"
+                                onSubmit={onSubmitBiblioteca}
+                            >
+                                <Row>
+                                    <Col>
+                                        <FormGroup>
+                                            <TextField
+                                                type="text"
+                                                className="input-text espacioForm"
+                                                // placeholder="Nombre del archivo"
+                                                name="nombre"
+                                                value={nombre}
+                                                onChange={onChangeBiblioteca}
+                                                id="standard-basic" label="Nombre"
+                                            />
+                                            <TextField
+                                                type="text"
+                                                className="input-text espacioForm"
+                                                // placeholder="Categoria"
+                                                name="categoria"
+                                                value={categoria}
+                                                onChange={onChangeBiblioteca}
+                                                id="standard-basic" label="Categoria"
 
-                <Form onSubmit={onSubmitBiblioteca}>
-                    <FormGroup>
-                        <input
-                            type="text"
-                            className="input-text"
-                            placeholder="Nombre del archivo"
-                            name="nombre"
-                            value={nombre}
-                            onChange={onChangeBiblioteca}
-                        />
-                        <input
-                            type="text"
-                            className="input-text"
-                            placeholder="Categoria"
-                            name="categoria"
-                            value={categoria}
-                            onChange={onChangeBiblioteca}
-                        />
-                        {message ? <Mensaje msg={message} /> : null}
+                                            />
 
-                        {/* <Label for="exampleFile">Archivo</Label> */}
-                        <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
+                                            <Row>
+                                                <Col>
+                                                    {message ? <Mensaje msg={message} /> : null}
 
-                        <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4" />
-                        {uploadedFile ? (
-                            <Row className="mt-5">
-                                <Col className="m-auto">
-                                    <h3 className="text-center">{uploadedFile.fileName}</h3>
-                                    <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
-                                </Col>
-                            </Row>
-                        ) : null}
+                                                    {/* <Label for="exampleFile">Archivo</Label> */}
 
-                    </FormGroup>
-                </Form>
+                                                    <Row className="rowBtnUploadFile">
+                                                        <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
 
+                                                    </Row>
 
+                                                    <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4 botonCheto" />
+                                                    {uploadedFile ? (
+                                                        <Row className="mt-5">
+                                                            <Col className="m-auto">
+                                                                <h3 className="text-center">{uploadedFile.fileName}</h3>
+                                                                <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+                                                            </Col>
+                                                        </Row>
+                                                    ) : null}
+                                                </Col>
+                                            </Row>
+                                        </FormGroup>
+                                    </Col>
+                                </Row>
+                            </Form>
+                        </Col>
+                    </Row>
+                </Container>
 
 
 

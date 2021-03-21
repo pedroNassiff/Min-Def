@@ -11,10 +11,14 @@
     margin: 2%;
     margin-top: -2%;
 }
-/* 
+
 .espacioForm{
-    margin: %;
-} */
+    margin: 1%!important;
+}
+
+.rowBtnUploadFile{
+    margin-bottom: 2%;
+}
 
 .botonCheto{
     border: 2px solid #00a0dc;

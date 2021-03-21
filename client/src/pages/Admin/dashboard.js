@@ -72,9 +72,6 @@ const Dashboard = () => {
     const { name, role, last_name, email, password } = usuarios;
     const { nombre, categoria, } = biblioteca;
 
-    const onSubmitNoticas = e => {
-        e.preventDefault();
-    }
 
     const onChangeNoticias = e => {
         guardarNoticias({
@@ -98,7 +95,31 @@ const Dashboard = () => {
         })
     }
 
- 
+
+    const onSubmitNoticas = e => {
+        e.preventDefault();
+    }
+
+
+    const onSubmitUsuarios = e => {
+        e.preventDefault();
+
+        AuthService.register(usuarios).then(
+            (data) => {
+                if (data.ok) {
+                    history.push({
+                        pathname: '/',
+                        reload: true
+                    });
+                }
+            },
+            error => {
+                //mensaje de error
+            }
+        );
+
+
+    }
 
     const onSubmitBiblioteca = async e => {
         e.preventDefault();
@@ -126,27 +147,6 @@ const Dashboard = () => {
         }
     }
 
-    const onSubmitUsuarios = e => {
-        e.preventDefault();
-
-        AuthService.register(usuarios).then(
-            (data) => {
-                if (data.ok) {
-                    history.push({
-                        pathname: '/',
-                        reload: true
-                    });
-                }
-            },
-            error => {
-                //mensaje de error
-            }
-        );
-
-
-    }
-
-
     return (
 
         <div className="container">
@@ -158,172 +158,192 @@ const Dashboard = () => {
 
                     <Row className="justify-content-center rowFormCenter">
                         <Col>
-                        <Form
-                        // className="formulario-nuevo-proyecto"
-                        onSubmit={onSubmitNoticas}
-                        // className={classes.root}
-                        noValidate autoComplete="off"
-                    >
-                        {message ? <Mensaje msg={message} /> : null}
-                            <FormGroup>
-                                {/* <Label for="exampleFile">Archivo</Label> */}
-                                {/* <label className="custom-file-label" htmlFor='customFile'>
+                            <Form
+                                // className="formulario-nuevo-proyecto"
+                                onSubmit={onSubmitNoticas}
+                                // className={classes.root}
+                                noValidate autoComplete="off"
+                            >
+                                {message ? <Mensaje msg={message} /> : null}
+                                <FormGroup>
+                                    {/* <Label for="exampleFile">Archivo</Label> */}
+                                    {/* <label className="custom-file-label" htmlFor='customFile'>
 
                                 </label> */}
-                                <Row className="justify-content-center contentformInfo">
+                                    <Row className="justify-content-center contentformInfo">
+                                        <Col>
+                                            <TextField
+                                                type="text"
+                                                className="input-text espacioForm"
+                                                // placeholder="Titulo"
+                                                name="title"
+                                                value={title}
+                                                onChange={onChangeNoticias}
+                                                id="standard-basic" label="Titulo"
+                                            />
+
+                                            <TextField
+                                                type="text"
+                                                className="input-text espacioForm"
+                                                // placeholder="Description"
+                                                name="description"
+                                                value={description}
+                                                onChange={onChangeNoticias}
+                                                id="standard-basic" label="Description"
+
+                                            />
+                                            <TextField
+                                                type="text "
+                                                className="input-text espacioForm"
+                                                // placeholder="fecha"
+                                                name="meta"
+                                                value={meta}
+                                                onChange={onChangeNoticias}
+                                                id="standard-basic" label="fecha"
+                                            />
+
+                                        </Col>
+                                    </Row>
+                                    <Row className="rowBtnUploadFile">
+                                        <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
+
+                                    </Row>
+                                    <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4 botonCheto" />
+                                    {uploadedFile ? (
+                                        <Row className="mt-5">
+                                            <Col className="m-auto">
+                                                <h3 className="text-center">{uploadedFile.fileName}</h3>
+                                                <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+                                            </Col>
+                                        </Row>
+                                    ) : null}
+
+                                </FormGroup>
+                            </Form>
+                        </Col>
+                    </Row>
+
+                </Container>
+
+                <Container className="py-5 mt-5">
+                    <h1>Usuarios</h1>
+
+                    <Row className="justify-content-center rowFormCenter">
+                        <Col>
+                            <Form
+                                className="formulario-nuevo-proyecto"
+                                onSubmit={onSubmitUsuarios}
+                            >
+                                <Row>
                                     <Col>
                                         <TextField
                                             type="text"
                                             className="input-text espacioForm"
-                                            // placeholder="Titulo"
-                                            name="title"
-                                            value={title}
-                                            onChange={onChangeNoticias}
-                                            id="standard-basic" label="Titulo"
+                                            // placeholder="Rol"
+                                            name="role"
+                                            value={role}
+                                            onChange={onChangeUsuarios}
+                                            id="standard-basic" label="Rol"
+                                        />
+                                        <TextField
+                                            type="text"
+                                            className="input-text espacioForm"
+                                            // placeholder="Nombre"
+                                            name="name"
+                                            value={name}
+                                            onChange={onChangeUsuarios}
+                                            id="standard-basic" label="Nombre"
                                         />
 
                                         <TextField
                                             type="text"
                                             className="input-text espacioForm"
-                                            placeholder="Description"
-                                            name="description"
-                                            value={description}
-                                            onChange={onChangeNoticias}
-                                            id="standard-basic" label="Description"
-
+                                            // placeholder="Apellido"
+                                            name="last_name"
+                                            value={last_name}
+                                            onChange={onChangeUsuarios}
+                                            id="standard-basic" label="Apellido"
                                         />
-                                        <TextField
-                                            type="text espacioForm"
-                                            className="input-text"
-                                            placeholder="fecha"
-                                            name="meta"
-                                            value={meta}
-                                            onChange={onChangeNoticias}
-                                            id="standard-basic" label="fecha"
-                                        />
-
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
-
+                                    <Col>
+                                        <TextField
+                                            type="text"
+                                            className="input-text espacioForm"
+                                            // placeholder="Email"
+                                            name="email"
+                                            value={email}
+                                            onChange={onChangeUsuarios}
+                                            id="standard-basic" label="Email"
+                                        />
+                                        <TextField
+                                            type="text"
+                                            className="input-text espacioForm"
+                                            placeholder="Password"
+                                            name="password"
+                                            value={password}
+                                            onChange={onChangeUsuarios}
+                                            id="standard-basic" label="Password"
+                                        />
+                                    </Col>
                                 </Row>
-                                <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4 botonCheto" />
-                                {uploadedFile ? (
-                                    <Row className="mt-5">
-                                        <Col className="m-auto">
-                                            <h3 className="text-center">{uploadedFile.fileName}</h3>
-                                            <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
-                                        </Col>
-                                    </Row>
-                                ) : null}
-
-                            </FormGroup>
-                    </Form>
+                                <Row className="rowContene">
+                                    <Col>
+                                        <button className="botonCheto" type="text">
+                                        Agregar
+                                        </button>
+                                    </Col>
+                                </Row>
+                             
+                            </Form>
                         </Col>
                     </Row>
-                    
                 </Container>
 
 
-                <h1>Usuarios</h1>
-                <button
-                    type="button"
-                    className="btn btn-block btn-primario"
-                >Nuevo usuario</button>
-
-                <form
-                    className="formulario-nuevo-proyecto"
-                    onSubmit={onSubmitUsuarios}
-                >
-
-                    <input
-                        type="text"
-                        className="input-text"
-                        placeholder="Nombre"
-                        name="name"
-                        value={name}
-                        onChange={onChangeUsuarios}
-                    />
-
-                    <input
-                        type="text"
-                        className="input-text"
-                        placeholder="Rol"
-                        name="role"
-                        value={role}
-                        onChange={onChangeUsuarios}
-                    />
-                    <input
-                        type="text"
-                        className="input-text"
-                        placeholder="Apellido"
-                        name="last_name"
-                        value={last_name}
-                        onChange={onChangeUsuarios}
-                    />
-                    <input
-                        type="text"
-                        className="input-text"
-                        placeholder="Email"
-                        name="email"
-                        value={email}
-                        onChange={onChangeUsuarios}
-                    />
-                    <input
-                        type="text"
-                        className="input-text"
-                        placeholder="Password"
-                        name="password"
-                        value={password}
-                        onChange={onChangeUsuarios}
-                    />
-                    <button className="botonCheto" type="text">
-                        Actualizar
-                </button>
-                </form>
                 <h1>Biblioteca</h1>
                 <button
                     type="button"
                     className="btn btn-block btn-primario"
                 >Nuevo Archivo</button>
 
-<Form onSubmit={onSubmitBiblioteca}>
-                        <FormGroup>
-                    <input
-                        type="text"
-                        className="input-text"
-                        placeholder="Nombre del archivo"
-                        name="nombre"
-                        value={nombre}
-                        onChange={onChangeBiblioteca}
-                    />
-                    <input
-                        type="text"
-                        className="input-text"
-                        placeholder="Categoria"
-                        name="categoria"
-                        value={categoria}
-                        onChange={onChangeBiblioteca}
-                    />
-                    {message ? <Mensaje msg={message} /> : null}
-                    
-                            {/* <Label for="exampleFile">Archivo</Label> */}
-                            <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
-                         
-                            <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4" />
-                            {uploadedFile ? (
-                                <Row className="mt-5">
-                                    <Col className="m-auto">
-                                        <h3 className="text-center">{uploadedFile.fileName}</h3>
-                                        <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
-                                    </Col>
-                                </Row>
-                            ) : null}
+                <Form onSubmit={onSubmitBiblioteca}>
+                    <FormGroup>
+                        <input
+                            type="text"
+                            className="input-text"
+                            placeholder="Nombre del archivo"
+                            name="nombre"
+                            value={nombre}
+                            onChange={onChangeBiblioteca}
+                        />
+                        <input
+                            type="text"
+                            className="input-text"
+                            placeholder="Categoria"
+                            name="categoria"
+                            value={categoria}
+                            onChange={onChangeBiblioteca}
+                        />
+                        {message ? <Mensaje msg={message} /> : null}
 
-                        </FormGroup>
-                    </Form>
-   
+                        {/* <Label for="exampleFile">Archivo</Label> */}
+                        <Input type="file" name="file" id="exampleFile" onChange={onChange} className="textInput" />
+
+                        <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4" />
+                        {uploadedFile ? (
+                            <Row className="mt-5">
+                                <Col className="m-auto">
+                                    <h3 className="text-center">{uploadedFile.fileName}</h3>
+                                    <file style={{ width: '100%' }} src={uploadedFile.filePath} alt='' />
+                                </Col>
+                            </Row>
+                        ) : null}
+
+                    </FormGroup>
+                </Form>
+
 
 
 

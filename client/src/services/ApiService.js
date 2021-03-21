@@ -11,9 +11,28 @@ class ApiService {
         headers: authHeader() 
       }
       ).then(response => {
+        console.log('anda');
         return response.data;
       }).catch((err) => {
-        return { err, data: { msg: 'Server error!!!' } };
+        return { err, data: { noticias: [] } };
+      });
+
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  }
+
+  getNoticia() {
+    try {
+      return axios.get(API_URL + 'apiUpload/getNoticia',
+      { 
+        headers: authHeader() 
+      }
+      ).then(response => {
+        console.log('anda noticias');
+        return response.data;
+      }).catch((err) => {
+        return {noticias: [] };
       });
 
     } catch (error) {

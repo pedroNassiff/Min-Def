@@ -34,11 +34,7 @@ const Dashboard = () => {
     const history = useHistory();
     const classes = useStyles();
 
-    const onChange = e => {
-        setFile(e.target.files[0]);
-        setFilename(e.target.files[0].name);
-    };
-
+    
 
     //state
     const [biblioteca, guardarBiblioteca] = useState({
@@ -75,9 +71,14 @@ const Dashboard = () => {
 
     const onSubmitNoticas = e => {
         e.preventDefault();
-       
-        ApiService.uploadNoticia(noticias).then(
+        const formData = new FormData();
+        formData.append('img', img);
+        formData.append('description', description);
+        formData.append('title', title);
+        formData.append('meta', meta);
+        ApiService.uploadNoticia(formData).then(
             (data) => {
+                console.log('retorno',data);
                 if (data.ok) {
                     history.push({
                         pathname: '/',
@@ -98,6 +99,13 @@ const Dashboard = () => {
             [e.target.name]: e.target.value
         })
     }
+
+    const onChange = e => {
+        guardarNoticias({
+            ...noticias,
+            img: e.target.files[0]
+        })
+    };
 
 
     const onChangeUsuarios = e => {
@@ -221,7 +229,7 @@ const Dashboard = () => {
                                     </Col>
                                 </Row>
                                 <Row>
-                                    <Input type="file" name="img" value={img} id="exampleFile" onChange={onChangeNoticias} className="textInput" />
+                                    <Input type="file" name="img" id="exampleFile" onChange={onChange} className="textInput" />
                                 </Row>
                                 <input type="submit" value="Subir" className="btn btn-primary btn-block mt-4 botonCheto" />
                                 {uploadedFile ? (

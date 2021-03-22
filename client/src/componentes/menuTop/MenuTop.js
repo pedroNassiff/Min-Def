@@ -85,11 +85,11 @@ const useStyles = makeStyles((theme) => ({
     opacity: 1,
     height: "3em",
 
-    "&:hover": {
-      opacity: 1,
-      // height: "3em",
-      backgroundColor: "#00a0dc",
-    },
+    // "&:hover": {
+    //   opacity: 1,
+    //   // height: "3em",
+    //   backgroundColor: "#00a0dc",
+    // },
   },
   drawerIconContainer: {
     marginRight: "25px",
@@ -131,14 +131,14 @@ export default function MenuTop() {
   const [openDrawer, setOpenDrawer] = useState(false);
   const matches = useMediaQuery(theme.breakpoints.down("md"));
   const [value, setValue] = useState(0);
-  const [anchorEl, setAnchorEl] = useState(null);
-  const [anchorEl2, setAnchorEl2] = useState(null);
-  const [anchorEl3, setAnchorEl3] = useState(null);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [anchorEl2, setAnchorEl2] = React.useState(null);
+  const [anchorEl3, setAnchorEl3] = React.useState(null);
 
-  const [openMenu, setOpenMenu] = useState(false);
-  const [openMenu2, setOpenMenu2] = useState(false);
-  const [openMenu3, setOpenMenu3] = useState(false);
-  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [openMenu, setOpenMenu] = React.useState(false);
+  const [openMenu2, setOpenMenu2] = React.useState(false);
+  const [openMenu3, setOpenMenu3] = React.useState(false);
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
 
   const handleChange = (e, newValue) => {
     setValue(newValue);
@@ -219,7 +219,7 @@ export default function MenuTop() {
       name: "Organización",
       link: "/institucional/organizacion",
       activeIndex: 1,
-      selectedIndex: 3,
+      selectedIndex: 4,
     },
   ];
 
@@ -229,25 +229,25 @@ export default function MenuTop() {
     {
     name: "MIEMBROS",
       link: "/institucional/organizacion",
-      activeIndex: 3,
+      activeIndex: 2,
       selectedIndex: 0,
     },
     {
     name: "Miembros Penales",
       link: "/miembros",
-      activeIndex: 1,
+      activeIndex: 2,
       selectedIndex: 1,
     },
     {
     name: "Miembros Civiles",
       link: "/miembrosCiviles",
-      activeIndex: 1,
+      activeIndex: 2,
       selectedIndex: 2,
     },
     {
     name: "Asesorìa de Niñas, Niños y adolecentes",
       link: "/miembrosANNA",
-      activeIndex: 1,
+      activeIndex: 2,
       selectedIndex: 3,
     },
   ];
@@ -264,38 +264,38 @@ export default function MenuTop() {
     {
     name: "Informes",
       link: "/acciones/informes",
-      activeIndex: 1,
+      activeIndex: 3,
       selectedIndex: 1,
     },
     {
     name: "Monitores",
       link: "/acciones/monitoreos",
-      activeIndex: 1,
+      activeIndex: 3,
       selectedIndex: 2,
     },
     {
     name: "Defensoria Itinerante",
       link: "/acciones/defensoriaItinerante",
-      activeIndex: 1,
+      activeIndex: 3,
       selectedIndex: 3,
     },
     {
       name: "Acciones Judiciales",
         link: "/acciones/accionesJudiciales",
-        activeIndex: 1,
-        selectedIndex: 3,
+        activeIndex: 3,
+        selectedIndex: 4,
       },
       {
         name: "Convenios",
           link: "/acciones/convenios",
-          activeIndex: 1,
-          selectedIndex: 3,
+          activeIndex: 3,
+          selectedIndex: 5,
         },
         {
           name: "Proyecto de Ley",
             link: "/acciones/ProyectoLey",
-            activeIndex: 1,
-            selectedIndex: 3,
+            activeIndex: 3,
+            selectedIndex: 6,
           },
   ];
 
@@ -323,6 +323,9 @@ export default function MenuTop() {
     { name: "SALUD MENTAL", link: "/saludMental", activeIndex: 5 },
     { name: "CONTACTO", link: "/contact", activeIndex: 6 },
     { name: "INGRESAR", link: "/login", activeIndex: 6 },
+    
+    { name: "DASHBOARD", link: "/dashboard", activeIndex: 7 },
+
   ];
 
   useEffect(() => {
@@ -377,7 +380,7 @@ export default function MenuTop() {
         id="simple-menu"
         anchorEl={anchorEl}
         open={openMenu}
-        onClose={handleClose}
+        // onClose={handleClose}
         classes={{ paper: classes.menu }}
         MenuListProps={{ onMouseLeave: handleClose }}
         autoFocus={false}
@@ -401,7 +404,7 @@ export default function MenuTop() {
         ))}
         
       </Menu>
-      <Menu
+       <Menu
         id="simple-menu2"
         anchorEl={anchorEl}
         open={openMenu2}
@@ -458,7 +461,7 @@ export default function MenuTop() {
             </MenuItem>
         ))}
         
-      </Menu>
+      </Menu> 
       
       
     </React.Fragment>

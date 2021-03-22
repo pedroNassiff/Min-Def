@@ -3,6 +3,8 @@ import { Layout } from "antd";
 import LoadRoutes from "config/LoadRoutes";
 import { ThemeProvider } from '@material-ui/styles';
 import MenuTop from "componentes/menuTop";
+import MenuBar from "componentes/menuTop";
+
 import Whatsapp from 'componentes/whatsapp'
 import Colapse from 'componentes/Colapse';
 import Footer from 'componentes/ui/Footer';

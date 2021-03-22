@@ -140,6 +140,8 @@ export default function MenuTop() {
   const [openMenu3, setOpenMenu3] = React.useState(false);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
+  const [user , setUser] = useState(JSON.parse(localStorage.getItem("user"))?JSON.parse(localStorage.getItem("user")):'');
+
   const handleChange = (e, newValue) => {
     setValue(newValue);
   };
@@ -322,9 +324,7 @@ export default function MenuTop() {
     { name: "BIBLIOTECA", link: "/biblioteca", activeIndex: 4 },
     { name: "SALUD MENTAL", link: "/saludMental", activeIndex: 5 },
     { name: "CONTACTO", link: "/contact", activeIndex: 6 },
-    { name: "INGRESAR", link: "/login", activeIndex: 6 },
-    
-    { name: "DASHBOARD", link: "/dashboard", activeIndex: 7 },
+    { name: !user?"INGRESAR":"DASHBOARD", link: !user?"/login":"/dashboard", activeIndex: 6 }
 
   ];
 

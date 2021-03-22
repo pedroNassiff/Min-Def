@@ -323,6 +323,7 @@ export default function MenuTop() {
     { name: "SALUD MENTAL", link: "/saludMental", activeIndex: 5 },
     { name: "CONTACTO", link: "/contact", activeIndex: 6 },
     { name: "INGRESAR", link: "/login", activeIndex: 6 },
+    
     { name: "DASHBOARD", link: "/dashboard", activeIndex: 7 },
 
   ];

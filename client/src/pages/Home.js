@@ -1,4 +1,4 @@
-import React, {useState}  from 'react'
+import React, {useState, useEffect}  from 'react'
 import {Link} from 'react-router-dom'
 import CardGrid from 'componentes/cardGrid'
 import Carousel from 'componentes/carouselNotices'
@@ -136,12 +136,23 @@ const useStyles = makeStyles(theme => ({
     },
 }))
 
-export default function Home() {
+export default function Home(props) {
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
     const [selectedIndex, setSelectedIndex] = useState(0);
-  const [value, setValue] = useState(0);
+    const [value, setValue] = useState(0);
+
+    const [user, setUser] = useState(false);
+    if (user) {
+      window.location.reload();
+    }
+
+    useEffect(() => {
+      setUser(props.location.reload);
+     }, []);
+
+
     return (
       <div className="homeContainer">
         <div className="carouselContainer">

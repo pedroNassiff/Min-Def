@@ -1,0 +1,100 @@
+import axios from "axios"
+import API_URL from "config/apiUrl"
+
+const headers = {
+  'Content-Type': 'application/json;charset=UTF-8',
+  "Access-Control-Allow-Origin": "*",
+}
+
+class AuthService {
+  login(email, password) {
+    try {
+      const body = {
+        'email': email,
+        'password': password
+      }
+      return axios.post(API_URL + 'users/login', body, {
+          headers: headers
+      }).then(response => {
+        if (response.data.ok) {
+          
+            localStorage.removeItem("user");
+            localStorage.removeItem("userfecha");
+            localStorage.setItem("user", JSON.stringify(response.data));
+            localStorage.setItem("userfecha", new Date());
+        }
+        return response.data;
+      })
+
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  }
+
+  googleFacebookHandler(respuesta) {
+    try {
+      const body = {
+        'email': respuesta.profileObj.email,
+        'name': respuesta.profileObj.givenName,
+        'last_name': respuesta.profileObj.familyName,
+        'password': respuesta.profileObj.googleId
+      }
+
+      return axios.post(API_URL + 'users/logReg', body, {
+          headers: headers
+      }).then(response => {
+
+        if (response.data.ok) {
+          localStorage.removeItem("user");
+          localStorage.removeItem("userfecha");
+          localStorage.setItem("user", JSON.stringify(response.data));
+          localStorage.setItem("userfecha", new Date());
+        }
+
+        return response.data;
+      })
+
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  }
+
+  logout() {
+    localStorage.removeItem("user");
+    localStorage.removeItem("userfecha");
+  }
+
+  register(input) {
+
+    try {
+
+      return axios.post(API_URL + "users/register", {
+        'email': input.email,
+        'name': input.name,
+        'last_name': input.last_name,
+        'role': input.role,
+        'password': input.password
+      }, {
+        headers: headers
+     }).then(response => {
+        console.log('=============================');
+        if (response.data.ok) {
+          localStorage.removeItem("user");
+          localStorage.removeItem("userfecha");
+          localStorage.setItem("user", JSON.stringify(response.data));
+          localStorage.setItem("userfecha", new Date());
+        }
+        return response.data;
+      })
+
+    } catch (error) {
+      console.log('error: ', error);
+    }
+  }
+
+  getCurrentUser() {
+    return JSON.parse(localStorage.getItem('user'))
+  }
+}
+
+export default new AuthService()

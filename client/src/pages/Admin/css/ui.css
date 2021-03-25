@@ -1,0 +1,48 @@
+.container{
+    padding: 6%;
+}
+
+.rowFormCenter{
+    text-align: center;
+    padding: 2em;
+}
+
+.contentformInfo{
+    margin: 2%;
+    margin-top: -2%;
+}
+
+.espacioForm{
+    margin: 1%!important;
+}
+
+.rowBtnUploadFile{
+    margin-bottom: 2%;
+}
+
+
+.containerEspacio{
+    margin-top: -10%;
+}
+.botonCheto{
+    border: 2px solid #00a0dc;
+    border-radius: 50px;
+    font-weight: 700;
+    color: #ffffff;
+    padding: 8px 20px 7px;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    background-color: #00a0dc;
+    cursor: pointer;
+}
+
+@media(max-width:767px){
+    .container{
+        padding: 30%;
+    }
+    .textInput{
+        font-size: 1.3rem;
+    }
+}

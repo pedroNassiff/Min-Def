@@ -1,0 +1,92 @@
+{
+    "data" : [
+      {
+          "name": "INICIO",
+          "url": "/"
+      },
+      {
+        "name": "INSTITUCIONAL",
+        "children": [
+            {
+              "name": "¿Qué es el MPD?",
+              "url": "/institucional/mpd"
+            },
+            {
+              "name": "¿Qué hacemos?",
+              "url": "/institucional/queHacemos"
+            },
+            {
+              "name": "¿Dónde estamos?",
+              "url": "/institucional/dondeEstamos"
+            },
+            {
+                "name": "Organización",
+                "url": "/institucional/organizacion"
+              }
+          ]
+      },
+      {
+        "name": "ACCIONES",
+        "children": [
+            {
+                "name": "Informes",
+                "url": "/acciones/informes"
+              },
+              {
+                "name": "Monitores",
+                "url": "/acciones/defensoriaItinerante"
+              },
+              {
+                "name": "Acciones Judiciales",
+                "url": "/acciones/accionesJudiciales"
+              },
+              {
+                  "name": "Convenios",
+                  "url": "/acciones/convenios"
+                },
+                {
+                    "name": "Proyecto de Ley",
+                    "url": "/acciones/ProyectoLey"
+                  }
+        ]
+      },
+      {
+        "name": "MIEMBROS",
+        "children": [
+          {
+            "name": "Miembros Penales",
+            "url": "/miembros"
+          },
+          {
+            "name": "Miembros Civiles",
+            "url": "/miembrosCiviles"
+          },
+          {
+            "name": "Asesorìa de Niñas, Niños y adolecentes",
+            "url": "/miembrosANNA"
+          }          
+        ]
+      },
+      {
+        "name": "BIBLIOTECA",
+        "url": "/biblioteca"   
+      },
+      {
+        "name": "SALUD MENTAL",
+        "url": "/saludMental"   
+      },
+      {
+        "name": "CONTACTO",
+        "url": "/contact"   
+      },
+      {
+        "name": "INGRESAR",
+        "url": "/login"   
+      },
+      {
+        "name": "DASHBOARD",
+        "url": "/dashboard"   
+      }
+      
+    ]
+  }

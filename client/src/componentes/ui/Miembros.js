@@ -26,21 +26,21 @@ export default class Miembros extends Component {
             <>
             <div className="App">
                 <div className="container">
-                    <div className="row justify-content-md-center">
-                        <div className="col-2 col-lg-5" > 
-                            <Accordion className="shadow" >
+                    <div className="row">
+                        <div className="col-lg-3 offset-lg-9" > 
+                            {/* <Accordion className="shadow" >
                                 <Card>
                                     <Card.Header style={{background: "#ccc"}}>
                                         <Accordion.Toggle as={Card.Header} eventKey="0" style={{background: "#80B8C8"}}>
                                         </Accordion.Toggle>
                                     </Card.Header>
                                     <Accordion.Collapse eventKey="0">
-                                        <Card.Body style={{background: "gray"}}>
-                                            <Mapa />
+                                        <Card.Body>
                                         </Card.Body>
-                                    </Accordion.Collapse>
-                                </Card>
-                            </Accordion>  
+                                        </Accordion.Collapse>
+                                        </Card>
+                                    </Accordion>   */}
+                            <Mapa />
                         </div>
                         <div className="col-1">
                             <LocalidadContenido />

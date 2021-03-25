@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid #ffffff",
   },
   tab: {
-    marginLeft: "0.5em",
+    marginLeft: "0em",
     color: "white",
     fontFamily: "Roboto",
     fontWeight: 800,
@@ -52,6 +52,9 @@ const useStyles = makeStyles((theme) => ({
       color: "white",
       opacity: "1",
     },
+    "&:last-child": {
+      backgroundColor: "#006186",
+    }
   },
   iniReg: {
     backgroundColor: "transparent",
@@ -117,6 +120,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: ".9em",
     opacity: "0.7",
   },
+
   drawerItemSelected: {
     "& .MuiListItemText-root": {
       opacity: "1",
@@ -139,7 +143,6 @@ export default function MenuTop() {
   const [openMenu2, setOpenMenu2] = React.useState(false);
   const [openMenu3, setOpenMenu3] = React.useState(false);
   const [selectedIndex, setSelectedIndex] = React.useState(0);
-
   const [user , setUser] = useState(JSON.parse(localStorage.getItem("user"))?JSON.parse(localStorage.getItem("user")):'');
 
   const handleChange = (e, newValue) => {
@@ -230,7 +233,7 @@ export default function MenuTop() {
   const menuOptions2 = [
     {
     name: "MIEMBROS",
-      link: "/institucional/organizacion",
+      link: "/miembros",
       activeIndex: 2,
       selectedIndex: 0,
     },
@@ -322,11 +325,15 @@ export default function MenuTop() {
         mouseOver: (event) => handleClick2(event),
       },
     { name: "BIBLIOTECA", link: "/biblioteca", activeIndex: 4 },
-    { name: "SALUD MENTAL", link: "/saludMental", activeIndex: 5 },
+    // { name: "SALUD MENTAL", link: "/saludMental", activeIndex: 5 },
     { name: "CONTACTO", link: "/contact", activeIndex: 6 },
-    { name: !user?"INGRESAR":"DASHBOARD", link: !user?"/login":"/dashboard", activeIndex: 6 }
+
+    
+    { name: !user?"INGRESAR":"DASHBOARD", link: !user?"/login":"/dashboard", activeIndex: 6, className: "botonIngresarBacground" }
 
   ];
+
+
 
   useEffect(() => {
     [...menuOptions, ...menuOptions2, ...menuOptions3, ...routes].forEach((route) => {
@@ -366,6 +373,7 @@ export default function MenuTop() {
             onMouseOver={route.mouseOver}
           />
         ))}
+        
       </Tabs>
       {/* <Button
         component={Link}

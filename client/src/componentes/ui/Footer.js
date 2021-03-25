@@ -198,14 +198,14 @@ export default function Footer(props) {
                         item
                         component={Link}
                         onClick={() => {props.setValue(3); props.setSelectedIndex(0)}}
-                        to="/miembros/mapa" 
+                        to="/miembros" 
                         className={classes.link}>
                         MIEMBROS
                     </Grid>
                     <Grid 
                         item
                         component={Link}
-                        to="/miembros/mapa"
+                        to="/miembros"
                         onClick={() => {props.setValue(3); props.setSelectedIndex(1)}}  
                         className={classes.link}>
                         Mapa

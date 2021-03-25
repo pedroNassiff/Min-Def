@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useEffect }  from 'react'
 import SingleLegend from 'componentes/ui/SingleLegend'
 import avatar5 from ' ../../assets/img/avatar5.jpg'
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -11,11 +11,22 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function Castelli() {
+    
+    const handleScroll = () => {
+        let topElem = document.getElementById('content-city');
+        let top = topElem.offsetTop;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+    }
+
+    useEffect(() => {
+        handleScroll();
+    },[]);
+
     const classes = useStyles();
     const theme = useTheme();
     const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
         return (
-            <div className='container content-city mx-auto'>
+            <div className='container content-city mx-auto' id='content-city'>
                 <div className='row'>
                     <h2 className='h2 first-title'>VI CIRCUNSCRIPCIÒN - JUAN JOSÈ CASTELLI | Cel turno: 3644-54944</h2>
                 </div>

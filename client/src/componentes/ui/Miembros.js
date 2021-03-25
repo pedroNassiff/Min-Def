@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import {Link} from 'react-router-dom'
 
 import Mapa from './Mapa';
 import './miembros.css';
 import LocalidadContenido from './LocalidadContenido';
-import Card from 'react-bootstrap/Card'
-import Accordion from 'react-bootstrap/Accordion'
+// import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+// import {Link} from 'react-router-dom'
+// import Card from 'react-bootstrap/Card'
+// import Accordion from 'react-bootstrap/Accordion'
 
 export default class Miembros extends Component {
     state ={
@@ -24,31 +24,21 @@ export default class Miembros extends Component {
     render(){   
         return (
             <>
-            <div className="App">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-3 offset-lg-9" > 
-                            {/* <Accordion className="shadow" >
-                                <Card>
-                                    <Card.Header style={{background: "#ccc"}}>
-                                        <Accordion.Toggle as={Card.Header} eventKey="0" style={{background: "#80B8C8"}}>
-                                        </Accordion.Toggle>
-                                    </Card.Header>
-                                    <Accordion.Collapse eventKey="0">
-                                        <Card.Body>
-                                        </Card.Body>
-                                        </Accordion.Collapse>
-                                        </Card>
-                                    </Accordion>   */}
-                            <Mapa />
-                        </div>
-                        <div className="col-1">
-                            <LocalidadContenido />
+                <div className="App">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col-md-12 text-center" >
+                                <div>
+                                    <h5 style={{fontFamily: "Roboto", fontSize:"20px", color:"black"}}>Selecciona la Circunscripción en el mapa</h5>
+                                </div>
+                                <Mapa />
+                            </div>
+                            <div className="col-1">
+                                <LocalidadContenido />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-
             </>
         );
     }

@@ -17,20 +17,15 @@ import MiembrosCiviles from './MiembrosCiviles'
 export default class LocalidadContenidoCiviles extends Component {
     render() {
         return (
-            <div className="card-1 shadow">
-                <div className="card-body1" >
-                
-                <Switch>
-                    <Route  exact path="/miembrosCiviles" component={DefaultLegend}/>
-                    <Route  exact path="/miembrosCiviles/castelli" component={Castelli}/>
-                    <Route  exact path="/miembrosCiviles/charata" component={Charata}/>
-                    <Route  exact path="/miembrosCiviles/resistencia" component={Resistencia}/>
-                    <Route  exact path="/miembrosCiviles/saenzPeña" component={SaenzPeña}/>
-                    <Route  exact path="/miembrosCiviles/sanMartin" component={SanMartin}/>
-                    <Route  exact path="/miembrosCiviles/villaAngela" component={VillaAngela}/>
-                </Switch>
-                </div>
-            </div>
+        <Switch>
+            {/* <Route  exact path="/miembrosCiviles" component={DefaultLegend}/> */}
+            <Route  exact path="/miembrosCiviles/castelli" component={Castelli}/>
+            <Route  exact path="/miembrosCiviles/charata" component={Charata}/>
+            <Route  exact path="/miembrosCiviles/resistencia" component={Resistencia}/>
+            <Route  exact path="/miembrosCiviles/saenzPeña" component={SaenzPeña}/>
+            <Route  exact path="/miembrosCiviles/sanMartin" component={SanMartin}/>
+            <Route  exact path="/miembrosCiviles/villaAngela" component={VillaAngela}/>
+        </Switch>
         )
     }
 }

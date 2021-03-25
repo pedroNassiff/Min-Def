@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { NavLink, withRouter } from 'react-router-dom'
 import mapa from '../../assets/img/mapa.png'
 
-import { Form, FormGroup, Input, Row, Col, Container } from 'reactstrap';
+// import { Form, FormGroup, Input, Row, Col, Container } from 'reactstrap';
 
 class Mapa extends Component {
 

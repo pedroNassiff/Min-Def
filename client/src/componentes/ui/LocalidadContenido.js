@@ -17,20 +17,15 @@ import Miembros from './Miembros'
 export default class LocalidadContenido extends Component {
     render() {
         return (
-            <div className="card-1 shadow">
-                <div className="card-body1" >
-                
-                <Switch>
-                    <Route  exact path="/miembros" component={DefaultLegend}/>
-                    <Route  exact path="/miembros/castelli" component={Castelli}/>
-                    <Route  exact path="/miembros/charata" component={Charata}/>
-                    <Route  exact path="/miembros/resistencia" component={Resistencia}/>
-                    <Route  exact path="/miembros/saenzPeña" component={SaenzPeña}/>
-                    <Route  exact path="/miembros/sanMartin" component={SanMartin}/>
-                    <Route  exact path="/miembros/villaAngela" component={VillaAngela}/>
-                </Switch>
-                </div>
-            </div>
+            <Switch>
+                {/* <Route  exact path="/miembros" component={DefaultLegend}/> */}
+                <Route  exact path="/miembros/castelli" component={Castelli}/>
+                <Route  exact path="/miembros/charata" component={Charata}/>
+                <Route  exact path="/miembros/resistencia" component={Resistencia}/>
+                <Route  exact path="/miembros/saenzPeña" component={SaenzPeña}/>
+                <Route  exact path="/miembros/sanMartin" component={SanMartin}/>
+                <Route  exact path="/miembros/villaAngela" component={VillaAngela}/>
+            </Switch>
         )
     }
 }

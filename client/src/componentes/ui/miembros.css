@@ -588,3 +588,44 @@ h5{
         min-width: 30%;
     }
 }
+
+/*
+Lo que agregó Walter para los mapas
+*/
+.App{
+  margin-top: 6rem;
+}
+.card-body1{
+    margin-top: -25em;
+}
+.offset-lg-9{
+    margin-left: 75%;
+}
+.col-lg-3{
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+.content-map{
+    position: relative;
+    padding-top: 5rem;
+}
+.content-map .map{
+    width: 300px;
+    height: 300px;
+    margin-top: 3rem;
+    position: relative;
+}
+.localidad{
+    cursor: pointer;
+    /* transition: transform .2s;
+    margin: auto; */
+    opacity: 0.5;
+}
+.localidad:hover{
+    /* transform: scale(1.1); */
+    opacity: 1;
+}
+.map .active .localidad{
+    opacity: 1;
+}

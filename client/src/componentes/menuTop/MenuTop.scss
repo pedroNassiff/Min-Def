@@ -25,3 +25,83 @@
 .ant-divider-vertical{
     margin: 0;
 }
+
+/*
+Nuevo Menú
+*/
+.main-navbar{
+    width: 100%;
+    background-color: #00a0dc;
+    color: #fff;
+    .group{
+        display: none;
+        border: 1px solid #FFFFFF;
+        @media (min-width: 768px) {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        &.active{
+            position: absolute;
+            right: 0;
+            top: 160px;
+            display: flex;
+            flex-direction: column;
+            background-color: #00a0dc;
+            color: #fff;
+            width: 50%;
+            overflow: auto;
+            max-height: calc(1000vh - 160px);
+            .line-item{
+                display: none;
+            }
+            &.item{
+                &:hover{
+                    .sub-group{
+                        height: 200px;
+                    }
+                }
+            }
+        }
+        li{
+            height: 48px;
+            opacity: 1;
+            font-size: .9em;
+            font-family: 'Roboto';
+            font-weight: 800;
+            margin: 0;
+            padding-top: 17px;
+            &.item{
+                text-align: center;
+                min-width: 160px;
+                position: relative;
+                &:hover{
+                    .sub-group{
+                        background-color: #00a0dc;
+                        display: block;
+                        position: absolute;
+                        min-width: 100%;
+                        left: -15px;
+                        top: 49px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                    }
+                }
+            }
+            &.line-item{
+                border-left: 1px solid #FFFFFF;
+            }
+            a{
+                color: white;
+            }
+        }
+        .sub-group{
+            display: none;
+        }
+    }
+}
+@media (min-width: 768px){
+    .MuiButtonBase-root.MuiIconButton-root.makeStyles-drawerIconContainer-6{
+        display: none;
+    }
+}

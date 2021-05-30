@@ -75,17 +75,21 @@ Nuevo Menú
                 text-align: center;
                 min-width: 160px;
                 position: relative;
+                width: 100%;
                 &:hover{
                     .sub-group{
                         background-color: #00a0dc;
                         display: block;
                         position: absolute;
                         min-width: 100%;
-                        left: -15px;
+                        left: 0;
                         top: 49px;
                         padding-left: 15px;
                         padding-right: 15px;
                     }
+                }
+                &.activated{
+                    background-color: #096dd9;
                 }
             }
             &.line-item{
@@ -101,7 +105,11 @@ Nuevo Menú
     }
 }
 @media (min-width: 768px){
-    .MuiButtonBase-root.MuiIconButton-root.makeStyles-drawerIconContainer-6{
+    .MuiButtonBase-root.MuiIconButton-root.jss6{
+
         display: none;
     }
+}
+ul{
+    margin: 0 !important;
 }

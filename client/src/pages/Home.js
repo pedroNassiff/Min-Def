@@ -162,7 +162,7 @@ export default function Home(props) {
 
         <section className='panel panel--content'>
           <article className='panel__item item--left item--first'>
-            <div class='card'>
+            <div className='card'>
               <div className='card__header'>
                 <h4>Defensorias Públicas Penales</h4>
               </div>
@@ -177,7 +177,7 @@ export default function Home(props) {
           </article>
 
           <article className='panel__item item--right item--second'>
-            <div class='card'>
+            <div className='card'>
               <div className='card__header'>
                 <h4>Defensorias Públicas Civiles</h4>
               </div>
@@ -192,7 +192,7 @@ export default function Home(props) {
           </article>
 
           <article className='panel__item item--left item--third'>
-            <div class='card'>
+            <div className='card'>
               <div className='card__header'>
                 <h4>Asesorias de Niños, Niñas y Adolecentes</h4>
               </div>

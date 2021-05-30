@@ -1,113 +1,79 @@
-import React, { useState, useEffect, createRef } from "react";
+import React, { useState, useEffect } from "react";
 import './BuscadorBiblioteca.scss'
-import { Button, Input, Card } from 'antd';
-import ApiService from '../../services/ApiService'
-import Dumi from '../../dummyData/test'
-
-const filtro = (Arr, value) => {
-  if(value === 'Todos'){
-      return Arr
-  }else{
-      return Arr.filter(e => e.categoria === value)
-  }
-}
+import { Button } from 'antd';
 
 const BuscadorBiblioteca = () => {
 
-    const [state, setState] = useState({
-      categoria: 'Todos',
-      search: '',
-      name: 'hai',
-      arrayentero: [],
-      arrayfiltrado:[]
-    });
+    const domain = 'http://mpdchaco.tk';
+    const [item, setItems] = useState([]);
 
-
-    useEffect(() => {
-     //data.biblioteca
-      ApiService.getBiblioteca().then(
-        (data) => {   
-          setState({
-            ...state,
-            arrayentero: data.biblioteca,
-            arrayfiltrado: filtro(data.biblioteca, 'Todos'),
-          });
-        },
-        error => {
-          console.log(error);
-        }
-      )
-    }, []);
-
-
-    const searchFilter = (event) => {
-      console.log(event.target.value);
-      console.log();
-      setState({
-          ...state,
-          search: event.target.value,
-          arrayfiltrado: filtro(state.arrayentero, state.categoria).filter(
-              function (list) 
-              {
-                  return list.nombre.toUpperCase().includes(event.target.value.toUpperCase())
-              })
-      }); 
+    async function getData(url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        const message = `Ocurrió un error: ${response.status}`;
+        throw new Error(message);
+      }
+      const data = await response.json();
+      setItems(data);
     }
 
-    const handleChange = (val) => {
-      setState({
-          ...state,
-          categoria: val,
-          search: '',
-          arrayfiltrado: filtro(state.arrayentero, val)
-      });
-    };
+    useEffect(() => {
+      // trayendo bibliotecas
+      getData(`${domain}/wp-json/wp/v2/biblioteca`);
+    }, []);
+
+    const filterList = (type) => {
+      getData(`${domain}/wp-json/wp/v2/biblioteca?filter[meta_key]=area&filter[meta_value]=${type}`);
+    } 
+
+    const searchFilter = (search) => {
+      getData(`${domain}/wp-json/wp/v2/biblioteca?search=${search}`);
+    }
 
     return (
         <div className="bibliotecaContainer">
             <div className="titleContainer">
                 <h1>Biblioteca</h1>
                 <span>
-                    Seleccione el tipo de información que necesite y luego escribe el campo de búsqueda.
+                    Filtros:
                 </span>
             </div>
             <div className="selectContainer">
-                <Button onClick={() => handleChange('reglamentos')} className='selectButton1'>Reglamentos</Button>
-                <Button onClick={() => handleChange('resoluciones')} className='selectButton2'>Resoluciones</Button>
-                <Button onClick={() => handleChange('leyes')} className='selectButton3'>Leyes</Button>
-                <Button onClick={() => handleChange('secretariaCivil')} className='selectButton3'>Secretaría Civil</Button>
-                <Button onClick={() => handleChange('secretariaPenal')} className='selectButton3'>Secretaría Penal</Button>
-                <Button onClick={() => handleChange('legislaciones')} className='selectButton4'>Legislaciones</Button>
+                <Button onClick={() => filterList('reglamentos')} className='selectButton1'>Reglamentos</Button>
+                <Button onClick={() => filterList('resoluciones')} className='selectButton2'>Resoluciones</Button>
+                <Button onClick={() => filterList('leyes')} className='selectButton3'>Leyes</Button>
+                <Button onClick={() => filterList('secretaria-civil')} className='selectButton3'>Secretaría Civil</Button>
+                <Button onClick={() => filterList('secretaria-penal')} className='selectButton3'>Secretaría Penal</Button>
+                <Button onClick={() => filterList('legislaciones')} className='selectButton4'>Legislaciones</Button>
             </div>
             <div className="SearchContainer">
-                <Input
-                    className='searchInput'
-                    type="text"
-                    name="search"
-                    onChange={searchFilter}
-                    value={state.search}
-                    placeholder="Que buscas?"
+                <input
+                  className='searchInput ant-input'
+                  type="text"
+                  name="search"
+                  onChange={event => searchFilter(event.target.value)}
+                  placeholder="¿Que buscas?"
                 />
-                <Button className='selectButton5'>Buscar</Button>
+                {/* <Button className='selectButton5'>Buscar</Button> */}
             </div>
-            <div className="titleContainer">
-            {
-              state.categoria != 'Todos' &&  
-              <h1>filtrado por {state.categoria}</h1>
-            }
-            </div>
-            <div className="resultContainer">
+            
+            <div className='resultContainer'>
               {
-                state.arrayfiltrado.map(
-                  (item, i) => (
-                    <div  key={i} className="site-card-border-less-wrapper">
-                    <Card title={item.nombre} bordered={false} extra={<a href={item.fileurl} target="_blank" className='selectButton5'>Descargar</a>}>
-                      {/*  <p>{item.descripcion}</p> */}
-                    </Card>
+                item && item.map(
+                  (b, i) => (
+                    <div  key={i} className="card w-100">
+                      <div className='card-body w-100'>
+                        <ul className='d-flex'>
+                          <li className='name body-title w-100 d-flex align-items-center'><p>{b.title.rendered} <span className='badge badge-success'>{b.acf.area.label}</span></p></li>
+                          <li className='body-button'><a href={b.acf.doc} className='btn btn-primary' target='_blank' download>Descargar</a></li>
+                        </ul>
+                      </div>
                     </div>
                   )
                 )
               }
+            </div>
+            <div className="titleContainer">
             </div>
         </div>
     );

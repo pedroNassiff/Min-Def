@@ -653,8 +653,7 @@ export default function MenuTop() {
                 <li className='line-item'></li>
                 <li className='item'><Link to={`/contact`}>CONTACTO</Link></li>
                 <li className='line-item'></li>
-                <li className='item'><Link to={`/login`}>INGRESAR</Link></li>
-                <li className='line-item'></li>
+                <li className='item activated'><Link to={`/login`}>INGRESAR</Link></li>
               </ul>
             </nav>
           </div>

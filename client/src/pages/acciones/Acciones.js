@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Convenios = () => {
+const Acciones = () => {
 
     const domain = 'http://mpdchaco.tk';
     const [item, setItems] = useState([]);
@@ -16,20 +16,21 @@ const Convenios = () => {
     }
 
     useEffect(() => {
-      // trayendo Acciones
-      getData(`${domain}/wp-json/wp/v2/acciones?filter[meta_key]=area&filter[meta_value]=convenios`);
+      // trayendo acciones
+      getData(`${domain}/wp-json/wp/v2/acciones`);
     }, []);
 
+
     const searchFilter = (search) => {
-      getData(`${domain}/wp-json/wp/v2/acciones?filter[meta_key]=area&filter[meta_value]=convenios&search=${search}`);
+      getData(`${domain}/wp-json/wp/v2/acciones?search=${search}`);
     }
 
     return (
         <div className="bibliotecaContainer">
             <div className="titleContainer">
-                <h1>Acciones - Convenios</h1>
+                <h1>Acciones</h1>
                 <span>
-                   Escriba lo que está buscando en el buscador
+                  Escriba lo que está buscando en el buscador
                 </span>
             </div>
             <div className="SearchContainer">
@@ -65,4 +66,4 @@ const Convenios = () => {
     );
 };
 
-export default Convenios;
+export default Acciones;

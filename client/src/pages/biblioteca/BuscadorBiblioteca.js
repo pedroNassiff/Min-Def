@@ -35,7 +35,7 @@ const BuscadorBiblioteca = () => {
             <div className="titleContainer">
                 <h1>Biblioteca</h1>
                 <span>
-                    Filtros:
+                    Selecciona una de las categorías para filtrar o escriba lo que está buscando en el buscador
                 </span>
             </div>
             <div className="selectContainer">

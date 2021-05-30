@@ -305,7 +305,7 @@ export default function MenuTop() {
         },
         {
           name: "Proyecto de Ley",
-            link: "/acciones/ProyectoLey",
+            link: "/acciones/ProyectoDeLey",
             activeIndex: 3,
             selectedIndex: 6,
           },
@@ -615,7 +615,7 @@ export default function MenuTop() {
                       </Link>
                     </li>
                     <li className='item sub-item'>
-                      <Link to={`/acciones/ProyectoLey`} className='item-link'>
+                      <Link to={`/acciones/ProyectoDeLey`} className='item-link'>
                         Proyectos de Ley
                       </Link>
                     </li>

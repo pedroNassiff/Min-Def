@@ -7,7 +7,6 @@ import SanMartin from '../Localidades/SanMartin'
 import VillaAngela from '../Localidades/VillaAngela'
 import Home from 'pages/Home'
 
-//import DefaultLegend from './DefaultLegend'
 import DefaultLegend from './DefaultLegend'
 
 import {Route, Switch} from 'react-router-dom'
@@ -18,7 +17,7 @@ export default class LocalidadContenido extends Component {
     render() {
         return (
             <Switch>
-                {/* <Route  exact path="/miembros" component={DefaultLegend}/> */}
+                {<Route  exact path="/miembros" component={DefaultLegend}/>}
                 <Route  exact path="/miembros/castelli" component={Castelli}/>
                 <Route  exact path="/miembros/charata" component={Charata}/>
                 <Route  exact path="/miembros/resistencia" component={Resistencia}/>

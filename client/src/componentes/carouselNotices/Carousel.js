@@ -17,49 +17,36 @@ const CarouselNotice = () => {
 
   const handlePrev = () => carousel.current.prev();
 
-  useEffect(() => {
-    ApiService.getNoticia().then(
-      (data) => {
-          console.log('retorno',data); 
-          if (data.noticias.length > 0) {
-            console.log(data.noticias);
-            setCards(
-              data.noticias.map(
-                (item, i) => (
-                  <div key={i}>
-                    <Card
-                      img={item.img}
-                      web={true}
-                      title={item.title}
-                      description={item.description}
-                      meta={item.meta}
-                    />
-                  </div>
-                )
-              )
-            )
-          }else{
-            setCards(
-              DummyData.map(
-                (item, i) => (
-                  <div key={i}>
-                    <Card
-                      img={item.img}
-                      web={false}
-                      title={item.title}
-                      description={item.description}
-                      meta={item.meta}
-                    />
-                  </div>
-                )
-              )
-            )
-          }
-      },
-      error => {
-        console.log(error);
-      }
+  const domain = 'http://mpdchaco.tk';
+
+  async function getData(url) {
+    const response = await fetch(url);
+    if (!response.ok) {
+      const message = `Ocurrió un error: ${response.status}`;
+      throw new Error(message);
+    }
+    const data = await response.json();
+
+    setCards(
+      data.map(
+        (noticia, i) => (
+          <div key={i}>
+            <Card
+              img={noticia.acf.cover}
+              web={true}
+              title={noticia.title.rendered}
+              description={noticia.acf.short_description}
+              meta={noticia.acf.fecha}
+            />
+          </div>
+        )
+      )
     )
+  }
+
+  useEffect(() => {
+
+    getData(`${domain}/wp-json/wp/v2/noticias`);
 
     function handleResize() {
       setToShow(window.innerWidth >= 800 ?2:1)

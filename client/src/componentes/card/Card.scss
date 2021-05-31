@@ -64,21 +64,31 @@ body{
      
   }
   
+  .gallery .info h2{
+      line-height: 24px;
+      font-size: 18px;
+      padding: 0 10px;
+      font-weight: 400;
+      margin-bottom: 0;
+  }
+
   .gallery .info h2 span{
     color: #fff;
     display: block;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
     text-decoration:none;
     font-weight: 600;
-
   }
-  
-  .gallery .info h2{
-      line-height: 24px;
-      font-size: 18px;
-    padding: 0 10px;
-    font-weight: 400;
-    
+
+  .gallery .info p{
+    text-align: center;
+  }
+
+  .gallery .info p span{
+    color: #fff;
+    display: block;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+    text-decoration:none;
   }
   
   .gallery .foot{

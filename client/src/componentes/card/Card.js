@@ -21,10 +21,8 @@ const CardComponent = (props) => {
         </span>
         <span className="thumb">
           <div className="info">
-            <h2>
-              <span>{title}</span>
-              <span>{description}</span>
-            </h2>
+            <h2 dangerouslySetInnerHTML={{__html: `<span>${title}</span>`}}></h2>
+            <p dangerouslySetInnerHTML={{__html: `<span>${description}</span>`}}></p>
             <div className="foot">
               <i className="line"></i>
               <span className="date">{meta}</span>

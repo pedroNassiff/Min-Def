@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Acciones = () => {
 
-    const domain = 'http://mpdchaco.tk';
+    const domain = 'https://mpdchaco.tk';
     const [item, setItems] = useState([]);
 
     async function getData(url) {

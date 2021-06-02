@@ -1,19 +1,9 @@
-import React, { useEffect, useState }  from 'react'
+import React, { useState, useEffect } from 'react';
 import iconArroba from '../../assets/img/icon-mail.svg';
 import iconPhone from '../../assets/img/icon-phone.svg';
 import iconMarker from '../../assets/img/icon-marker.svg';
 
-// const useStyles = makeStyles(theme => ({
-// }))
-
-export default function Castelli() {
-    
-    const handleScroll = () => {
-        let topElem = document.getElementById('content-city');
-        let top = topElem.offsetTop;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-    }
-
+export default function SingleLegend() {
     const domain = 'https://mpdchaco.tk';
     const [miembros, setMiembros] = useState([]);
 
@@ -30,8 +20,7 @@ export default function Castelli() {
     }
 
     useEffect(() => {
-      getData(`${domain}/wp-json/wp/v2/miembros?categories=1`);
-      handleScroll();
+      getData(`${domain}/wp-json/wp/v2/miembros?categories=3`);
     }, []);
 
     return (
@@ -42,10 +31,9 @@ export default function Castelli() {
                 (miembro, i) => (
                   <div className='row w-100' key={i}>
                     {
-                      miembro.city === 'Castelli' &&
                       miembro.circunscripcion.map((circu, j) => (
-                        <div className='card-miembro w-100' key={j}>
-                          <div className='card-header'>
+                        <div className='card-miembro w-100'>
+                          <div className='card-header' key={j}>
                             <ul className='header--title'>
                               <li><h2 className='h2 text-left'>{circu.title}</h2></li>
                               <li><h2 className='name-city'>{miembro.city}</h2></li>

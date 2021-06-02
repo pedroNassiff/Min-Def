@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const Convenios = () => {
 
-    const domain = 'http://mpdchaco.tk';
+    const domain = 'https://mpdchaco.tkk';
     const [item, setItems] = useState([]);
 
     async function getData(url) {

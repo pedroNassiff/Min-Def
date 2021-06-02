@@ -8,7 +8,7 @@ import VillaAngela from '../Localidades/anna/VillaAngela'
 import Home from 'pages/Home'
 
 //import DefaultLegend from './DefaultLegend'
-import DefaultLegend from './DefaultLegend'
+import DefaultLegend from './DefaultLegendANNA'
 
 import {Route, Switch} from 'react-router-dom'
 import {Link} from 'react-router-dom'
@@ -18,7 +18,7 @@ export default class LocalidadContenidoANNA extends Component {
     render() {
         return (
         <Switch>
-            {/* <Route  exact path="/miembrosANNA" component={DefaultLegend}/> */}
+            <Route  exact path="/miembrosANNA" component={DefaultLegend}/>
             <Route  exact path="/miembrosANNA/castelli" component={Castelli}/>
             <Route  exact path="/miembrosANNA/charata" component={Charata}/>
             <Route  exact path="/miembrosANNA/resistencia" component={Resistencia}/>

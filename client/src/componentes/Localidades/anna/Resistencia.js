@@ -1,94 +1,89 @@
-import React, { useEffect } from 'react'
-import avatar3 from ' ../../assets/img/avatar3.jpg'
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
+import React, { useEffect, useState }  from 'react'
 import iconArroba from '../../../assets/img/icon-mail.svg';
 import iconPhone from '../../../assets/img/icon-phone.svg';
+import iconMarker from '../../../assets/img/icon-marker.svg';
 
 
-const useStyles = makeStyles(theme => ({
-}))
 export default function Resistencia() {
-    const handleScroll = () => {
-        let topElem = document.getElementById('content-city');
-        let top = topElem.offsetTop;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-    }
 
-    useEffect(() => {
-        handleScroll();
-    },[]);
-
-    const classes = useStyles();
-    const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-        return (
-            <div className='container content-city mx-auto' id='content-city'>
-            <div className='row'>
-                <h2 className='h2'>I - CIRCUNSCRIPCIÓN RESISTENCIA |<br />Civiles Av. 9 de Julio Nº 466 | Cel Turno: 3624-902841</h2>
-            </div>
-            <div className='row'>
-                <div className='item item--2'>
-                    <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar3} alt='Asesoria de NNA N° 1: Dra. Natalia Raquel Fachin' /> </figure>
-                    <h6>Asesoria de NNA N° 1: Dra. Natalia Raquel Fachin</h6>
-                    <ul className='item--info'>
-                        {/* <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span></li> */}
-                        <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono: 362-4433642</li>
-                        <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> asesoriadelmenor1@justiciachaco.gov.ar</li>
-                    </ul>
-                </div>
-                <div className='item item--2'>
-                    <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar3} alt='Asesoria de NNA N° 2: Dra. Romina Soledad Cima' /> </figure>
-                    <h6>Asesoria de NNA N° 2: Dra. Romina Soledad Cima</h6>
-                    <ul className='item--info'>
-                        {/* <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span></li> */}
-                        <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono: 362-4453879</li>
-                        <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> asesoriadelmenor2@justiciachaco.gov.ar</li>
-                    </ul>
-                </div>
-                <div className='item item--2'>
-                    <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar3} alt='Asesoria de NNA N° 5: Dra. Gabriela Carolina Coleff' /> </figure>
-                    <h6>Asesoria de NNA N° 5: Dra. Gabriela Carolina Coleff</h6>
-                    <ul className='item--info'>
-                        {/* <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span></li> */}
-                        <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono: 362-44538731</li>
-                        <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> asesoriadelmenor5@justiciachaco.gov.ar</li>
-                    </ul>
-                </div>
-                <div className='item item--2'>
-                    <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar3} alt='Asesoria de NNA N° 5: Dra. Patricia Noemi Zamudio' /> </figure>
-                    <h6>Asesoria de NNA N° 5: Dra. Patricia Noemi Zamudio</h6>
-                    <ul className='item--info'>
-                        {/* <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span></li> */}
-                        <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono: 362-4453872</li>
-                        <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> asesoriadelmenor6@justiciachaco.gov.ar</li>
-                    </ul>
-                </div>
-            </div>
-            <div className='row'>
-                <h2 className='h2 first-title'>PENALES | Av. las Heras Nº 320 - 2do piso | Celular de turno: 3624-248988</h2>
-            </div>
-            <div className='row'>
-                <div className='item item--2 first--city'>
-                    <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar3} alt='Asesoria de NNA N° 3: Dra. Marianela Motter Lugo' /> </figure>
-                    <h6>Asesoria de NNA N° 3: Dra. Marianela Motter Lugo</h6>
-                    <ul className='item--info'>
-                        {/* <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span></li> */}
-                        <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono: 362-4453959</li>
-                        <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> asesoriadelmenor3@justiciachaco.gov.ar</li>
-                    </ul>
-                </div>
-                <div className='item item--2 first--city'>
-                    <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar3} alt='Asesoria de NNA N° 4: Dra. Elena Velazco - Prov -' /> </figure>
-                    <h6>Asesoria de NNA N° 4: Dra. Elena Velazco - Prov -</h6>
-                    <ul className='item--info'>
-                        {/* <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span></li> */}
-                        <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono: 362-4452565</li>
-                        <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> asesoriadelmenor5@justiciachaco.gov.ar</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    )
+  const handleScroll = () => {
+    let topElem = document.getElementById('content-city');
+    let top = topElem.offsetTop;
+    window.scrollTo({ top: top, behavior: 'smooth' });
 }
 
+const domain = 'https://mpdchaco.tk';
+const [miembros, setMiembros] = useState([]);
+
+async function getData(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    const message = `Ocurrió un error: ${response.status}`;
+    throw new Error(message);
+  }
+  const data = await response.json();
+  if(data.length > 0) {
+    setMiembros(data[0].acf.localidad)
+  };
+}
+
+useEffect(() => {
+  getData(`${domain}/wp-json/wp/v2/miembros?categories=3`);
+  handleScroll();
+}, []);
+
+return (
+    <>
+      <div className='container content-city mx-auto' id='content-city'>
+        {
+          miembros && miembros.map(
+            (miembro, i) => (
+              <div className='row w-100' key={i}>
+                {
+                  miembro.city === 'Resistencia' &&
+                  miembro.circunscripcion.map((circu, j) => (
+                    <div className='card-miembro w-100' key={j}>
+                      <div className='card-header'>
+                        <ul className='header--title'>
+                          <li><h2 className='h2 text-left'>{circu.title}</h2></li>
+                          <li><h2 className='name-city'>{miembro.city}</h2></li>
+                        </ul>
+                      </div>  
+                      {
+                        circu.item.map((ite, k) => (
+                          <div className='card-body' key={k}>
+                            <div className='body--cover'>
+                              <figure className='mx-auto'> <img className='img-fluid d-block' src={ite.cover} alt={ite.name} /> </figure>
+                            </div>
+                            <div className='body--info'>
+                              <h2>{ite.name}</h2>
+                              <ul className='item--info'>
+                                {
+                                  ite.address &&
+                                  <li><span><img className='img-fluid' src={iconMarker} alt='Dirección'/></span> Dirección: {ite.address}</li>
+                                }
+                                {
+                                  ite.phone &&
+                                  <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono fijo: {ite.phone}</li>
+                                }
+                                {
+                                  ite.email &&
+                                  <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> {ite.email}</li>
+                                }
+                              </ul>
+                            </div>
+                          </div>
+                        ))
+                      }
+                    </div>
+                  ))
+                }
+              </div>
+            )
+          )
+        }
+      </div>
+    </>
+)
+    
+}

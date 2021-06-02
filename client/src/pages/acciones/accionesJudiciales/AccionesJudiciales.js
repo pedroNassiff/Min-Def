@@ -3,7 +3,7 @@ import './AccionesJudiciales.scss'
 
 const AccionesJudiciales = () => {
 
-    const domain = 'http://mpdchaco.tk';
+    const domain = 'https://mpdchaco.tkk';
     const [item, setItems] = useState([]);
 
     async function getData(url) {

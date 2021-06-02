@@ -3,7 +3,7 @@ import './ProyectoDeLey.scss'
 
 const ProyectoDeLey = () => {
 
-    const domain = 'http://mpdchaco.tk';
+    const domain = 'https://mpdchaco.tk';
     const [item, setItems] = useState([]);
 
     async function getData(url) {

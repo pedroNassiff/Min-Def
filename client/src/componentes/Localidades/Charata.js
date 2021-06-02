@@ -1,57 +1,90 @@
-import React, { useEffect } from 'react'
-import SingleLegend from 'componentes/ui/SingleLegend'
-import Grid from '@material-ui/core/Grid';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import avatar5 from ' ../../assets/img/avatar5.jpg'
-import iconArroba from '../../assets/img/arroba.png'
-const useStyles = makeStyles(theme => ({
-}))
+import React, { useEffect, useState }  from 'react'
+import iconArroba from '../../assets/img/icon-mail.svg';
+import iconPhone from '../../assets/img/icon-phone.svg';
+import iconMarker from '../../assets/img/icon-marker.svg';
+
 
 export default function Charata() {
 
-    const handleScroll = () => {
-        let topElem = document.getElementById('content-city');
-        let top = topElem.offsetTop;
-        window.scrollTo({ top: top, behavior: 'smooth' });
-    }
+  const handleScroll = () => {
+    let topElem = document.getElementById('content-city');
+    let top = topElem.offsetTop;
+    window.scrollTo({ top: top, behavior: 'smooth' });
+}
 
-    useEffect(() => {
-        handleScroll();
-    },[]);
+const domain = 'https://mpdchaco.tk';
+const [miembros, setMiembros] = useState([]);
 
+async function getData(url) {
+  const response = await fetch(url);
+  if (!response.ok) {
+    const message = `Ocurrió un error: ${response.status}`;
+    throw new Error(message);
+  }
+  const data = await response.json();
+  if(data.length > 0) {
+    setMiembros(data[0].acf.localidad)
+  };
+}
 
-    const classes = useStyles();
-    const theme = useTheme();
-    const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
-        return (
-            <div className='container content-city mx-auto' id='content-city'>
-                <div className='row'>
-                    <h2 className='h2 first-title'>IV CIRCUNSCRIPCIÒN - CHARATA | Cel turno: 3625-239848</h2>
-                </div>
-                <div className='row'>
-                    <div className='item item--2'>
-                        <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 1: Dra. Cecilia Carauini' /> </figure>
-                        <h6>Defensoría Oficial N° 1: Dra. Patricia Paz</h6>
-                        <ul className='item--info'>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='Dirección'/></span>Direcciòn: Monseñor de Carlo Nº 345</li>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span>Teléfono fijo: 3731-442393</li>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span>defensoria1-ch@justiciachaco.gov.ar</li>
+useEffect(() => {
+  getData(`${domain}/wp-json/wp/v2/miembros?categories=1`);
+  //getData(`${domain}/wp-json/wp/v2/miembros?categories=1&filter[meta_key]=city&filter[meta_value]=castelli`);
+  handleScroll();
+}, []);
+
+return (
+    <>
+      <div className='container content-city mx-auto' id='content-city'>
+        {
+          miembros && miembros.map(
+            (miembro, i) => (
+              <div className='row w-100' key={i}>
+                {
+                  miembro.city === 'Charata' &&
+                  miembro.circunscripcion.map((circu, j) => (
+                    <div className='card-miembro w-100' key={j}>
+                      <div className='card-header'>
+                        <ul className='header--title'>
+                          <li><h2 className='h2 text-left'>{circu.title}</h2></li>
+                          <li><h2 className='name-city'>{miembro.city}</h2></li>
                         </ul>
+                      </div>  
+                      {
+                        circu.item.map((ite, k) => (
+                          <div className='card-body' key={k}>
+                            <div className='body--cover'>
+                              <figure className='mx-auto'> <img className='img-fluid d-block' src={ite.cover} alt={ite.name} /> </figure>
+                            </div>
+                            <div className='body--info'>
+                              <h2>{ite.name}</h2>
+                              <ul className='item--info'>
+                                {
+                                  ite.address &&
+                                  <li><span><img className='img-fluid' src={iconMarker} alt='Dirección'/></span> Dirección: {ite.address}</li>
+                                }
+                                {
+                                  ite.phone &&
+                                  <li><span><img className='img-fluid' src={iconPhone} alt='Teléfono'/></span> Teléfono fijo: {ite.phone}</li>
+                                }
+                                {
+                                  ite.email &&
+                                  <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span> {ite.email}</li>
+                                }
+                              </ul>
+                            </div>
+                          </div>
+                        ))
+                      }
                     </div>
-                    <div className='item item--2'>
-                        <figure className='mx-auto'> <img className='img-fluid d-block' src={avatar5} alt='Defensoría Oficial N° 2: Dr. Ramòn Svenson' /> </figure>
-                        <h6>Defensoría Oficial N° 2: Dra. Lorena Pàez</h6>
-                        <ul className='item--info'>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='Dirección'/></span>Monseñor de Carlo Nº 345</li>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='Teléfono'/></span>3731-423146 - Cel: 3731-624414</li>
-                            <li><span><img className='img-fluid' src={iconArroba} alt='correo'/></span>defensoria2-ch@justiciachaco.gov.ar</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </div>
-        )
+                  ))
+                }
+              </div>
+            )
+          )
+        }
+      </div>
+    </>
+)
     
 }

@@ -17,7 +17,7 @@ const CarouselNotice = () => {
 
   const handlePrev = () => carousel.current.prev();
 
-  const domain = 'http://mpdchaco.tk';
+  const domain = 'https://mpdchaco.tk';
 
   async function getData(url) {
     const response = await fetch(url);

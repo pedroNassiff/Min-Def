@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 
-import Mapa from './MapaANNA';
+import Mapa from './MapaPenales';
 import './miembros.css';
-import LocalidadContenido from './LocalidadContenidoANNA';
+import LocalidadContenido from './LocalidadContenidoPenales';
 // import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import {Link} from 'react-router-dom'
 // import Card from 'react-bootstrap/Card'
 // import Accordion from 'react-bootstrap/Accordion'
 
-export default class MiembrosANNA extends Component {
+export default class MiembrosPenales extends Component {
     state ={
         hideNav:null
     }

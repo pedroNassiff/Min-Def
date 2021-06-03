@@ -1,4 +1,5 @@
 //acciones
+import Acciones from 'pages/acciones/Acciones'
 import AccionesJudiciales from 'pages/acciones/accionesJudiciales'
 import Convenios from 'pages/acciones/convenios'
 import DefensoriaItinerante from 'pages/acciones/defensoriaItinerante'
@@ -7,6 +8,11 @@ import Monitoreos from 'pages/acciones/monitoreos'
 import ProyectoDeLey from 'pages/acciones/proyectoDeLey'
 
 export default [
+    {
+        path: "/acciones",
+        component: Acciones,
+        exact: true
+    },
     {
         path: "/acciones/accionesJudiciales",
         component: AccionesJudiciales,

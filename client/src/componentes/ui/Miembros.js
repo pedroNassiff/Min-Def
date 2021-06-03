@@ -27,12 +27,12 @@ export default class Miembros extends Component {
                 <div className="App">
                     <div className="container">
                         <div className="row">
-                            <div className="col-md-12 text-center" >
+                            {/* <div className="col-md-12 text-center" >
                                 <div>
                                     <h5 style={{fontFamily: "Roboto", fontSize:"20px", color:"black"}}>Selecciona la Circunscripción en el mapa</h5>
                                 </div>
                                 <Mapa />
-                            </div>
+                            </div> */}
                             <div className="col-1">
                                 <LocalidadContenido />
                             </div>

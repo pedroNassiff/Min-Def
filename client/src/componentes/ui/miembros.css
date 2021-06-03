@@ -504,14 +504,16 @@ h5{
     margin-right: auto;
     margin-left: auto;
 }
-.first--city{
 
-}
 .content-city  .row{
     display: flex;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
+}
+.content-city.main-container .row{
+    margin-right: 0;
+    margin-left: 0; 
 }
 .content-city h2{
     font-family: "Roboto";
@@ -520,7 +522,7 @@ h5{
 }
 @media (min-width: 768px){
     .content-city h2{
-        font-size: 1.3em;
+        font-size: 1em;
     }
 }
 .content-city .item{
@@ -668,6 +670,9 @@ Lo que agregó Walter para los mapas
     color: black;
     padding-left: 0;
     text-align: left;
+    font-size: 1.3em;
+    padding-top: 12px;
+    margin-bottom: 1.5em;
 }
 .item--info{
     display: flex;
@@ -677,4 +682,25 @@ Lo que agregó Walter para los mapas
 }
 .item--info li{
     padding-right: 15px;
+}
+.react-tabs__tab{
+    padding: 10px 15px !important;
+}
+.react-tabs__tab--selected{
+    border-radius: 0 !important;
+}
+.react-tabs__tab-panel--selected{
+    padding: 15px;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.react-tabs__tab h4{
+    margin-bottom: 0;
+    font-size: 1.75rem;
+    font-family: "Roboto";
+}
+.react-tabs__tab:focus{
+    box-shadow: none !important;
+    border-color: transparent !important;
 }

@@ -246,7 +246,7 @@ export default function MenuTop() {
     },
     {
     name: "Miembros Penales",
-      link: "/miembros",
+      link: "/miembrosPenales",
       activeIndex: 2,
       selectedIndex: 1,
     },
@@ -626,7 +626,7 @@ export default function MenuTop() {
                   <Link to={`/miembros`}>MIEMBROS</Link>
                   <ul className='sub-group'>
                     <li className='item sub-item'>
-                      <Link to={`/miembros`} className='item-link'>
+                      <Link to={`/miembrosPenales`} className='item-link'>
                         Miembros Penales
                       </Link>
                     </li>

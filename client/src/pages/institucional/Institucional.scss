@@ -1,0 +1,21 @@
+.container{
+  padding-top: 0;
+  padding-bottom: 3%;
+}
+p{
+  font-size: 18px;
+  font-family: 'Roboto';
+  line-height: 1.25;
+}
+
+.donde-estamos{
+  text-align: center;
+  h4{
+    margin-bottom: 15px;
+  }
+  iframe{
+    width: 800px;
+    height: 450px;
+    max-width: 100%;
+  }
+}

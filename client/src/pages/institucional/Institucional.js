@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import './Institucional.scss'
 
-const DondeEstamos = () => {
+const Institucional = () => {
 
   const domain = 'https://mpdchaco.tk';
     const [item, setItems] = useState([]);
@@ -29,13 +30,31 @@ const DondeEstamos = () => {
     return (
       <div className="mainContainer">
         <div className="titleContainer">
+          <h1>¿Qué es el MPD?</h1>
+          <div className='container'>
+            <div className='row' dangerouslySetInnerHTML={{__html: `${item.what}`}}></div>
+          </div>
+        </div>
+        <div className="titleContainer">
+          <h1>¿Qué hacemos?</h1>
+          <div className='container'>
+            <div className='row' dangerouslySetInnerHTML={{__html: `${item.what_do}`}}></div>
+          </div>
+        </div>
+        <div className="titleContainer">
           <h1>¿Dónde estamos?</h1>
           <div className='container donde-estamos'>
             <div className='row' dangerouslySetInnerHTML={{__html: `${item.where}`}}></div>
+          </div>
+        </div>
+        <div className="titleContainer">
+          <h1>Organización</h1>
+          <div className='container'>
+            <div className='row' dangerouslySetInnerHTML={{__html: `${item.organization}`}}></div>
           </div>
         </div>
       </div>
     );
 };
 
-export default DondeEstamos;
+export default Institucional;

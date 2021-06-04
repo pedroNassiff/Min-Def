@@ -65,7 +65,7 @@ const BuscadorBiblioteca = () => {
                       <div className='card-list-body w-100'>
                         <ul className='d-flex'>
                           <li className='name body-title w-100 d-flex align-items-center'><p>{b.title.rendered} <span className='badge badge-success'>{b.acf.area.label}</span></p></li>
-                          <li className='body-button'><a href={b.acf.doc} className='btn btn-primary' target='_blank' download>Descargar</a></li>
+                          <li className='body-button'><a href={b.acf.doc} className='btn btn-primary' target='_blank' download='download'>Descargar</a></li>
                         </ul>
                       </div>
                     </div>

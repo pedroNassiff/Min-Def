@@ -181,3 +181,25 @@ li{
     border-radius: 7px;
     padding: 15px 40px; 
 }
+
+@media (max-width: 768px){
+    .bibliotecaContainer{
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .bibliotecaContainer .titleContainer{
+        text-align: center;
+    }
+    .selectContainer{
+        width: 100%;
+        overflow-x: auto;
+        justify-content: start;
+    }
+    .SearchContainer{
+        width: 100%;
+    }
+    .searchInput{
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

@@ -424,50 +424,6 @@ h5{
       top: 172px;
       z-index:-1;
   }
-  
-  @media screen and (max-width: 600px) {
-    
-    .contenedor-mapa{
-        margin-top: -25em;
-        margin-left: -61em;
-      }
-      .card-body1{
-        margin-top: 4em;
-        /* margin-left: 8em; */
-    }
-    .titulo-card{
-        margin-left: -3.5em;
-    }
-    .col-1{
-        margin-top: 11em;
-        /* width: 29em; */
-        /* margin-left: -3.4em; */
-    }
-    .card-1{
-        position: relative;
-        /* width: 25em; */
-        /* margin-left: -4em; */
-    }
-    .col-1 .card-body1 > .MuiGrid-container{
-        width: 100%;
-        padding-left: 15px;
-    }
-    .img-fluid .mx-auto .d-block{
-        margin-left: 2em;
-    }
-    .text-center{
-        margin-left: -2.5em;
-    }
-    .overflow-auto{
-        width: 20em;
-        margin-left: 11em;
-    }
-    .font-weight-normal{
-        width: 23em;
-        font-size: 1.4rem;
-    }
-}
-
 
 /* Acá Walter */
 .container{
@@ -703,4 +659,91 @@ Lo que agregó Walter para los mapas
 .react-tabs__tab:focus{
     box-shadow: none !important;
     border-color: transparent !important;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .contenedor-mapa{
+        margin-top: -25em;
+        margin-left: -61em;
+      }
+      .card-body1{
+        margin-top: 4em;
+        /* margin-left: 8em; */
+    }
+    .titulo-card{
+        margin-left: -3.5em;
+    }
+    .col-1{
+        margin-top: 5em;
+        /* width: 29em; */
+        /* margin-left: -3.4em; */
+    }
+    .card-1{
+        position: relative;
+        /* width: 25em; */
+        /* margin-left: -4em; */
+    }
+    .col-1 .card-body1 > .MuiGrid-container{
+        width: 100%;
+        padding-left: 15px;
+    }
+    .img-fluid .mx-auto .d-block{
+        margin-left: 2em;
+    }
+    .overflow-auto{
+        width: 20em;
+        margin-left: 11em;
+    }
+    .font-weight-normal{
+        width: 23em;
+        font-size: 1.4rem;
+    }
+    .App{
+        margin-top: 10rem;
+    }
+    .content-city{
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .content-city .row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .header--title{
+        flex-direction: column;
+    }
+    .header--title h2{
+        padding: 0 15px;
+        font-size: 1.75rem;
+    }
+    .header--title .name-city{
+        padding-top: 15px;
+    }
+    .card-body{
+        flex-direction: column;
+        
+    }
+    .card-body .body--info{
+        text-align: center;
+        
+    }
+    .body--info h2{
+        font-size: 1.1em;
+        text-align: center;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .item--info{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .react-tabs__tab{
+        width: 100%;
+        border-bottom: 1px;
+    }
+    .react-tabs__tab-list{
+        padding-bottom: 15px !important;
+    }
 }

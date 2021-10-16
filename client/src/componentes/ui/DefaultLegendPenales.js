@@ -4,7 +4,7 @@ import iconPhone from '../../assets/img/icon-phone.svg';
 import iconMarker from '../../assets/img/icon-marker.svg';
 
 export default function SingleLegend() {
-    const domain = 'https://mpdchaco.tkk';
+    const domain = 'https://mpdchaco.com.ar/admin';
     const [miembros, setMiembros] = useState([]);
 
     async function getData(url) {
@@ -21,6 +21,8 @@ export default function SingleLegend() {
 
     useEffect(() => {
       getData(`${domain}/wp-json/wp/v2/miembros?categories=1`);
+
+      console.log(miembros)
     }, []);
 
     return (

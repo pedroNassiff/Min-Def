@@ -202,30 +202,30 @@ export default function Footer(props) {
                         className={classes.link}>
                         MIEMBROS
                     </Grid>
-                    <Grid 
+                    {/* <Grid 
                         item
                         component={Link}
                         to="/miembros"
                         onClick={() => {props.setValue(3); props.setSelectedIndex(1)}}  
                         className={classes.link}>
                         Mapa
-                    </Grid>
-                    <Grid 
+                    </Grid> */}
+                    {/* <Grid 
                         item
                         component={Link}
                         to="/miembros/turnos"
                         onClick={() => {props.setValue(3); props.setSelectedIndex(2)}}  
                         className={classes.link}>
                         Turnos
-                    </Grid>
-                    <Grid 
+                    </Grid> */}
+                    {/* <Grid 
                         item
                         component={Link}
                         to="/miembros/intranet"
                         onClick={() => {props.setValue(3); props.setSelectedIndex(3)}}  
                         className={classes.link}>
                         intranet
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Grid>
             <Grid 
@@ -257,19 +257,19 @@ export default function Footer(props) {
                     <Grid 
                         item
                         component={Link}
-                        to="/saludMental/orsm"
+                        to="/saludMental/"
                         onClick={() => props.setValue(4)}  
                         className={classes.link}>
-                        SALUD MENTAL
+                        ORSM - SALUD MENTAL
                     </Grid>
-                    <Grid 
+                    {/* <Grid 
                         item
                         component={Link}
                         to="/saludMental/orsm"
                         onClick={() => props.setValue(4)}   
                         className={classes.link}>
                         ORSM
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Grid>
             <Grid 

@@ -8,13 +8,13 @@ import VillaAngela from '../Localidades/penales/VillaAngela'
 import Home from 'pages/Home'
 
 //import DefaultLegend from './DefaultLegend'
-import DefaultLegend from './DefaultLegendANNA'
+import DefaultLegend from './DefaultLegendPenales'
 
 import {Route, Switch} from 'react-router-dom'
 import {Link} from 'react-router-dom'
-import MiembrosANNA from './MiembrosANNA'
+import MiembrosPenales from './MiembrosPenales'
 
-export default class LocalidadContenidoANNA extends Component {
+export default class LocalidadContenidoPenales extends Component {
     render() {
         return (
         <Switch>

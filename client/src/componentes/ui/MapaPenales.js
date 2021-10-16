@@ -11,7 +11,7 @@ class MapaANNA extends Component {
                 <div className='content-map'>
                     <div class='map'>
                             <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                width="300px" height="228.27px" viewBox="0 0 1187 903.202" enable-background="new 0 0 1187 903.202" xmlSpace="preserve">
+                                width="300px" height="228.27px" viewBox="0 0 1187 903.202" enableBackground="new 0 0 1187 903.202" xmlSpace="preserve">
                             <NavLink to="/miembrosPenales/castelli" activeclassname="active"><g><path fill="#EBC862" className="localidad" id="castelli" d="M296.199,158.153v10.204h1.7v139.446h173.459v10.205h1.7v8.435l40.813-1.633v11.905v113.938H624.41v8.502
                                 h1.7v53.285l119.441,40.813v-53.284v-11.904h11.503l93.531,1.641v-71.365c0,0-62.921-64.621-83.328-59.519
                                 c-20.408,5.103-28.91-8.503-32.311-34.012c-3.401-25.509-15.307-18.706-37.413-42.514c-22.107-23.808-3.401-20.407-37.412-34.012

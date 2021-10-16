@@ -4,7 +4,7 @@ import { Button } from 'antd';
 
 const BuscadorBiblioteca = () => {
 
-    const domain = 'https://mpdchaco.tk';
+    const domain = 'https://mpdchaco.com.ar/admin';
     const [item, setItems] = useState([]);
 
     async function getData(url) {

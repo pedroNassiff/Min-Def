@@ -3,7 +3,7 @@ import './Informes.scss'
 
 const Informes = () => {
 
-    const domain = 'https://mpdchaco.tk';
+    const domain = 'https://mpdchaco.com.ar/admin';
     const [item, setItems] = useState([]);
 
     async function getData(url) {

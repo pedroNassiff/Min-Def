@@ -12,7 +12,7 @@ export default function Charata() {
     window.scrollTo({ top: top, behavior: 'smooth' });
 }
 
-const domain = 'https://mpdchaco.tk';
+const domain = 'https://mpdchaco.com.ar/admin';
 const [miembros, setMiembros] = useState([]);
 
 async function getData(url) {

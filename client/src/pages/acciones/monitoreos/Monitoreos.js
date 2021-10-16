@@ -3,7 +3,7 @@ import './Monitoreos.scss'
 
 const Monitoreos = () => {
 
-    const domain = 'https://mpdchaco.tkk';
+    const domain = 'https://mpdchaco.com.ar/admin';
     const [item, setItems] = useState([]);
 
     async function getData(url) {

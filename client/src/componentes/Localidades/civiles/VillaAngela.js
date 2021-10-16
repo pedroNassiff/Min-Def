@@ -12,7 +12,7 @@ export default function VillaAngela() {
     window.scrollTo({ top: top, behavior: 'smooth' });
 }
 
-const domain = 'https://mpdchaco.tkk';
+const domain = 'https://mpdchaco.com.ar/admin';
 const [miembros, setMiembros] = useState([]);
 
 async function getData(url) {

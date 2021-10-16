@@ -4,7 +4,7 @@ import iconPhone from '../../assets/img/icon-phone.svg';
 import iconMarker from '../../assets/img/icon-marker.svg';
 
 export default function SingleLegend() {
-    const domain = 'https://mpdchaco.tk';
+    const domain = 'https://mpdchaco.com.ar/admin';
     const [miembros, setMiembros] = useState([]);
 
     async function getData(url) {

@@ -6,7 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 
 export default function SingleLegend() {
-    const domain = 'https://mpdchaco.tk';
+    const domain = 'https://mpdchaco.com.ar/admin';
     const [penales, setPenales] = useState([]);
     const [civiles, setCiviles] = useState([]);
     const [anna, setAnna] = useState([]);
